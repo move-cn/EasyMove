@@ -18,3 +18,4 @@
 - [15.轻松入门Sui Move:  集合（下）](./chapter_15.md)
 - [16.轻松入门Sui Move:  升级（上）](./chapter_16.md)
 - [17.轻松入门Sui Move:  升级（下）](./chapter_17.md)
+- [18.轻松入门Sui Move:  设计模式](./chapter_18.md)
