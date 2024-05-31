@@ -19,3 +19,5 @@
 - [16.轻松入门Sui Move:  升级（上）](./chapter_16.md)
 - [17.轻松入门Sui Move:  升级（下）](./chapter_17.md)
 - [18.轻松入门Sui Move:  设计模式](./chapter_18.md)
+- [19.轻松入门Sui Move:  获取时间](./chapter_19.md)
+- [20.轻松入门Sui Move: 对象的展示](./chapter_20.md)
