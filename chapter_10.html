@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>10.轻松入门Sui Move: 动态字段 - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html" class="active"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_10.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="10轻松入门sui-move-动态字段"><a class="header" href="#10轻松入门sui-move-动态字段">10.轻松入门Sui Move: 动态字段</a></h2>
+<p>在第八章我们讲被嵌套的对象的时候，举了一个例子：人(Person对象)可能拥有0个或者多个笔记本电脑，但在实际生活中，我们不仅仅可以拥有笔记本电脑，我们还可以拥有平板电脑、手机、台式机、游戏机等电子设备。那Person对象的定义将会变成如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    //拥有的笔记本
+    notebooks: vector&lt;Notebook&gt;,
+    //拥有的手机
+    mobile_phones: vector&lt;MobilePhone&gt;,
+    //拥有的游戏机
+    game_consoles: vector&lt;GameConsole&gt;,
+    //拥有的平板电脑
+    ipads: vector&lt;Ipad&gt;,
+}
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public struct MobilePhone has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    number: u64,
+}
+public struct GameConsole has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    games: vector&lt;u8&gt;,
+}
+public struct Ipad has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    size: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Person对象嵌套了一堆对象，但事实上有的老年人没有任何电子设备，那这个实例化这个老人的Person对象就得带着四个空的对象数组，不仅没有任何意义还会消耗GAS。再者如果每出现一个新型电子设备，就得给Person对象增加一个字段，不仅麻烦，后面Person对象的定义会变得又臭又长，难以维护。如果达到嵌套对象数量的上限，甚至会影响业务实现。</p>
+<p>有没有一种方法，可以让对象只嵌套需要的对象，不限名称不限类型，还可以动态的嵌套，动态解除嵌套对象？</p>
+<p>这时候就要用到动态字段了。</p>
+<p>现在Person对象的类型定义就可以去掉所有电子设备相关的字段：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>定义Notebook，MobilePhone等电子设备对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//注意：Notebook作为动态字段的值，必须具有store ability
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    weight: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>person对象购入一台笔记本电脑，只需调用add方法，给Person对象增加一个动态字段：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun add_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let notebook = Notebook{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        weight: 12,
+    };
+    //给Person对象增加一个动态字段
+    ofield::add&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name(), notebook);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>get_notebook_name()方法是用于获取String类型的动态字段名，而字段值是新实例化的Notebook对象。</p>
+<p>add方法可以将不同类型的电子设备对象都加入到Person对象的动态字段中，而无需修改Person的类型定义。</p>
+<p>如果要转卖笔记本电脑，就使用remove方法从Person对象中删除：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun remove_notebook(person: &amp;mut Person, buyer: address, _:&amp;mut TxContext) {
+    //如果动态字段中不存在，就停止运行
+    assert!(ofield::exists_&lt;String&gt;(&amp;person.id, get_notebook_name()), ENotExsitsInOfiled);
+	//remove方法从动态字段中删除
+    let notebook:Notebook = ofield::remove&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name());
+	//转交给买家
+    transfer::public_transfer(notebook, buyer);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们使用add和remove就可以灵活的给Person对象增加/删除字段，是不是特别简单。</p>
+<p>但是，动态字段有两种，一种是dynamic_object_field，另一种则是dynamic_field。他们之间有什么区别呢，各自使用场景是什么？我们一起看看源码中add方法的定义：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//dynamic_object_field模块
+public fun add&lt;Name: copy + drop + store, Value: key + store&gt;(
+    object: &amp;mut UID,
+    name: Name,
+    value: Value,
+) 
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//dynamic_field模块
+public fun add&lt;Name: copy + drop + store, Value: store&gt;(
+    object: &amp;mut UID,
+    name: Name,
+    value: Value,
+) 
+<span class="boring">}</span></code></pre></pre>
+<p>两个模块对动态字段的字段名有相同的要求：必须是带有copy,drop,store 能力的数据类型。那就包括所有的基础类型和带有这三个能力的非对象结构体。在第9章中阐述了为什么对象不能有copy和drop能力，不懂的小伙伴可以翻阅一下这里不再赘述。</p>
+<p>add函数的区别主要在于字段值。dynamic_object_field模块要求字段值必须是带有store能力的对象，而dynamic_field模块的字段值可以是带有store能力的任何数据类型。</p>
+<p>所以如果字段值是非对象类型，就只能使用dynamic_field模块，但是如果值是对象，如何选择使用哪种动态字段呢？</p>
+<p>假设现在Person对象有两个动态字段，一个值是笔记本另一个则是手机。分别使用两种动态字段添加到Person对象中。笔记本的代码已经在上面代码块add_notebook定义，就不再重复。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct MobilePhone has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    number: u64,
+}
+public entry fun add_mobilephone(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let mp = MobilePhone{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        number: 13512354569,
+    };
+    //使用dynamic_filed模块的add方法
+    field::add&lt;String, MobilePhone&gt;(&amp;mut person.id, get_mobilephone_name(), mp);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>发布合约，再分别调用add_mobilephone方法和add_notebook方法，这两个方法都会创建一个归属于Person对象的Field对象，</p>
+<p>这个Field对象是用于保存动态字段键值对的对象，它在源码中的定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Field&lt;Name: copy + drop + store, Value: store&gt; has key {
+    /// Determined by the hash of the object ID, the field name value and it's type,
+    /// i.e. hash(parent.id || name || Name)
+    id: UID,
+    /// 键
+    name: Name,
+    /// 值
+    value: Value,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>调用add方法新创建的两个Filed对象类型分别是：Field&lt;String, MobilePhone&gt;和Filed&lt;dynamic_object_field::Wrapper&lt;0x1::string::String&gt;, object::ID&gt;。</p>
+<p>这两个Filed对象的name字段类型不同，是为了让dynamic_object_field和dynamic_filed添加的动态字段的字段名区分开，避免产生键冲突。</p>
+<p>使用dynamic_filed::add方法生成的Field对象，通过value字段直接嵌套了MobilePhone对象，那这个MobilePhone对象就只能通过Field对象进行访问，修改，删除和转移了。执行sui client object 命令也会报错不存在这个对象。</p>
+<p>与此不同的是，dynamic_object_field:add对象生成的Field对象值是Notebook对象的ID，并没有嵌套Notebook对象，那就意味着外界依然可以访问Notebook对象。</p>
+<p>所以对象选择哪种方式添加进动态字段，取决于被添加的对象是否需要被外界访问。</p>
+<p>动态字段模块还为我们提供了borrow和borrow_mut方法来不可变引用和可变引用；exists_方法判断是否存在动态字段。</p>
+<p>虽然是为Person对象添加的动态字段，但是删除Person对象并不会默认删除对象的动态字段！所以删除对象的方法里，应该先删除动态字段，再删除对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun delete_person(mut person: Person, _: &amp;mut TxContext) {
+    assert!(ofield::exists_&lt;String&gt;(&amp;person.id, get_notebook_name()), ENotExsitsInOfiled);
+    assert!(field::exists_&lt;String&gt;(&amp;person.id, get_mobilephone_name()), ENotExsitsInOfiled);
+	//删除notebook动态字段
+    let Notebook{id: notebook_id, brand:_, model:_,weight:_} = ofield::remove&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name());
+    object::delete(notebook_id);
+	//删除mobilephone动态字段
+    let MobilePhone{id: mobilephone_id, brand:_, model:_,number:_} = field::remove&lt;String, MobilePhone&gt;(&amp;mut person.id, get_notebook_name());
+    object::delete(mobilephone_id);
+	//删除person对象
+    let Person{id:id, name: _} = person;
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_9.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_11.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_9.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_11.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

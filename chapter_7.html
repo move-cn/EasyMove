@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>7.轻松入门Sui Move: 对象（上） - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html" class="active"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_7.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="7轻松入门sui-move-对象上"><a class="header" href="#7轻松入门sui-move-对象上">7.轻松入门Sui Move: 对象（上）</a></h2>
+<p>有过后端编程经验的小伙伴会发现：无论什么语言核心其实都是对数据的增删改查，Sui Move也不例外，但是Sui Move并不会跟其他语言一样连接数据库、使用特定的数据库语言存储数据，而是使用<strong>对象作为最小的存储单元</strong>。也就是说如果你想持久化一些数据，先申明一个对象模型，使用要存储的数据实例化对象即可。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//申明对象模型
+public struct Article has key {
+    id: object::UID,
+    title: string::String,
+    content: string::String,
+    word_cnt: u64,
+}
+public fun new(title: vector&lt;u8&gt;, content: vector&lt;u8&gt;, ctx: &amp;mut tx_context::TxContext) {
+ 	let content = string::utf8(content);
+    //实例化一个对象
+    let article = Article{
+        id: object::new(ctx),
+        title: string::utf8(title),
+        content: content,
+        word_cnt: string::length(&amp;content),
+    };
+	//对象设置为共享对象，所有用户皆可访问修改
+    transfer::share_object&lt;Article&gt;(article);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在发布这段代码后，调用new方法就可以生成一个对象并返回对象的元数据，对象也保存在了链上。</p>
+<p><strong>对象模型是一种特殊的结构体</strong>，所以上一章讲到的结构体相关的用法对象也一样适用。那如何区分这是一个普通的结构体还是对象呢？<strong>对象一定具有key能力且对象的第一个字段是全局唯一ID</strong>  ，这个全局唯一id可以确定对象在链上的位置，所以也可以理解为就是对象的地址。对象的其他字段则可以是基础数据类型、对象或者非对象结构体。</p>
+<p>第一章我们也讲过，在发布代码的时候会返回一个所有者为Immutable(不可改变的)的对象,这个对象的ID就是对应的包地址。这句话隐含了一个信息，就是<strong>我们发布的包也是一个对象</strong>。这个对象永远不可改变或删除。所以发布代码的过程也可以理解为是把代码存储到区块链的过程。</p>
+<h4 id="对象的结构"><a class="header" href="#对象的结构">对象的结构</a></h4>
+<p>使用sui client object <object id>就可以看到对象的完整信息，无论是包还是结构体对象都可以执行这个命令。结果如下：</p>
+<p>结构体对象：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/object.jpg?raw=true" alt="" /></p>
+<p>包：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/package.jpg?raw=true" alt="" /></p>
+<p>我们可以把对象分为两部分：元数据和内容。</p>
+<h5 id="公共元数据"><a class="header" href="#公共元数据">公共元数据</a></h5>
+<p>以下是无论是对象模型还是包都有的公共元数据：</p>
+<ul>
+<li>32个字节的全球唯一标识符（objectId），也就是对象ID，也可以说是对象的地址。</li>
+<li>8个字节的版本号(version)，每次修改对象都会加一。</li>
+<li>32个字节的交易的摘要（prevTx），记录最后一次输出这个对象的交易。</li>
+<li>33个字节的owner字段，对象的所有者，也可以根据这个字段推测如何访问这个对象。</li>
+<li>objectType则指明对象类型，值可能是package可能是自定义的结构体类型。</li>
+<li>digest字段是这个对象元数据和内容的哈希，也就是对象的摘要。</li>
+<li>storageRebate字段表示，如果这个对象后期在链上删除，将会返还的gas值。</li>
+</ul>
+<h5 id="对象内容"><a class="header" href="#对象内容">对象内容</a></h5>
+<p>对象内容就一个content字段，它里面的dataType字段用于区分是结构体对象（moveObject）还是包(package)。content字段的其他内容则因类型的不同而各有区别了。</p>
+<h6 id="结构体对象"><a class="header" href="#结构体对象">结构体对象</a></h6>
+<ul>
+<li>type字段：表明结构体类型</li>
+<li>hasPublicTransfer字段：是否能使用publish_transfer转移所有权，上图这个对象因为是共享对象所以不能被转移所有权，值为false。</li>
+<li>fields字段就是对象的键值对，使用BCS(Binary Canonical Serialization)编码。我们可以在sui client object命令中指定–bcs选项来查看编码后的值。</li>
+</ul>
+<h6 id="包"><a class="header" href="#包">包</a></h6>
+<p>Move Packages包含包中的代码。查看上图可以发现引用包的名称已经自动变成了包的地址。</p>
+<h4 id="删除对象"><a class="header" href="#删除对象">删除对象</a></h4>
+<p>我们上面说对象就是一种特殊的结构体，按理说上一章的销毁实例应该也适用于对象吧？我们按照上一章讲解的方法定义drop函数：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun drop(a: Article) {
+    let Article{id:_,title:_,content:_,word_cnt:_}=a;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>编译的时候直接报错：id字段Cannot ignore values without the ‘drop’ ability. The value must be used。id字段的类型是sui::object::UID，这个结构体类型没有drop的能力，所以不能丢弃id字段值。好在sui::object模块提供了一个删除UID的方法，也是删除对象id的唯一方法，如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//注意：要删除对象，必须按值传入
+public fun drop(a: Article) {
+    let Article{id:id,title:_,content:_,word_cnt:_}=a;
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们发布合约后调用这个方法删除对象。在浏览器查看本次交易的费用明细可以发现：本次交易给我们返还了0.000351964 SUI！删除对象释放存储空间就会返还一部分gas，那我们在编码过程中应该积极删除无用对象，以减少gas消耗！</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/delete_object.png?raw=true" alt="" /></p>
+<h4 id="对象的分类"><a class="header" href="#对象的分类">对象的分类</a></h4>
+<p>根据对象的所有者和访问权限的不同，可以将对象分为以下几类：</p>
+<ul>
+<li>
+<p>独有对象</p>
+<p>这种对象的owner字段值是账户的地址或者是对象的ID。它只能属于某一个地址，可以切换对象的所有者。也只有所有者能访问，修改，转交它。</p>
+</li>
+<li>
+<p>共享对象</p>
+<p>这种对象的owner字段值带有Shared标记。这种对象属于所有人，对所有人开放访问，修改的权限。</p>
+</li>
+<li>
+<p>不可变对象</p>
+</li>
+</ul>
+<p>​	 这种对象的owner字段值是Immutable,一旦创建不能修改和转交，但是对所有人开放访问权限。 我们每次发布包就会返回一个不可变对象，所有人都可以访问这个包但包一经发布不可修改。</p>
+<ul>
+<li>被嵌套的对象</li>
+</ul>
+<p>​		这种对象的owner字段值是嵌套对象的地址,。它被一个对象嵌套在内，在链上不能独立存在，也无法使用对象ID直接访问。只能通过嵌套他的对象访问，修改或转移。如果转移给了一个账户地址，该账户的用户就可以通过对象ID直接访问了。</p>
+<p>本节我们只简单介绍一下每种对象的特征，下一节我们将详解讲解如何创建，访问和转交这些对象。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_6.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_8.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_6.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_8.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

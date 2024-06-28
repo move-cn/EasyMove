@@ -1,0 +1,519 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>8.轻松入门Sui Move: 对象（下） - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html" class="active"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_8.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="8轻松入门sui-move-对象下"><a class="header" href="#8轻松入门sui-move-对象下">8.轻松入门Sui Move: 对象（下）</a></h2>
+<p>上一章我们简单概括了四种不同类型的对象，这一章将详细介绍每种对象的使用方法。期间可能会有些关于ability的内容，如果对ability不太熟悉的朋友，建议先看：9.轻松入门Sui Move: Ability</p>
+<h4 id="独有对象"><a class="header" href="#独有对象">独有对象</a></h4>
+<p><strong>独有对象属于某一个账户地址或者某个对象ID，只有该账户地址（或对象）能访问，修改，删除和转交它。</strong></p>
+<h5 id="创建方法"><a class="header" href="#创建方法">创建方法</a></h5>
+<p><strong>创建一个对象后，使用transfer或者public_transfer把所有权转交给一个账户地址（或对象ID），那么这个对象就是独有对象</strong>。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun new(ctx: &amp;mut TxContext) {
+    let person = Person {
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+    };
+    let company = Company {
+        id: object::new(ctx),
+        person: person,
+        can_be_transfered: false,
+    };
+    //company就是一个独有对象
+    transfer::transfer(company, tx_context::sender(ctx))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>那transfer和public_transfer有什么区别呢？我们来看一下实现这两个方法的源码：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun transfer&lt;T: key&gt;(obj: T, recipient: address) {
+    transfer_impl(obj, recipient)
+}
+//public_transfer要求被转交的对象具有key, store ability
+public fun public_transfer&lt;T: key + store&gt;(obj: T, recipient: address) {
+    transfer_impl(obj, recipient)
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们可以看到函数内的实现完全一样，只是不同函数对类型T的限定有区别：public_transfer方法还要求对象必须有store ability。</p>
+<p>根据这个源码，我们得出以下结论：</p>
+<ul>
+<li>无论是transfer还是pubic_transfer,都只能用于转交对象，没有key ability的非对象结构体不能使用。</li>
+<li>如果对象没有store ability 就只能使用transfer</li>
+</ul>
+<p>还有一个区别就是transfer方法只能在定义对象的模块内使用,public_transfer则模块内外均可使用。</p>
+<p>总结来说就是：<strong>transfer适用于没有store ability的对象，只能在定义它的模块内转交。 public_transfer则只能用于有store ability的对象，可以在模块内外转交</strong>。</p>
+<p><font size=4>笔者做了一个小实验，使用transfer在模块内转交有store ability的对象，会触发警告，不影响运行。但不建议这么做。</font></p>
+<h5 id="使用场景"><a class="header" href="#使用场景">使用场景</a></h5>
+<p>只要是在任何时间点都只有一个拥有者的对象，都应该使用独有对象。相比共享对象，独有对象没有数据争用的问题，将会有更快的速度，更小的成本和更高的吞吐量，所以独有对象应用尽用。</p>
+<h4 id="不可变对象"><a class="header" href="#不可变对象">不可变对象</a></h4>
+<p><strong>不可变对象不能被编辑、删除和转交。它不属于任何人，所有人都可以访问它</strong>。</p>
+<h5 id="创建方法-1"><a class="header" href="#创建方法-1">创建方法</a></h5>
+<p><strong>使用freeze_object或者public_freeze_object就可以freeze对象，把对象变成不可变对象</strong>。注意！这个过程是不可逆的。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//创建一个不可变对象
+public fun new_contract(text:String, ctx: &amp;mut TxContext) {
+    transfer::freeze_object(Contract{
+        id: object::new(ctx),
+        text: string::utf8(b"hello world"),
+    })
+}
+<span class="boring">}</span></code></pre></pre>
+<p>freeze_object和public_freeze_object的区别，跟public_transfer和transfer的区别一样，这里不再详解。</p>
+<h5 id="访问方法"><a class="header" href="#访问方法">访问方法</a></h5>
+<p>因为不可变对象不属于任何人，也不允许编辑，所以不可变对象只允许不可变引用。把对象本身作为参数或者使用可变引用都会引起报错，</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//正确
+public fun access_contract(c: &amp;Contract, _: &amp;mut TxContext)
+//报错
+public fun access_contract(c: Contract, _: &amp;mut TxContext)
+//报错
+public fun access_contract(c: &amp;mut Contract, _: &amp;mut TxContext)
+<span class="boring">}</span></code></pre></pre>
+<h5 id="使用场景-1"><a class="header" href="#使用场景-1">使用场景</a></h5>
+<p>只要对象有不可改变，不能转移，不能删除的特性都应该使用不可变对象。不仅是因为它的特性，而且它也没有数据争用问题具有较高性能。一个典型的不可变对象就是我们发布的包。</p>
+<h4 id="共享对象"><a class="header" href="#共享对象">共享对象</a></h4>
+<p><strong>共享对象是使用share_object或者public_share_object函数的对象，它属于所有人，所有人都可以访问、修改、删除和转交它</strong>。这里值得注意的是，所有人都可以访问共享对象不代表模块内外都能直接访问对象内字段，模块外对共享对象字段的访问也只能通过调用定义对象的模块提供的函数实现。所有人都可以转交共享对象也不意味着模块外一定能转交共享对象，模块外要能转交共享对象，要求对象有store abiity 并且使用public_share_object方法。</p>
+<p>share_object和public_share_object的区别请看transfer和public_transfer</p>
+<h5 id="创建方法-2"><a class="header" href="#创建方法-2">创建方法</a></h5>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun new_platform(ctx: &amp;mut TxContext): Admin {
+    let platform = RentalPlatform {
+        id: object::new(ctx),
+        deposit_pool: table::new&lt;ID, u64&gt;(ctx),
+        balance: balance::zero&lt;SUI&gt;(),
+        notices: table::new&lt;ID, RentalNotice&gt;(ctx),
+        owner: tx_context::sender(ctx),
+    };
+
+    transfer::share_object(platform);
+}
+<span class="boring">}</span></code></pre></pre>
+<h5 id="访问方法-1"><a class="header" href="#访问方法-1">访问方法</a></h5>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这三种都可以
+public fun access_platform(c: &amp;Contract, _: &amp;mut TxContext)
+public fun access_platform(c: Contract, _: &amp;mut TxContext)
+public fun access_platform(c: &amp;mut Contract, _: &amp;mut TxContext)
+<span class="boring">}</span></code></pre></pre>
+<h5 id="使用场景-2"><a class="header" href="#使用场景-2">使用场景</a></h5>
+<p>只有必要的时候才使用共享对象，因为所有人都能编辑，转交，删除可能会存在数据争用问题，为了解决数据争用会耗费更多时间和资源。</p>
+<h4 id="被嵌套的对象"><a class="header" href="#被嵌套的对象">被嵌套的对象</a></h4>
+<p>**被嵌套的对象被一个对象嵌套在内，成为外层对象的一部分，在链上不能独立存在，也无法使用对象ID直接访问。只能通过嵌套他的对象访问，修改或转移。**如果它又被转交给了一个账户地址，这个对象就转变成了独有对象，该账户的用户就可以通过对象ID直接访问了。</p>
+<p>嵌套对象的Owner是外层对象ID，那是不是Owner是对象ID的都是嵌套对象呢？？？别忘了独有对象的owner也可能是对象ID，这里需要注意区分。</p>
+<p>注意，非对象结构体也能被嵌套，嵌套时也要求结构体有store ability.但是本文讨论的是对象，非对象结构体暂不详谈。</p>
+<p>嵌套的方式有三种，分别是直接嵌套，通过Option嵌套和通过vector嵌套。我们接下来依次探究每种嵌套方式。</p>
+<h5 id="直接嵌套"><a class="header" href="#直接嵌套">直接嵌套</a></h5>
+<h6 id="创建方式"><a class="header" href="#创建方式">创建方式</a></h6>
+<p><strong>直接把一个对象作为另外一个对象的字段，这种方式就是直接嵌套。</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Company  has key,store {
+    id: UID,     
+    //嵌套Person对象
+    person: Person,
+    can_be_transfered: bool,
+}
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>注意，不能循环嵌套，也就是说A嵌套B,B不能嵌套A。</p>
+<h6 id="访问方式"><a class="header" href="#访问方式">访问方式</a></h6>
+<p>被直接嵌套的对象，不能使用对象ID访问(sui client object命令也不行)，也不能在任何函数调用中将其作为参数，唯一的访问方式就是通过访问外层对象。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_person(company: &amp;Company,_: &amp;mut TxContext) {
+    //使用.一层一层访问
+    let _ = company.person.name;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套"><a class="header" href="#解除嵌套">解除嵌套</a></h6>
+<p>被嵌套的对象，可以取出转交给账户地址，转变成一个独有对象。这个过程称之为解除嵌套。方法如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这里的company对象必须按值传递才能获取到person的对象
+public entry fun transfer_person(company: Company, ctx: &amp;mut TxContext) {
+    let Company{
+        id:id,
+        person:person,
+        can_be_transfered:can_be_transfered,
+    } = company;
+    let _ = can_be_transfered;
+    //需要使用person对象值来转交
+    transfer::public_transfer(person, tx_context::sender(ctx));
+    //必须删除外层对象
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>本段代码执行完，输出的Transaction Effects 模块，会有一个 Unwrapped Objects，展示的就是解开嵌套的对象。如下：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/unwrap_object.png?raw=true" alt="" /></p>
+<h6 id="应用场景"><a class="header" href="#应用场景">应用场景</a></h6>
+<p>被嵌套的对象无法直接访问只有通过调用模块内特定的函数才能访问，在这个函数内我们可以设置访问的条件，以实现对对象的访问限制。</p>
+<p>被直接嵌套的对象在解除嵌套的时候，必须删除外层对象；并且实例化外层对象的时候也必须同时实例化被嵌套的对象。直接嵌套适用于外层对象必须有嵌套对象的场景。比如公司必须有员工，没员工就会倒闭。</p>
+<p>那有没有一种更灵活的方式，外层对象可能嵌套对象，可能没有嵌套对象，可以动态嵌套；解除嵌套也无需删除外层对象？通过Option嵌套就能轻松实现。</p>
+<h5 id="通过option嵌套"><a class="header" href="#通过option嵌套">通过Option嵌套</a></h5>
+<p>Option是标准库实现的一个结构体，含有copy,drop和store ability，内部包含一个可指定类型的数组字段。源码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//在使用Option类型的时候，需要使用&lt;&gt;指定类型。这是泛型相关知识后续将会讲到
+struct Option&lt;Element&gt; has copy, drop, store {
+    vec: vector&lt;Element&gt;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>那如何使用Option来嵌套对象呢？我们通过一个人和笔记本的例子说明：</p>
+<h6 id="创建方式-1"><a class="header" href="#创建方式-1">创建方式</a></h6>
+<p>有的人拥有笔记本，有的人则没有。所以我们可以声明一个Person对象，通过Option嵌套Notebook对象。我们先实例化一个没有笔记本的Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    notebook: Option&lt;Notebook&gt;,
+}
+//被嵌套的对象必须要有store ability
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public fun new(ctx: &amp;mut TxContext) {
+    transfer::transfer(Person{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+        //可以实例化一个没有Notebook对象的Peroson对象
+        notebook: option::none&lt;Notebook&gt;(),
+        }, tx_context::sender(ctx));
+}
+
+<span class="boring">}</span></code></pre></pre>
+<p>后面这位名为hanmeimei的人购买了一个笔记本，我们使用option::fill方法将Notebook对象嵌入Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//嵌套Notebook对象
+public fun fill_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    //在将Notebook嵌入Person之前，确定Person没有嵌套Notebook。否则会报错
+    assert!(option::is_none(&amp;person.notebook), EOptionNotEmpty);
+
+    let notebook = Notebook {
+        id: object::new(ctx),
+        brand: string::utf8(b"HUAWEI"),
+        model: string::utf8(b"v10"),
+    };
+    //嵌套Notebook
+    option::fill&lt;Notebook&gt;(&amp;mut person.notebook, notebook);    
+}		
+<span class="boring">}</span></code></pre></pre>
+<h6 id="访问方式-1"><a class="header" href="#访问方式-1">访问方式</a></h6>
+<p>访问被Option嵌套的对象也只能通过外层对象访问，可以使用option::borrow方法不可变引用notebook对象，也可以使用option::borrow_mut方法可变引用notebook对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_notebook(person: &amp;Person, _: &amp;mut TxContext) {
+    let notebook_ref = option::borrow&lt;Notebook&gt;(&amp;person.notebook);
+    _ = notebook_ref.brand;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套-1"><a class="header" href="#解除嵌套-1">解除嵌套</a></h6>
+<p>如果要转卖笔记本，则使用option::extract取出，并转交给其他人。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//解除嵌套
+public entry fun unwrap_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    //确认有嵌套，否则会报错
+    assert!(option::is_some(&amp;person.notebook), EOptionEmpty);
+    //解除嵌套并转交给当前用户
+    let notebook = option::extract&lt;Notebook&gt;(&amp;mut person.notebook);
+    transfer::public_transfer(notebook, someone);
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="应用场景-1"><a class="header" href="#应用场景-1">应用场景</a></h6>
+<p>虽然Option类型的唯一字段是数组类型，但是Option&lt;element&gt;只能最多只能包含一个对象。所以Option适合可能有一个嵌套或者没有嵌套对象的场景。那如果我想嵌套多个同类型对象怎么办？我们可以使用vector嵌套对象。</p>
+<h5 id="通过vector嵌套"><a class="header" href="#通过vector嵌套">通过vector嵌套</a></h5>
+<p>很多人可能没有笔记本，开发人员则可能有一个或者多个笔记本，我们使用vector来创建Person对象：</p>
+<h6 id="创建方式-2"><a class="header" href="#创建方式-2">创建方式</a></h6>
+<p>我们可以声明一个Person对象,notebooks字段申明为Notebook类型的数组。并实例化一个没有笔记本的Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    notebooks: vector&lt;Notebook&gt;,
+}
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public fun new(ctx: &amp;mut TxContext) {
+    transfer::transfer(Person{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+        notebooks: vector::empty&lt;Notebook&gt;(),
+        }, tx_context::sender(ctx));
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="访问方式-2"><a class="header" href="#访问方式-2">访问方式</a></h6>
+<p>跟option类型类似，可以使用borrow方法不可变引用。不过因为是数组，在访问的时候需要指定索引，确实访问多个笔记本中的哪一个。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_notebook(person: &amp;Person, index: u64, _: &amp;mut TxContext) {
+    //也可以使用vector::borrow_mut方法可变引用
+    let notebook_ref = vector::borrow&lt;Notebook&gt;(&amp;person.notebooks, index);
+    _ = notebook_ref.brand;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套-2"><a class="header" href="#解除嵌套-2">解除嵌套</a></h6>
+<p>使用vector::remove方法解除嵌套</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//解除嵌套
+public entry fun unwrap_notebook(person: &amp;mut Person, notebook: &amp;Notebook, ctx: &amp;mut TxContext) {
+    //确认有嵌套，否则会报错
+    let (contains,index) = vector::index_of&lt;Notebook&gt;(&amp;person.notebooks, notebook);
+    assert!(contains, EEmpty);
+    //解除嵌套并转交给当前用户
+    let notebook = vector::remove&lt;Notebook&gt;(&amp;mut person.notebooks, index);
+    transfer::public_transfer(notebook, tx_context::sender(ctx));
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="应用场景-2"><a class="header" href="#应用场景-2">应用场景</a></h6>
+<p>vector方法的嵌套，适用于外层对象有零个或者多个同类型嵌套对象的场景。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_7.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_9.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_7.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_9.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>番外篇：我在dacade赚了100SUI - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html" class="active"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/extra_story.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="番外篇我在dacade赚了100sui"><a class="header" href="#番外篇我在dacade赚了100sui">番外篇：我在dacade赚了100SUI</a></h2>
+<p>事先说明，本篇文章不是广告，只是讲述我如何在Dacade的挑战中赢得了100SUI的经历。如果大家有疑问可以自己去dacade官网查看，仔细辨别：https://dacade.org/communities/sui/challenges/19885730-fb83-477a-b95b-4ab265b61438</p>
+<p>这是我在dacede中提现100SUI的截图:</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/dacade.jpg?raw=true" alt="" /></p>
+<p>这个挑战的要求是</p>
+<ul>
+<li>
+<p>在DEFI领域创建创新项目，例如用于交易所，贷款平台或产量耕作应用程序的原型。</p>
+</li>
+<li>
+<p>确保项目的高质量代码：结构良好，高效，最佳实践，详细的代码注释并没有错误。</p>
+</li>
+</ul>
+<p>按照上述要求编写，70分以上就能获得100SUI。他们的评分分为两个部分，一个是原创分满分60，另外一个部分则是代码质量分满分40分。原创是非常重要的分数，建议大家在写之前看看历次已经得分的提交，如果有人写过的功能最好就不要写了，原创分低的话很难超过70。高质量代码他们也给出了范例，可以拉优秀的代码下来研究一下再写</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/best_submit.jpg?raw=true" alt="" />代码提写完代码提交到代码仓库，并在dacade中提交你的代码仓库地址，接下来只需要等待审核就可以啦。根据我的观察审核周期是在一周到一个月不等，只要审核通过就会收到邮件。</p>
+<p>下面我介绍一下我在dacade审核通过的代码，希望能给大家一起启发：</p>
+<p>我编写的是一个公平公开的租房平台，可以防止提灯定损。在这平台中有三个角色：平台管理员，房东，房客。房东发布租房信息，房客租房时需要缴纳房租和押金，房租将会打款给房东，而押金则交由平台托管。等房租到期房东验房并管理员审核之后才能扣除押金，房客退房时退还剩余押金。</p>
+<p>租房平台对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct RentalPlatform has key {
+    // uid of the RentalPlatform object
+    id: UID,
+    // deposit stored on the rental platform, key is house object id,value is the amount of deposit
+    deposit_pool: Table&lt;ID, u64&gt;,
+    balance: Balance&lt;SUI&gt;,
+    // rental notices on the platform, key is house object id
+    notices: Table&lt;ID, RentalNotice&gt;,
+    //owner of platform
+    owner: address,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这是一个共享对象，不仅保存了房东发布的租房信息（notices）,还保存了租房押金，balance就是所有租房押金的总和，deposit_pool保存了每个房屋的押金明细。</p>
+<p>还有一个平台管理员的对象，是一个独有对象，创建它主要是为了权限管理，只有拥有这个对象的上下文才能请求比如审核验房报告的接口。这个对象是在创建租房平台的接口中创建并转交给请求者的。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//presents Rental platform administrator
+struct Admin has key, store {
+	// uid of admin object
+	id: UID,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>租房信息由房东发布，包含租金押金等信息：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//If the landlord wants to rent out a house, they first need to issue a rental notice
+struct RentalNotice has key,store  {
+    // uid of the RentalNotice object
+    id: UID,
+    // the amount of gas to be paid per month
+    monthly_rent: u64,
+    // the amount of gas to be deposited 
+    deposit: u64,
+    // the id of the house object
+    house_id: ID,
+    // account address of landlord
+    landlord: address,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>房屋对象则是房屋的虚拟化，租房前房东拥有它，租房后租客拥有它：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// present a house object
+struct House has key {
+    // uid of the house object
+    id: UID,
+    // The square of the house area
+    area: u64,
+    // The owner of the house
+    owner: address,
+    // A set of house photo links
+    photo: String,
+    // The landlord's description of the house
+    description: String
+}
+<span class="boring">}</span></code></pre></pre>
+<p>租客想租房，就需要签订租房合同，租房合同一旦创建不可改变，不可销毁，所以这里的租房合同是一个不可变对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// present a house rentle contract object
+struct Lease has key,store {
+    // uid of the Lease object
+    id: UID,
+    //uid of house object
+    house_id: ID,
+    // Tenant's account address
+    tenant: address,
+    // Landlord's account address
+    landlord: address,
+    // The month plan to rent
+    tenancy: u32,
+    // The mount of gas already paid
+    paid_rent: u64,
+    // The mount of gas already paid for deposit
+    paid_deposit: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在租约到期之后，房东需要出具验房报告并提交给管理员审核，以获取房屋损坏的赔偿。验房报告包含房屋损伤相关的证明</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//presents inspection report object.The landlord submits the inspection report, and the administrator reviews the inspection report
+struct Inspection has key,store {
+    // uid of the Inspection object
+    id: UID,
+    //id of the house object
+    house_id: ID,
+    //id of the lease object
+    lease_id: ID,
+    //Damage level, from 0 to 3, evaluated by the landlord
+    damage: u8,
+    //Description of damage details submitted by the landlord
+    damage_description: String,
+    //Photos of the damaged area submitted by the landlord
+    damage_photo: String,
+    //Damage level evaluated by administrator
+    damage_assessment_ret: u8,
+    //Deducting the deposit based on the damage to the house
+    deduct_deposit: u64,
+    //Used to mark whether the administrator reviews or not
+    review_status: u8,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>最后我再挑选几个主要的接口讲解一下。分别是房东发布租房信息、租客交钱签订租房合同、房东交房给租客、房东验房并提交报告、平台管理员审核验房报告并给与房东补偿，租客退房并领取剩余押金。</p>
+<ul>
+<li>
+<p>房东发布租房信息</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//The landlord releases a rental message, creates a rentalnotice object and create a  house object
+public fun post_rental_notice(platform: &amp;mut RentalPlatform, monthly_rent: u64, housing_area: u64, description: vector&lt;u8&gt;, photo: vector&lt;u8&gt;, ctx: &amp;mut TxContext): House {
+    //caculate deposit by monthly_rent
+    let deposit = (monthly_rent * DEPOSIT_PERCENT) / 100;
+
+    let house = House {
+        id: object::new(ctx),
+        area: housing_area,
+        owner: tx_context::sender(ctx),
+        photo: string::utf8(photo),
+        description:string::utf8(description),
+    };
+    let rentalnotice = RentalNotice{
+        id: object::new(ctx),
+        deposit: deposit,
+        monthly_rent: monthly_rent,
+        house_id: object::uid_to_inner(&amp;house.id),
+        landlord: tx_context::sender(ctx),
+    };
+
+    table::add&lt;ID, RentalNotice&gt;(&amp;mut platform.notices, object::uid_to_inner(&amp;house.id), rentalnotice);
+
+    house
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>租客交钱签订租房合同</p>
+<p>这个接口暂时只接收SUI币的coin,如果缴纳的金额不正确将会报错。在这个事务中，一旦租房成功，租房合约签订完毕，租房信息将会被删除。押金归入到了平台的balance字段，租金打入了房东账户。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//call pay_rent function,transfer rent coin object  to landlord, deposit will be managed by platform.
+public entry fun pay_rent_and_transfer(platform: &amp;mut RentalPlatform, house_address: address, tenancy: u32,  paid: Coin&lt;SUI&gt;, ctx: &amp;mut TxContext) {
+    let house_id: ID = object::id_from_address(house_address);
+    let (rent_coin, deposit_coin, landlord) = pay_rent(platform, house_id, tenancy, paid, ctx);
+    transfer::public_transfer(rent_coin, landlord);
+    balance::join(&amp;mut platform.balance, coin::into_balance(deposit_coin));
+}
+//Tenants pay rent and sign rental contracts
+public fun pay_rent(platform: &amp;mut RentalPlatform, house_id: ID, tenancy: u32,  paid: Coin&lt;SUI&gt;, ctx: &amp;mut TxContext): (Coin&lt;SUI&gt;, Coin&lt;SUI&gt;, address) {
+    assert!(tenancy &gt; 0, ETenancyIncorrect);
+    assert!(table::contains&lt;ID, RentalNotice&gt;(&amp;platform.notices, house_id), EInvalidNotice);
+
+    let notice = table::borrow&lt;ID, RentalNotice&gt;(&amp;platform.notices, house_id);
+    assert!(!table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, notice.house_id), EInvalidHouse);
+
+
+    let rent = notice.monthly_rent * (tenancy as u64);
+    let total_fee = rent + notice.deposit;
+    assert!(total_fee == coin::value(&amp;paid), EInvalidSuiAmount);
+
+    //the deposit is stored by rental platform
+    let deposit_coin = coin::split&lt;SUI&gt;(&amp;mut paid, notice.deposit, ctx);
+    table::add&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, notice.house_id, notice.deposit);
+
+    //lease is a Immutable object
+    let lease = Lease {
+        id: object::new(ctx),
+        tenant: tx_context::sender(ctx),
+        landlord: notice.landlord,
+        tenancy: tenancy,
+        paid_rent: rent,
+        paid_deposit: notice.deposit,
+        house_id: notice.house_id,
+    };
+    transfer::public_freeze_object(lease);
+
+    //remove notice from platform
+    let RentalNotice{id: notice_id, monthly_rent: _, deposit: _, house_id: _, landlord: landlord } = table::remove&lt;ID, RentalNotice&gt;(&amp;mut platform.notices, house_id);
+    object::delete(notice_id);
+
+
+    (paid, deposit_coin, landlord)
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>房东交房给租客</p>
+<p>这个接口非常简单，就是转移house的所有权给租客</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//After the tenant pays the rent, the landlord transfers the house to the tenant
+public entry fun transfer_house_to_tenant(lease: &amp;Lease, house: House) {
+    transfer::transfer(house, lease.tenant)
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>房东验房并提交报告</p>
+<p>房东需要对房屋损伤评级，1-4级分别赔偿押金的0%,10%,50%,100%。具体赔付结果需要管理员定级。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//Rent expires, landlord inspects and submits inspection report
+public entry fun landlord_inspect(lease: &amp;Lease, damage: u8, damage_description: vector&lt;u8&gt;, damage_photo: vector&lt;u8&gt;, ctx: &amp;mut TxContext) {
+    assert!(lease.landlord == tx_context::sender(ctx), ENoPermission);
+    assert!(damage &gt;= DAMAGE_LEVEL_0 &amp;&amp; damage &lt;= DAMAGE_LEVEL_3, EDamageIncorrect);
+    let inspection = Inspection{
+        id: object::new(ctx),
+        house_id: lease.house_id,
+        lease_id: object::uid_to_inner(&amp;lease.id),
+        damage: damage,
+        damage_description: string::utf8(damage_description),
+        damage_photo: string::utf8(damage_photo),
+        damage_assessment_ret: DAMAGE_LEVEL_UNKNOWN,
+        deduct_deposit: 0,
+        review_status: WAITING_FOR_REVIEW
+    };
+
+    transfer::public_share_object(inspection);
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>平台管理员审核验房报告并给与房东补偿</p>
+<p>这个接口只有管理员可以请求，在这个事务里将审核验房报告，并对房屋评级、取出这个房屋的押金，根据评级结果赔偿一部分给房东、deposit_pool也要同步减去已经取走的押金。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    //The platform administrator reviews the inspection report and deducts the deposit as compensation for the landlord
+public entry fun review_inspection_report(platform: &amp;mut RentalPlatform, lease: &amp;Lease, inspection: &amp;mut Inspection, _: &amp;Admin, damage: u8, ctx: &amp;mut TxContext)  {
+    assert!(lease.house_id == inspection.house_id, EWrongParams);
+    assert!(inspection.review_status == WAITING_FOR_REVIEW, EInspectionReviewed);
+    assert!(table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, lease.house_id), EInvalidDeposit);
+
+    let deduct_deposit:u64 = calculate_deduct_deposit(lease.paid_deposit, damage);
+    let deposit_amount = table::borrow_mut&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, lease.house_id);
+
+    assert!(deduct_deposit &lt;= balance::value&lt;SUI&gt;(&amp;platform.balance), EInsufficientBalance);
+
+    inspection.damage_assessment_ret = damage;
+    inspection.review_status = REVIEWED;
+    inspection.deduct_deposit = deduct_deposit;
+
+    if (deduct_deposit &gt; 0) {
+        *deposit_amount = *deposit_amount - deduct_deposit; 
+
+        let deduct_coin = coin::take&lt;SUI&gt;(&amp;mut platform.balance, deduct_deposit, ctx);
+        transfer_deposit(deduct_coin, lease.landlord)
+    };
+}
+
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>租客退房并领取剩余押金</p>
+<p>租客将房屋退还给房东，领取部分押金。清除租房平台押金和押金明细。</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//The tenant returns the room to the landlord,collects deposit 
+public entry fun tenant_return_house_and_transfer(platform: &amp;mut RentalPlatform, lease: &amp;Lease, house: House, ctx: &amp;mut TxContext) {
+    let house = tenant_return_house(platform, lease, house, ctx);
+
+    transfer::transfer(house, lease.landlord)
+}
+//The tenant returns the room to the landlord and receives the deposit
+public fun tenant_return_house(platform: &amp;mut RentalPlatform, lease: &amp;Lease, house: House, ctx: &amp;mut TxContext): House {
+    assert!(lease.house_id == object::uid_to_inner(&amp;house.id), EWrongParams);
+    assert!(lease.tenant == tx_context::sender(ctx), ENoPermission);
+    assert!(table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, lease.house_id), EInvalidDeposit);
+
+    let deposit = table::borrow(&amp;platform.deposit_pool, lease.house_id);
+    assert!(*deposit &lt;= balance::value&lt;SUI&gt;(&amp;platform.balance), EInsufficientBalance);
+
+    //If there is still any remaining deposit, refund it to the tenant
+    if (*deposit &gt; 0) {
+        let deposit_coin = coin::take&lt;SUI&gt;(&amp;mut platform.balance, *deposit, ctx);
+        transfer_deposit(deposit_coin, tx_context::sender(ctx));
+    };
+
+    let _ = table::remove&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, lease.house_id);
+
+    house
+}
+<span class="boring">}</span></code></pre></pre>
+<p>其实这种赢奖励的机会并不少，大家在学习Web3的过程中应该积极参与这些活动，用金钱激励自己才能学的更快更深刻。</p>
+<p>了解更多活动：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_14.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_14.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

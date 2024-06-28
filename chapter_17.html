@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>17.轻松入门Sui Move:  升级（下） - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html" class="active"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_17.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="17轻松入门sui-move--升级下"><a class="header" href="#17轻松入门sui-move--升级下">17.轻松入门Sui Move:  升级（下）</a></h2>
+<p>上一章我们讲到UpgradeCap的定义，讲到它有一个policy字段表示这个包使用的升级策略。那Move内置的升级策略有哪些呢？</p>
+<h4 id="内置的升级策略"><a class="header" href="#内置的升级策略">内置的升级策略</a></h4>
+<p>Move内置了几种升级策略供我们选择，下面我们分别介绍各种策略以及设置方法。不过在这之前，设置升级策略的规则需要了解：</p>
+<ul>
+<li>默认的升级策略是最宽松的策略</li>
+<li>如果想设置升级策略只能设置比当前策略更严苛的策略，设置更宽松的策略将会导致报错。</li>
+</ul>
+<h5 id="升级策略"><a class="header" href="#升级策略">升级策略</a></h5>
+<p>我们从严苛到宽松列举内置的升级策略：</p>
+<ul>
+<li>
+<p>不可升级</p>
+<p>这是最严格的升级策略，发布之后不允许任何升级。可以通过调用sui::package::make_immutable方法设置:</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function make_immutable --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>只允许修改依赖项</p>
+<p>只能修改包的依赖项，其他一律不允修改</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function only_dep_upgrades --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>只允许添加</p>
+<p>只能在包内添加新的函数和结构体，不允许修改原来的代码（即便是私有函数的内部实现也不行）</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function only_additive_upgrades --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>兼容</p>
+</li>
+</ul>
+<p>​	最宽松的升级策略，也是默认的升级策略。允许修改函数的实现代码，但是不允许修改public函数签名（非public函数的签名允许修改）；允许祛除函数的泛型约束（只允许放松约束); 只允许新增结构体不允许修改。</p>
+<p>​	兼容策略是默认的升级策略，并且不允许从更严苛的策略设置为此策略，所以兼容策略没有设置方法。</p>
+<h4 id="自定义升级策略"><a class="header" href="#自定义升级策略">自定义升级策略</a></h4>
+<p>除了内置的升级策略外，我们也可以自定义升级策略，但是自定义之前我们需要了解包的升级过程，才能理解如何编写策略。</p>
+<h5 id="升级包的流程"><a class="header" href="#升级包的流程">升级包的流程</a></h5>
+<p>我们上一章讲解包升级方法，了解到包的升级是在一个事务中完成的。不过在这个事务中，实际上是分别调用了三个命令，下面我们通过介绍这三个命令来了解升级的底层原理。</p>
+<h6 id="授权authorize_upgrade"><a class="header" href="#授权authorize_upgrade">授权（authorize_upgrade）</a></h6>
+<p>这个命令的作用是使用UpgradeCap验证权限、验证通过则返回UpgradeTicket。这个命令在sui包package模块中的签名是：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun authorize_upgrade(
+        cap: &amp;mut UpgradeCap,
+        policy: u8,
+        digest: vector&lt;u8&gt;
+): UpgradeTicket 
+<span class="boring">}</span></code></pre></pre>
+<p>第一个传参是UpgradeCap对象，在发布包的时候返回它的ID, 包的发布者即是它的拥有者。它的拥有者可以使用它升级包或者修改升级策略。它的定义再上一章已经讲过，这章不再赘述。</p>
+<p>第二个参数是正在使用的升级策略</p>
+<p>第三个参数则是摘要，摘要如何计算的可以参考</p>
+<p>我们可以通过在build包的时候通过–dump-bytecode-as-base64选项来指示程序打印base64编码的字节码，在打印的内容中可以获取digest值</p>
+<pre><code class="language-bash">sui move build --dump-bytecode-as-base64
+</code></pre>
+<p>打印内容：</p>
+<pre><code class="language-json">{"modules":["oRzrCwYAAAALAQAKAgoUAx4pBEcEBUslB3CKAQj6AWAG2gIkCv4CEgyQA1AN4AMCAA8BDQILAhACEQAACAAAAQgAAQIHAAIEBAAEAwIAAAoAAQAACQABAAAFAgEAAA4CAQABEgQFAAIIAAMAAxAJAQEIBAwGBwAGCAYKAQcIBAACBwgABwgEAQgDAQoCAQgCAQYIBAEFAQgBAgkABQEIAAZQZXJzb24FUGhvbmUGU3RyaW5nCVR4Q29udGV4dANVSUQNY2hhbmdlX3BlcnNvbgJpZARuYW1lA25ldwpuZXdfcGVyc29uCW5ld19waG9uZQZvYmplY3QGc2VuZGVyBnN0cmluZwR0ZXN0BXRlc3Q2CHRyYW5zZmVyCnR4X2NvbnRleHQEdXRmOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgoCBwYxMjM0NTYKAgkIdmVyc2lvbjEKAgsKdmVyc2lvbjE5MAACAgYIAwcIAgECAgYIAwcIAgABBAABCgoAEQUHABEEEgELAC4RBzgAAgEBBAABCgoAEQUHABEEEgALAC4RBzgBAgIBBAABBgcBEQQLAA8AFQIDAAAAAQYHAhEECwAPABUCAAEA"],"dependencies":["0x0000000000000000000000000000000000000000000000000000000000000001","0x0000000000000000000000000000000000000000000000000000000000000002"],"digest":[79,58,190,101,62,35,128,195,167,4,23,212,223,242,100,90,123,173,107,231,106,142,168,236,51,207,220,158,121,59,154,142]}
+</code></pre>
+<p>其中digest字段就是第三个参数的值。</p>
+<p>这个函数的返回是UpgradeTicket，旨在作为授权成功的凭证。它的定义为：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeTicket {
+    /// 生成ticket的UpgradeCap对象ID
+    cap: ID,
+    /// 可以升级的包的ID，一定是最新版本包的ID,以此保证只有最新包能升级
+    package: ID,
+    /// 在本次升级中使用的升级策略
+    policy: u8,
+    /// 在本次升级中使用的摘要,用于标识升级后的包的内容
+    digest: vector&lt;u8&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>每个UpgradeCap一次只能生成一个UpgradeTicket，以此保证不会并发升级或者修改升级策略等操作。</p>
+<p>UpgradeTicket是一个“烫手山芋”，所以在拿到这个UpgradeTicket之后，必须要调用后续的升级命令来将UpgradeTicket传递出去，否则事务将失败。</p>
+<h6 id="执行升级"><a class="header" href="#执行升级">执行升级</a></h6>
+<p>执行升级这一步是使用的内建命令，作用是消费UpgradeTicket、验证包的更新是否符合升级策略、生成升级包的对象并返回一个代表升级成功的UpgradeReceipt对象。</p>
+<p>在这个命令中，拿到UpgradeTicket后验证器便会使用这个类型的所有字段值来验证，只要有一个不符合要求都会升级失败。比如，要升级的包的字节码必须要跟digest字段匹配，policy字段至少要跟UpgradeCap的升级策略一样严格等。</p>
+<p>值得注意的是，UpgradeTicket是一次性“票据”，会在这一步被析构，不能将其保存多次使用。</p>
+<p>这一步骤返回的UpgradeReceipt是升级成功的证明，它也是一个“烫手山芋”用来保证一定会调用提交升级的方法。它的定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeReceipt {
+    ///UpgraceCap的ID
+    cap: ID,
+    ///升级后的包的ID
+    package: ID,
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="提交升级commit_upgrade"><a class="header" href="#提交升级commit_upgrade">提交升级(commit_upgrade)</a></h6>
+<p>这个命令的作用是消费UpgradeReceipt，并更新UpgradeCap的version字段和package字段。它的定义：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun commit_upgrade(
+    cap: &amp;mut UpgradeCap,
+    receipt: UpgradeReceipt,
+) {
+    //析构UpgradeReceipt
+    let UpgradeReceipt { cap: cap_id, package } = receipt;
+
+    assert!(object::id(cap) == cap_id, EWrongUpgradeCap);
+    assert!(cap.package.to_address() == @0x0, ENotAuthorized);
+	//修改UpgradeCap对象的值
+    cap.package = package;
+    cap.version = cap.version + 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<h5 id="自定义升级策略-1"><a class="header" href="#自定义升级策略-1">自定义升级策略</a></h5>
+<p>我们可以通过重写授权和提交升级这两个命令来自定义升级策略。但是要自定义升级策略之前我们最好先了解官方建议的最佳实践：</p>
+<h6 id="最佳实践"><a class="header" href="#最佳实践">最佳实践</a></h6>
+<ul>
+<li>自定义升级策略单独一个包，不要与使用这个策略的代码放同一个包</li>
+<li>自定义的升级策略的包升级策略设置为不可升级</li>
+<li>锁定UpgradeCap的policy字段，不允许违反只能收紧升级策略的原则。</li>
+</ul>
+<h6 id="自定义升级策略-2"><a class="header" href="#自定义升级策略-2">自定义升级策略</a></h6>
+<p>下面我们使用官网的例子来演示如何升级。我们自定义一个升级策略：在兼容的升级策略基础上，只允许在一周内的指定一天进行升级操作。</p>
+<p>我们新创建一个包，自定义一个UpgradeCap对象，在这个对象中保存验证规则所需字段:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeCap has key, store {
+    id: UID,
+    //包含package的UpgradeCap对象，用于调用基础的授权和提交升级等函数
+    cap: package::UpgradeCap,
+    //指定可发布的时间，值在1-7
+    day: u8,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>定义新建升级策略的方法,这个方法返回UpgraceCap对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun new_policy(
+    cap: package::UpgradeCap,
+    day: u8,
+    ctx: &amp;mut TxContext,
+): UpgradeCap {
+    assert!(day &lt; 7, ENotWeekDay);
+    UpgradeCap { id: object::new(ctx), cap, day }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>重写授权函数,在这个函数中验证是否满足升级策略：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun authorize_upgrade(
+    cap: &amp;mut UpgradeCap,
+    policy: u8,
+    digest: vector&lt;u8&gt;,
+    ctx: &amp;TxContext,
+): package::UpgradeTicket {
+    //如果不是可升级的日期，就报错
+    assert!(week_day(ctx) == cap.day, ENotAllowedDay);
+    //调用基础的授权方法，也就是说在遵循自定义升级策略的基础上还要遵循内建的升级策略！
+    package::authorize_upgrade(&amp;mut cap.cap, policy, digest)
+}
+<span class="boring">}</span></code></pre></pre>
+<p>重写提交升级函数：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun commit_upgrade(
+    cap: &amp;mut UpgradeCap,
+    receipt: package::UpgradeReceipt,
+) {
+    package::commit_upgrade(&amp;mut cap.cap, receipt)
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="发布升级策略"><a class="header" href="#发布升级策略">发布升级策略</a></h6>
+<p>编写完成后，将包发布到链上</p>
+<pre><code class="language-bash">sui client publish
+</code></pre>
+<p>遵循最佳实践，将这个包设置为不可升级</p>
+<pre><code class="language-bash">sui client call --gas-budget 10000000 \
+    --package 0x2 \
+    --module 'package' \
+    --function 'make_immutable' \
+    --args '&lt;POLICY-UPGRADE-CAP&gt;'
+</code></pre>
+<h6 id="使用升级策略"><a class="header" href="#使用升级策略">使用升级策略</a></h6>
+<p>我们在发布完一个包之后，拿着这个发布包返回的UpgradeCap对象的ID,调用new_policy函数，并保存返回的自定义UpgradeCap对象的ID。</p>
+<p>在后续的升级中，按照上面讲得升级的流程，依次调用自定义的authorize_upgrade函数、内置的升级函数和commit_upgrade函数即可。</p>
+<p>参考资料：</p>
+<p>https://docs.sui.io/concepts/sui-move-concepts/packages/custom-policies</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_16.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_18.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_16.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_18.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

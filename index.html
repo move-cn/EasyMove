@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>1.轻松入门Sui Move: 快速了解基本概念 - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_1.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="1轻松入门sui-move-快速了解基本概念"><a class="header" href="#1轻松入门sui-move-快速了解基本概念">1.轻松入门Sui Move: 快速了解基本概念</a></h1>
+<p>2009年，中本聪发布比特币的开源软件，实现了去中心化的数字货币系统，开启了区块链1.0的时代。</p>
+<p>比特币区块链虽然为去中心化的数字货币提供了一个安全的基础，但其功能受到了限制，只能用于简单的价值交换。有没有一种机制可以在链上编写复杂的代码实现区块链智能化，让区块链能应用于更多场景呢？</p>
+<p>2015年以太坊主网正式上线，为这个问题交出了答卷。也开启了区块链2.0的时代。以太坊为去中心化应用提供一个通用的智能合约平台，使得开发者可以开始编写和部署智能合约，通过智能合约为区块链技术的应用提供了更广泛的可能性。</p>
+<p>下图为区块链2.0的逻辑架构图，展示了智能合约在区块链中的位置：</p>
+<p><img src="https://raw.githubusercontent.com/Crazyjs123/crazyjs123.github.io/main/pic/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84%E5%9B%BE.png" alt="" /></p>
+<p>区块链为智能合约提供执行环境，而智能合约为区块链扩展功能。智能合约赋予了区块链智能的特性，在区块链中智能合约的作用如同一个智能助理，对区块链中的数据和事件按照预先设定的逻辑进行处理。它作为一个在区块链上可以自动执行的计算机程序，可以处理信息，接收、发送和存储资产。</p>
+<p>智能合约部署到区块链中，作为区块链的一部分，自然具有区块链不可篡改的特点；部署后也会作为区块在区块链网络中广播，每个节点都会保存一份，所以分布式保证了它的高可靠性；智能合约在满足一定条件后会自动执行，无需人工触发，更不需要三方担保。以上这些特点使得基于智能合约的交易更加安全，高效和低成本。</p>
+<p>智能合约具有这么多优秀的特质，那我们如何编写它呢？就不得不说到Move语言了。Mysten Labs联合创始人兼首席技术官Sam Blackshear为Diem区块链开发了Move，不过Move旨在成为一个跨平台的嵌入式语言，可不是只能在Diem区块链平台运行，当然也可以在Sui区块链网络中运行, 这就是Sui Move。</p>
+<p>Sui Move准确来说应该是Move On Sui。是在Sui区块链平台上运行的原生语言。开发人员使用它可以创建、管理和操作数字资产，并编写智能合约。Sui Move 引入了以对象为中心的数据存储模型，这使得Sui可以并行处理事务，比串行事务的区块链具有更高性能。从开发的角度，Sui Move 也无需在交易前后做大量关于资产所有权的处理；针对对象的处理也非常简单灵活。</p>
+<p>接下来让我们使用一个简单的例子来演示一下，使用Sui Move如何操作数据对象，如何在区块链上部署以及如何运行。需要注意的是，初学者先不要陷入细节，只需跟着我的例子，一探Sui Move的宏观即可。</p>
+<pre><code class="language-Move">module test::test {
+    use sui::object::{Self, UID};
+    use sui::tx_context::{Self, TxContext};
+    use sui::transfer;
+    use std::string;
+	//定义一个博客结构体
+    public struct Blog has key{
+        id: UID,
+        content: string::String,
+        like_cnt: u64,
+    }
+    //此函数用于发布博客，每次发布完成会返回博客对象信息
+    public entry fun publish_blog(content: string::String, ctx: &amp;mut TxContext){
+         transfer::transfer(Blog {
+            id: object::new(ctx),
+            content: content,
+            like_cnt: 0
+        }, tx_context::sender(ctx));
+    }
+    //调用此函数，增加博客对象的点赞数
+    public entry fun like_blog(blog: &amp;mut Blog){
+        blog.like_cnt = blog.like_cnt + 1;
+    }
+}
+</code></pre>
+<p>此合约包含两个函数，一个是publish_blog根据传入的content参数，新建一个Blog对象，并把这个Blog对象所有权赋给调用函数的用户地址。另一个则是like_blog修改博客对象的属性，将指定的Blog对象的点赞数加1。</p>
+<p>我们如何将这段代码发布到Sui区块链网络上呢？只需要使用Sui Move命令行工具的publish命令即可。需要注意的是，这个操作会消耗gas(gas这里暂不多做介绍，我们简单理解为付费的一种形式)</p>
+<pre><code class="language-bash">sui client publish 
+</code></pre>
+<p>执行完这个命令后，会返回一个所有者为Immutable(不可改变的)的对象，这个对象的ID就是这个代码在区块链的地址。拿着这个地址，指定模块名和函数名，就可以在区块链上调用publish_blog函数：</p>
+<pre><code class="language-bash">sui client call --package &lt;合约地址&gt; --module &lt;合约模块名&gt; --function publish_blog --args "this is a blog" 
+</code></pre>
+<p>建好的对象会保存在区块链中，并返回一个对象ID。我们使用对象ID就可以查询到刚新建的Blog对象</p>
+<pre><code class="language-bash">sui client object &lt;对象ID&gt;
+</code></pre>
+<p>Web2.0的开发者可能对此感到惊奇，数据存储的过程没有连接数据库的操作，更没有繁琐的SQL语句执行。我们只需要新建一个对象指定所有权就保存了一个对象。是不是非常简单？</p>
+<p>接下来我们继续调用like_blog函数</p>
+<pre><code class="language-bash">sui client call --package &lt;合约地址&gt; --module &lt;合约模块名&gt; --function publish_blog --args &lt;Blog对象ID&gt; 
+</code></pre>
+<p>通过sui client object 命令查看对象可以发现：虽然我们没有显式的对存储做任何操作，但是Blog对象的like_cnt属性值已经加1。</p>
+<p>现在我们对Sui Move有了大致的了解，得出了Sui Move 不仅安全、性能高、开发也简单灵活的结论。那我们可以使用它做些什么呢？</p>
+<p>1.创建智能合约来管理和转移各种类型的数字资产，包括加密货币、代币化资产、非同质化代币（NFT）等</p>
+<p>2.Sui Move可以用于编写智能合约，实现去中心化交易、借贷等金融服务；也可以利用智能合约实现去中心化的投票和治理机制；还可以用于NFT和数字艺术领域，确保数字内容的版权和所有权。</p>
+<p>3.Sui Move可以用于创建数字身份认证系统，使用户能够安全地管理和共享他们的身份信息，同时保护个人隐私。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="chapter_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="chapter_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

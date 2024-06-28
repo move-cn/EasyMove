@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>12.轻松入门Sui Move: 父子对象 - easy move</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html" class="active"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove/edit/main/src/chapter_12.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="12轻松入门sui-move-父子对象"><a class="header" href="#12轻松入门sui-move-父子对象">12.轻松入门Sui Move: 父子对象</a></h2>
+<p>我们在第八章讲对象的类别的时候，讲到独有对象，它只属于一个账户或者对象，只有这个账户或者对象可以对其进行访问、删除、修改和转交。这是因为Move并没有区分转交的目标是一个账户的地址还是一个对象ID。当一个对象被转交给另一个对象的时候，这两个对象就形成了父子关系，为了方便下面我统一将被转交的对象称之为子对象，作为owner的另一个对象称之为父对象。</p>
+<p>如何创建父子对象，这个我们在上一章就讲过，只需要transfer给一个对象即可：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Parent has key {
+    id:UID,
+    name: String,
+}
+public struct Child has key {
+    id:UID,
+    description: String,
+} 
+public entry fun new_parent(ctx: &amp;mut TxContext) {
+    transfer::transfer(Parent{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmi"),
+        }, tx_context::sender(ctx));
+}
+public entry fun new_child(parent_id: address, ctx: &amp;mut TxContext) {
+    transfer::transfer(Child{
+        id: object::new(ctx),
+        description: string::utf8(b"this is a description"),
+        }, parent_id);
+} 
+<span class="boring">}</span></code></pre></pre>
+<p>但是要成功创建父子对象需要保证父对象的ID存在并且这个父对象不是不可变对象。因为后续需要对父对象进行可变引用，而不可变对象不允许这么做。</p>
+<p>当对象属于一个账户地址的时候，只要使用对应账户的上下文就可以访问这个对象。但是如果对象属于另外一个对象，就只能通过这个对象访问了，如何通过这个对象访问呢？前面我们讲嵌套对象的时候讲到过如何通过一个对象访问另一个对象，是否可以沿用这个方法呢？</p>
+<p>独有对象跟嵌套对象虽然都是一个对象属于另一个对象，但大相径庭，首先被嵌套的对象必须有store ability，而独有对象不用；其次被嵌套的对象是直接或者间接作为外层对象的一个字段，所以访问被嵌套对象只需要像访问外层对象的一个字段就可以实现被嵌套对象的访问。</p>
+<p>但独有对象的值并不保存在对象中，自然无法像嵌套对象那样访问。Move提供了receive和public_receive方法。下面这个例子展示了如何接收子对象并修改它：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun modify_child(parent: &amp;mut Parent, to_receive: Receiving&lt;Child&gt;, _: &amp;mut TxContext) {
+    let mut child = transfer::receive&lt;Child&gt;(&amp;mut parent.id, to_receive);
+    child.description = string::utf8(b"have changed");
+    transfer::transfer(child, object::uid_to_address(&amp;parent.id));
+}
+<span class="boring">}</span></code></pre></pre>
+<p>访问子对象的方法，必须对父对象使用可变引用，并且使用Receive结构体作为另一个参数。然后调用transfer::receive方法来返回子对象本身。修改完子对象后再次转交到父对象，就完成了子对象的修改。</p>
+<p>那如何将Receive结构体值作为参数调用modify_child方法？我们直接使用子对象的ID作为参数传入即可，如下：</p>
+<pre><code class="language-bash">sui client call --package $PACKAGE --module $MODULE --function modify_child --args $PARENT_ID $CHILD_ID
+</code></pre>
+<p>上面的例子Parent、Child对象和所有方法都在同一个模块中，并且Child只有key ability没有store ability，所以我们使用receive方法。如果Child对象有store ability我们也可以在定义Child模块之外使用public_receive方法。现在我们尝试在定义子对象的模块外接收它，父子对象分别在不同模块定义：</p>
+<p>父对象模块：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Parent has key {
+    id:UID,
+    name: String,
+}
+public entry fun new_parent(ctx: &amp;mut TxContext) {
+    transfer::transfer(Parent{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmi"),
+        }, tx_context::sender(ctx));
+}
+public entry fun new_child(parent_id: address, ctx: &amp;mut TxContext) {
+    //创建父子对象关系，因为是在父对象模块，只能使用public_transfer
+    transfer::public_transfer(child::new(ctx), parent_id);
+}
+public entry fun motify_child(parent: &amp;mut Parent, to_receive: Receiving&lt;Child&gt;, _: &amp;mut TxContext) {
+    //接收子对象，因为是在父对象模块只能使用public_receive
+    let mut child = transfer::public_receive&lt;Child&gt;(&amp;mut parent.id, to_receive);
+    //只能调用子对象的方法修改，不能在定义对象的模块外修改
+    child::modify(&amp;mut child);
+    transfer::public_transfer(child, object::uid_to_address(&amp;parent.id));
+}
+<span class="boring">}</span></code></pre></pre>
+<p>子对象模块：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//包含store ability才能在模块外转发，接收对象
+public struct Child has key,store{
+    id:UID,
+    description: String,
+}
+//只能在定义对象的模块内，创建、修改对象。
+public fun new(ctx: &amp;mut TxContext):Child {
+    Child{
+        id: object::new(ctx),
+        description: string::utf8(b"this is a description"),
+    }
+}
+public fun modify(child: &amp;mut Child) {
+    child.description = string::utf8(b"have changed");
+}
+<span class="boring">}</span></code></pre></pre>
+<p>因为要在模块外接收它，子对象就必须有store ability。我们在前面章节讲过，对象的创建和修改，也都只能在定义它的模块中实现，所以在父对象模块中使用public_receive接收并修改子对象就只能调用子对象修改字段的方法，而不是直接修改。</p>
+<p>如果我们想自定义接收规则，可以不给子对象store ability，在子对象模块内实现自定义接收方法，在方法内使用receive接收子对象。其他模块想接收子对象就只能调用这个接收方法以此保证遵循自定义接收规则。跟自定义transfer规则的机制相同，这里不再赘述。</p>
+<p>我们前面说，父对象不能是不可变对象，那父对象可能是一个独有对象、共享对象或者被嵌套对象。因为子对象需要根据父对象先接收后访问，所以父对象的访问控制也会影响子对象的访问控制：</p>
+<ul>
+<li>如果父对象是一个独有对象，那就只有在owner账户上下文中，可以通过对父对象可变引用来访问子对象</li>
+<li>如果父对象是一个共享对象，那所有用户都可以访问子对象</li>
+<li>如果父对象是一个被嵌套的对象，那就取决于外层对象的访问控制。</li>
+</ul>
+<p>接下来我想介绍一种特殊的父子对象–灵魂绑定：可以从父对象中取出子对象访问，但是在这之后必须将子对象返还给父对象。代码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Child has key {
+    id: UID,
+}
+//归还子对象的清单,没有drop能力，不允许自动析构
+struct ReturnReceipt { 
+    object_id: ID, 
+    return_to: address,
+}
+public fun get_object(parent: &amp;mut UID, soul_bound_ticket: Receiving&lt;Child&gt;): (Child, ReturnReceipt) {
+    let soul_bound = transfer::receive(parent, soul_bound_ticket);
+    let return_receipt = ReturnReceipt { 
+        return_to: object::uid_to_address(parent),
+        object_id: object::id(&amp;soul_bound),
+    };
+    (soul_bound, return_receipt)
+}
+public fun return_object(soul_bound: Child, receipt: ReturnReceipt) {
+    let ReturnReceipt { return_to, object_id }  = receipt;
+    assert!(object::id(&amp;soul_bound) == object_id, EWrongObject);
+    sui::transfer::transfer(soul_bound, return_to);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>ReturnReceipt结构体是一个hot potato结构体,主要保存父子对象映射。get_object方法就是通过对父对象的可变引用获取子对象的方法。return_object方法则将取出的子对象又归还给父对象并销毁归还清单。</p>
+<p>调用get_object方法不仅会返回子对象，还会返回一个归还子对象的清单。这个清单是ReturnReceipt结构体的实例，没有drop能力，不会自动析构，要想保证交易的成功，就必须再调用return_object去删除ReturnReceipt实例，以此保证在取出Child对象之后一定会返还，父子对象再次绑定，这就像绑定灵魂契约一次绑定永不改变！</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="chapter_13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="chapter_13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

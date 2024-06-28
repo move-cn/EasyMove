@@ -1,0 +1,3507 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>easy move</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 1.轻松入门Sui Move: 快速了解基本概念</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 2.轻松入门Sui Move: 搭建开发环境</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 3.轻松入门Sui Move: 清单文件和模块</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 4.轻松入门Sui Move: 基础语法</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> 5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> 6.轻松入门Sui Move: 结构体</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> 7.轻松入门Sui Move: 对象（上）</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> 8.轻松入门Sui Move: 对象（下）</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> 9.轻松入门Sui Move: Ability</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> 10.轻松入门Sui Move: 动态字段</a></li><li class="chapter-item expanded "><a href="chapter_11.html"><strong aria-hidden="true">11.</strong> 11.轻松入门Sui Move: Bag和Table</a></li><li class="chapter-item expanded "><a href="chapter_12.html"><strong aria-hidden="true">12.</strong> 12.轻松入门Sui Move: 父子对象</a></li><li class="chapter-item expanded "><a href="chapter_13.html"><strong aria-hidden="true">13.</strong> 13.轻松入门Sui Move: 时间和泛型</a></li><li class="chapter-item expanded "><a href="extra_story.html"><strong aria-hidden="true">14.</strong> 番外篇：我在dacade赚了100SUI</a></li><li class="chapter-item expanded "><a href="chapter_14.html"><strong aria-hidden="true">15.</strong> 14.轻松入门Sui Move:  集合（上）</a></li><li class="chapter-item expanded "><a href="chapter_15.html"><strong aria-hidden="true">16.</strong> 15.轻松入门Sui Move:  集合（下）</a></li><li class="chapter-item expanded "><a href="chapter_16.html"><strong aria-hidden="true">17.</strong> 16.轻松入门Sui Move:  升级（上）</a></li><li class="chapter-item expanded "><a href="chapter_17.html"><strong aria-hidden="true">18.</strong> 17.轻松入门Sui Move:  升级（下）</a></li><li class="chapter-item expanded "><a href="chapter_18.html"><strong aria-hidden="true">19.</strong> 18.轻松入门Sui Move:  设计模式</a></li><li class="chapter-item expanded "><a href="chapter_19.html"><strong aria-hidden="true">20.</strong> 19.轻松入门Sui Move:  获取时间</a></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">21.</strong> 20.轻松入门Sui Move: 对象的展示</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">easy move</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/move-cn/EasyMove" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="1轻松入门sui-move-快速了解基本概念"><a class="header" href="#1轻松入门sui-move-快速了解基本概念">1.轻松入门Sui Move: 快速了解基本概念</a></h1>
+<p>2009年，中本聪发布比特币的开源软件，实现了去中心化的数字货币系统，开启了区块链1.0的时代。</p>
+<p>比特币区块链虽然为去中心化的数字货币提供了一个安全的基础，但其功能受到了限制，只能用于简单的价值交换。有没有一种机制可以在链上编写复杂的代码实现区块链智能化，让区块链能应用于更多场景呢？</p>
+<p>2015年以太坊主网正式上线，为这个问题交出了答卷。也开启了区块链2.0的时代。以太坊为去中心化应用提供一个通用的智能合约平台，使得开发者可以开始编写和部署智能合约，通过智能合约为区块链技术的应用提供了更广泛的可能性。</p>
+<p>下图为区块链2.0的逻辑架构图，展示了智能合约在区块链中的位置：</p>
+<p><img src="https://raw.githubusercontent.com/Crazyjs123/crazyjs123.github.io/main/pic/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84%E5%9B%BE.png" alt="" /></p>
+<p>区块链为智能合约提供执行环境，而智能合约为区块链扩展功能。智能合约赋予了区块链智能的特性，在区块链中智能合约的作用如同一个智能助理，对区块链中的数据和事件按照预先设定的逻辑进行处理。它作为一个在区块链上可以自动执行的计算机程序，可以处理信息，接收、发送和存储资产。</p>
+<p>智能合约部署到区块链中，作为区块链的一部分，自然具有区块链不可篡改的特点；部署后也会作为区块在区块链网络中广播，每个节点都会保存一份，所以分布式保证了它的高可靠性；智能合约在满足一定条件后会自动执行，无需人工触发，更不需要三方担保。以上这些特点使得基于智能合约的交易更加安全，高效和低成本。</p>
+<p>智能合约具有这么多优秀的特质，那我们如何编写它呢？就不得不说到Move语言了。Mysten Labs联合创始人兼首席技术官Sam Blackshear为Diem区块链开发了Move，不过Move旨在成为一个跨平台的嵌入式语言，可不是只能在Diem区块链平台运行，当然也可以在Sui区块链网络中运行, 这就是Sui Move。</p>
+<p>Sui Move准确来说应该是Move On Sui。是在Sui区块链平台上运行的原生语言。开发人员使用它可以创建、管理和操作数字资产，并编写智能合约。Sui Move 引入了以对象为中心的数据存储模型，这使得Sui可以并行处理事务，比串行事务的区块链具有更高性能。从开发的角度，Sui Move 也无需在交易前后做大量关于资产所有权的处理；针对对象的处理也非常简单灵活。</p>
+<p>接下来让我们使用一个简单的例子来演示一下，使用Sui Move如何操作数据对象，如何在区块链上部署以及如何运行。需要注意的是，初学者先不要陷入细节，只需跟着我的例子，一探Sui Move的宏观即可。</p>
+<pre><code class="language-Move">module test::test {
+    use sui::object::{Self, UID};
+    use sui::tx_context::{Self, TxContext};
+    use sui::transfer;
+    use std::string;
+	//定义一个博客结构体
+    public struct Blog has key{
+        id: UID,
+        content: string::String,
+        like_cnt: u64,
+    }
+    //此函数用于发布博客，每次发布完成会返回博客对象信息
+    public entry fun publish_blog(content: string::String, ctx: &amp;mut TxContext){
+         transfer::transfer(Blog {
+            id: object::new(ctx),
+            content: content,
+            like_cnt: 0
+        }, tx_context::sender(ctx));
+    }
+    //调用此函数，增加博客对象的点赞数
+    public entry fun like_blog(blog: &amp;mut Blog){
+        blog.like_cnt = blog.like_cnt + 1;
+    }
+}
+</code></pre>
+<p>此合约包含两个函数，一个是publish_blog根据传入的content参数，新建一个Blog对象，并把这个Blog对象所有权赋给调用函数的用户地址。另一个则是like_blog修改博客对象的属性，将指定的Blog对象的点赞数加1。</p>
+<p>我们如何将这段代码发布到Sui区块链网络上呢？只需要使用Sui Move命令行工具的publish命令即可。需要注意的是，这个操作会消耗gas(gas这里暂不多做介绍，我们简单理解为付费的一种形式)</p>
+<pre><code class="language-bash">sui client publish 
+</code></pre>
+<p>执行完这个命令后，会返回一个所有者为Immutable(不可改变的)的对象，这个对象的ID就是这个代码在区块链的地址。拿着这个地址，指定模块名和函数名，就可以在区块链上调用publish_blog函数：</p>
+<pre><code class="language-bash">sui client call --package &lt;合约地址&gt; --module &lt;合约模块名&gt; --function publish_blog --args "this is a blog" 
+</code></pre>
+<p>建好的对象会保存在区块链中，并返回一个对象ID。我们使用对象ID就可以查询到刚新建的Blog对象</p>
+<pre><code class="language-bash">sui client object &lt;对象ID&gt;
+</code></pre>
+<p>Web2.0的开发者可能对此感到惊奇，数据存储的过程没有连接数据库的操作，更没有繁琐的SQL语句执行。我们只需要新建一个对象指定所有权就保存了一个对象。是不是非常简单？</p>
+<p>接下来我们继续调用like_blog函数</p>
+<pre><code class="language-bash">sui client call --package &lt;合约地址&gt; --module &lt;合约模块名&gt; --function publish_blog --args &lt;Blog对象ID&gt; 
+</code></pre>
+<p>通过sui client object 命令查看对象可以发现：虽然我们没有显式的对存储做任何操作，但是Blog对象的like_cnt属性值已经加1。</p>
+<p>现在我们对Sui Move有了大致的了解，得出了Sui Move 不仅安全、性能高、开发也简单灵活的结论。那我们可以使用它做些什么呢？</p>
+<p>1.创建智能合约来管理和转移各种类型的数字资产，包括加密货币、代币化资产、非同质化代币（NFT）等</p>
+<p>2.Sui Move可以用于编写智能合约，实现去中心化交易、借贷等金融服务；也可以利用智能合约实现去中心化的投票和治理机制；还可以用于NFT和数字艺术领域，确保数字内容的版权和所有权。</p>
+<p>3.Sui Move可以用于创建数字身份认证系统，使用户能够安全地管理和共享他们的身份信息，同时保护个人隐私。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="2轻松入门sui-move-搭建开发环境"><a class="header" href="#2轻松入门sui-move-搭建开发环境">2.轻松入门Sui Move: 搭建开发环境</a></h1>
+<p>在编写Sui Move程序之前，需要先安装开发环境，所以本章将介绍如何安装开发环境。</p>
+<p>安装开发环境有三种方式：</p>
+<ul>
+<li>1.使用二进制文件安装</li>
+<li>2.使用源代码安装,比较复杂但是可以更多的控制安装过程</li>
+<li>3.使用docker镜像安装</li>
+</ul>
+<p>入门的朋友，我建议还是选择既能了解安装过程又不会太过复杂的二进制安装。</p>
+<p>这篇文章将主要讲解如何在Windows上使用二进制文件安装本地开发环境。注意不是使用Windows子系统Ubuntu安装，而是直接安装到Windows系统。以下方法适用于win10、win11。</p>
+<h3 id="安装前准备"><a class="header" href="#安装前准备">安装前准备</a></h3>
+<h4 id="curl"><a class="header" href="#curl">curl</a></h4>
+<p>这个一般Windows是自带的，检测是否自带运行命令：</p>
+<pre><code class="language-bash">curl http://www.baidu.com
+</code></pre>
+<h4 id="git"><a class="header" href="#git">git</a></h4>
+<p>详细的安装方法网络上已经有不少教程，详细参见：<a href="https://zhuanlan.zhihu.com/p/443527549">git安装方法</a></p>
+<h4 id="cmake"><a class="header" href="#cmake">cmake</a></h4>
+<p><a href="https://cmake.org/download/">下载页面</a>选择带有windows标志的.msi文件下载，具体下载x64、AMD64还是i386架构的，参见<a href="https://zhuanlan.zhihu.com/p/443527549">git安装方法</a>。下载完成后，双击安装，一路点next完成安装</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/cmake_installer.jpg?raw=true" alt="" /></p>
+<h4 id="protocol-buffer"><a class="header" href="#protocol-buffer">protocol buffer</a></h4>
+<p><a href="https://github.com/protocolbuffers/protobuf/releases">下载页面</a>下载最新版本，带有win字样的压缩包即可。下载完解压缩，把bin目录所在目录，添加到环境变量Path中，如下图：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/protocol.jpg?raw=true" alt="" /></p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/protocol_path.jpg?raw=true" alt="" /></p>
+<h4 id="llvm-compiler-infrastructure"><a class="header" href="#llvm-compiler-infrastructure">LLVM Compiler Infrastructure</a></h4>
+<p><a href="https://releases.llvm.org/">下载页面</a> 点击进入，选择最新版本download跳到github页面，选择带有win字样的exe文件下载，并安装。一路next即可。</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/llvm_download.jpg?raw=true" alt="" /></p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/llvm_github.jpg?raw=true" alt="" /></p>
+<h4 id="rustup"><a class="header" href="#rustup">rustup</a></h4>
+<p>rustup是一个管理工具链，用于管理不同平台下的 Rust 构建版本并使其互相兼容。在Windows环境中，使用 <a href="https://www.rust-lang.org/zh-CN/tools/install">rustup-ini.exe</a>下载后，双击运行，会有一个选项，如下图，输入1回车即可安装。</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/intsall_rustup.png?raw=true" alt="" /></p>
+<p>安装完成后，enter键关闭窗口，重新打开cmd窗口，输入下图命令，判断是否安装成功：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/rustc.jpg?raw=true" alt="" /></p>
+<h3 id="安装sui"><a class="header" href="#安装sui">安装Sui</a></h3>
+<p><a href="https://github.com/MystenLabs/sui/releases">下载页面</a>，点击带有windows字样的压缩包，下载并解压，打开target/release文件夹，把其中可执行文件的名称中的-windows-x86_64去掉，并复制到.cargo/bin文件夹中。如下图：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/sui_exec.png?raw=true" alt="" /></p>
+<p>打开一个cmd命令行窗口，输入以下命令验证安装是否成功:</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/sui_installed.png?raw=true" alt="" /></p>
+<h3 id="安装编辑器及插件"><a class="header" href="#安装编辑器及插件">安装编辑器及插件</a></h3>
+<p>vscode编辑器的安装教程，网上已经有很多，这里不再赘述。<a href="https://blog.csdn.net/msdcp/article/details/127033151">详见</a></p>
+<p>这里要着重讲的是安装Sui Move Analyzer</p>
+<p>Sui Move Analyzer是由MoveBit开发的适用于sui-move语言的Visual Studio代码插件，它有许多有用的功能，如高亮显示、自动完成、转到定义/引用等。</p>
+<p>vscode安装好后，点击侧边栏EXTENSIONS,在搜索栏搜索Sui Move Analyzer选中后，不要直接点击安装，先查看安装说明，这里有几点需要注意：</p>
+<p>1.如果已经安装move-analyzer 或者 aptos-move-analyzer的需要先disable掉，避免产生冲突</p>
+<p>2.要先安装sui-move-analyzer language server,然后再安装此插件。</p>
+<h3 id="申请开发环境gas"><a class="header" href="#申请开发环境gas">申请开发环境gas</a></h3>
+<p>上文我们也讲到，无论是将代码部署到链上还是调用链上方法，都需要gas。那我们开发环境怎么办呢？难不成要付费开发？这倒是不用，我们可以免费申请devnet的gas。申请方法如下：</p>
+<ul>
+<li>
+<p>1.获取当前地址，第一次执行有一些交互，按照图示输入即可。生成完当前地址再执行sui client active-address就可以获取账户地址</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/gas.png?raw=true" alt="" /></p>
+</li>
+<li>
+<p>2.在<a href="https://blog.csdn.net/msdcp/article/details/127033151">Discord</a>中注册账号并通过验证</p>
+</li>
+<li>
+<p>3.在#devnet-faucet频道输入框输入 !faucet &lt;第一步获取到的地址&gt; 。使用sui client gas几秒钟后就可以看到gas充值成功</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/get_gas.png?raw=true" alt="" /></p>
+</li>
+</ul>
+<p>现在既有编辑器、gas、运行环境都准备好了，那我们可以开始我们的Sui Move之旅啦。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="3轻松入门sui-move-清单文件和模块"><a class="header" href="#3轻松入门sui-move-清单文件和模块">3.轻松入门Sui Move: 清单文件和模块</a></h2>
+<p>按照国际惯例，学习一门语言,编写的第一个程序一定是输出一个Hello World。今天我们也来一起写一个Hello World并以此引出一些Sui Move项目结构，并作详细介绍</p>
+<p>首先我们新建一个名为hello_world的项目，使用命令：</p>
+<pre><code class="language-bash">sui move new hello_world
+</code></pre>
+<p>这个命令会自动新建一个名为hello_world的文件夹，文件夹结构如图：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/tree.png?raw=true" alt="" /></p>
+<p>这个文件夹包含一个sources文件夹和一个Move.toml清单文件，其中sources目录是存放我们编写的代码，里面的一个文件对应一个模块。Move.toml文件则是一个清单文件，用于申明包的元数据信息、依赖、地址等。详情请看下面代码块：</p>
+<pre><code class="language-toml">[package]
+#在这个部分申明包的元数据信息,比如名称、版本信息、证书信息等
+name = "hello_world"
+
+# edition = "2024.alpha" # 使用Move 2024 alpha 版本 
+# license = ""           # 申明证书，比如, "MIT", "GPL", "Apache 2.0"
+# authors = ["..."]      # 申明作者，比如 ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
+
+[dependencies]
+#在这个部分列出这个包依赖的其他包
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
+# 对于远程包的引用，请使用 `{ git = "...", subdir = "...", rev = "..." }`.
+# 其中rev可以是一个分支，一个tag或者一个提交哈希，如下例：
+# MyRemotePackage = { git = "https://some.remote/host.git", subdir = "remote/path", rev = "main" }
+
+# 如果是本地包的引用，使用 `local = path`即可. Path 是包的根目录下的相对路径
+# Local = { local = "../path/to" }
+
+# 如果有版本冲突，则指定版本号，并且使用`override = true`来解决冲突
+# Override = { local = "../conflicting/version", override = true }
+
+[addresses]
+# 申明这个包的地址，在后续可以使用hello_world代指这个包。默认情况这个地址是"0x0"，但在发布到链上会替换成区块链上的地址。这个名称甚至不局限于在包内使用，比如std标准包，我们直接在自己的包中使用std引用。
+hello_world = "0x0"
+
+[dev-dependencies]
+# 这个部分用于声明开发或者测试模式下才需要的依赖。
+# 额外提一句，开发或测试模式是编译时通过指定--test(--dev)来指定模式的。
+# Local = { local = "../path/to/dev-build" }
+
+[dev-addresses]
+# 这个部分用于申明开发或者测试模式下的包地址。
+</code></pre>
+<p>上面代码块中提到的package就是所谓的包，<strong>包是一组模块的集合，是发布代码到链上的单元。</strong></p>
+<p>那什么又是模块呢？<strong>模块是一组函数和结构体的集合。模块是一种组织代码的方式，可以将相关的功能组织在一起，并且通过模块可以控制代码的可见性和访问权限，提高代码的可维护性和可扩展性。</strong></p>
+<p>现在我们在sources文件夹内新建一个文件，命名为helloworld.move,然后编写一个名为hello_world的模块：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module hello_world::hello_world {
+    use sui::object::{Self, UID};
+    use sui::transfer;
+    use sui::tx_context::{Self, TxContext};
+
+    public struct HelloWorldObject has key, store {
+        id: UID,
+        text: std::string::String 
+    }
+
+    #[lint_allow(self_transfer)]
+    public fun mint(ctx: &amp;mut TxContext) {
+        let object = HelloWorldObject {
+            id: object::new(ctx), 
+            text: std::string::utf8(b"Hello World!") 
+        };
+        transfer::public_transfer(object, tx_context::sender(ctx));
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>上面这段代码申明了一个名称为HelloWorldObject的结构体，在mint方法中创建一个HelloWorldObject对象并将所有权转交给当前上下文的用户。此段代码包含以下几个知识点：</p>
+<h4 id="1模块的申明方法"><a class="header" href="#1模块的申明方法">1.模块的申明方法</a></h4>
+<pre><code class="language-bash">module &lt;包的地址&gt;::&lt;模块名称&gt; {
+	模块内容
+}
+</code></pre>
+<p>包的地址和模块名称可以标识一个模块，包的地址可以是包名也可以是清单文件中申明的包地址。</p>
+<p>在一个包内，模块名必须唯一。模块文件名与模块名不一致可以通过编译也不影响其他模块的调用，但不建议这么做。模块名建议使用小写字母和下划线组成。</p>
+<h4 id="2模块之间的关系引用"><a class="header" href="#2模块之间的关系引用">2.模块之间的关系：引用</a></h4>
+<p>模块之间可以互相引用，引用方式分为以下几种：</p>
+<ul>
+<li>
+<p>直接引用:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct HelloWorldObject has key, store {
+	id: UID,
+    text: std::string::String //直接引用std::string模块的utf8方法
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>使用use引用结构体或者函数</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::object::UID //申明引用UID结构体（或函数）
+public struct HelloWorldObject has key, store {
+	id: UID, //直接使用结构体名（或函数）
+    text: std::string::String 
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>使用use 引用模块</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::transfer;
+transfer::public_transfer(object, tx_context::sender(ctx));
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>使用Self关键字引用模块自身</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> use sui::tx_context::{Self, TxContext};
+ tx_context::sender(ctx)//使用模块名调用函数
+ //直接使用TxContext引用TxContext结构体
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>同一个模块多个引用</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">使用花括号括起来，并逗号隔开
+</span>use sui::tx_context::{Self, TxContext};
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<p>不同的申明方式之间也可以转换使用，效果是一样。比如：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::tx_context::{Self, TxContext};
+tx_context::sender(ctx)//使用模块名调用函数
+//直接使用TxContext引用TxContext结构体
+<span class="boring">}</span></code></pre></pre>
+<p>等价于：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::tx_context;
+tx_context::sender(ctx)//使用模块名调用函数
+//TxContext结构体则使用tx_context::TxContext引用
+<span class="boring">}</span></code></pre></pre>
+<p>还等价于：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::tx_context::{sender, TxContext};
+sender(ctx)//直接调用函数
+//直接使用TxContext引用TxContext结构体
+<span class="boring">}</span></code></pre></pre>
+<h4 id="3模块如何控制访问权限"><a class="header" href="#3模块如何控制访问权限">3.模块如何控制访问权限?</a></h4>
+<p>我们上面讲了如何引用模块，那如果模块不愿意被引用怎么办呢？这就涉及到访问权限的问题。访问模块内容分为访问结构体和函数。而结构体内部的字段不能跨模块使用，只能通过调用与结构体同模块的函数实现，如下图：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> struct HelloWorldObject has key, store {
+        id: UID,
+        text: std::string::String 
+  }
+  //通过调用此方法访问结构体内部值
+  public fun getText(obj: &amp;HelloWorldObject) :std::string::String {
+        obj.text
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>所以，访问权限其实主要就是对函数的访问权限的控制。对函数的访问权限控制粒度从粗到细分为：</p>
+<ul>
+<li>
+<p>所有模块都可以调用</p>
+<p>所有模块都可调用，使用关键字public申明函数即可</p>
+</li>
+<li>
+<p>部分模块可以调用</p>
+<p>使用关键词public(package)申明函数，那就只有在模块内申明了是“朋友”的模块才可以调用。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//申明朋友模块
+//只有朋友模块才可以引用的函数
+public(package) fun getName(obj: &amp;Game) :std::string::String {
+    obj.name
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>只有同模块可调用</p>
+</li>
+</ul>
+<p>​      只有同模块都可调用，使用关键字private申明函数即可。private是默认权限，也可以省略。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="4轻松入门sui-move-基础语法"><a class="header" href="#4轻松入门sui-move-基础语法">4.轻松入门Sui Move: 基础语法</a></h2>
+<p>本章将介绍Sui Move的基础语法。</p>
+<h3 id="基本类型"><a class="header" href="#基本类型">基本类型</a></h3>
+<p>Move语言是一个强调数据类型的语言，在声明任何变量时，必须将该变量定义为一种数据类型。Move中的数据类型包括基本数据类型和自定义类型（也就是结构体）。结构体不属于本章所讲述的内容，本章主要介绍数据的基本类型。Move程序中，总共有三种基本类型：其中包括整型、布尔型和地址。</p>
+<h4 id="整型"><a class="header" href="#整型">整型</a></h4>
+<p>整型有分五种，分别是u8,u32,u64,u128,u256。u代表unsigned说明不支持负数,u后面的数字代表可以存储的位数，也可以根据这个位数，推算出能存储的最大值：</p>
+<div class="table-wrapper"><table><thead><tr><th>类型</th><th>最小值</th><th>最大值</th></tr></thead><tbody>
+<tr><td>u8</td><td>0</td><td>255</td></tr>
+<tr><td>u32</td><td>0</td><td>4294967295</td></tr>
+<tr><td>u64</td><td>0</td><td>18446744073709551615</td></tr>
+<tr><td>u128</td><td>0</td><td>3.4028236692093846346e+38</td></tr>
+<tr><td>u256</td><td>0</td><td>1.1579208923731619542e+77</td></tr>
+</tbody></table>
+</div>
+<p>注意：基本类型只支持正整数，负数将会导致编译报错。</p>
+<p>两个不同类型的正整数，要比较大小怎么办呢？可以使用as做类型转换后在进行比较，如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun compare() :bool {
+	let a:u8 = 10;
+    let b:u32 = 30;
+
+    (a as u32) &gt;= b
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="布尔型"><a class="header" href="#布尔型">布尔型</a></h4>
+<p>布尔类型使用bool表示，值有两个true和false。</p>
+<h4 id="地址"><a class="header" href="#地址">地址</a></h4>
+<p>地址类型用于标识区块链中的地址，如果引入包的包地址、钱包地址或者发送方地址。</p>
+<p>地址一般是0x开头，代表十六进制数。</p>
+<h3 id="注释"><a class="header" href="#注释">注释</a></h3>
+<p>像大多数编程语言，注释分为单行注释和多行注释。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//单行注释
+/*
+
+多行注释
+
+*/
+<span class="boring">}</span></code></pre></pre>
+<h3 id="变量"><a class="header" href="#变量">变量</a></h3>
+<p>变量可以使用以下方式声明和初始化:</p>
+<p>let <VARIABLE> : <TYPE></p>
+<p><code>let &lt;VARIABLE&gt; = &lt;EXPRESSION&gt;</code></p>
+<p>let <VARIABLE> : <TYPE> = <EXPRESSION></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a:u8;
+let a=10;
+let a:u8=10;
+let a=true;
+let a=0x0
+<span class="boring">}</span></code></pre></pre>
+<p>如果直接对变量赋值正整数，不指定类型，默认类型是u64</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a=10;//a类型是u64
+<span class="boring">}</span></code></pre></pre>
+<p>Move不允许申明变量之后不使用。我们可以使用_去标记该变量不使用：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun compare() :bool {
+	let a = 10;
+    let b = 10;
+    let _ = returnNum(); //丢弃函数返回值
+    a &gt; b
+}
+public fun returnNum():u64 {
+    13
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="变量作用域"><a class="header" href="#变量作用域">变量作用域</a></h4>
+<p>变量的作用域用一句话就能描述清楚：变量只在声明它的代码块中生效，代码块结束变量就无效。代码块由花括号标记，模块的花括号代表一个代码块，函数的花括号也是一个代码块。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//参数a,b作用域：整个函数代码块
+public fun varLifetimes(a:u8, b:u8) :bool {
+	let c = a + b;//变量c作用域：整个函数代码块
+    if (c &gt; 10) {
+        let d = 12; //变量d作用域：if{}内
+        _ = d;
+    } else {
+        let e = 13;//变量e作用域：else{}内
+        _ = e;
+    };
+    {
+    	let f=1;//变量f作用域：{}内
+        _ = f;
+     };
+
+     c &gt; 100
+}
+<span class="boring">}</span></code></pre></pre>
+<h3 id="常量"><a class="header" href="#常量">常量</a></h3>
+<p>使用const关键字 申明一个常量，常量用大写字母和下划线组成。值可以是基本类型、数组和一部分表达式。</p>
+<p>值得注意的是，常量只能模块内部访问！</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const LEVEL:u64=10;
+<span class="boring">}</span></code></pre></pre>
+<h3 id="流程控制"><a class="header" href="#流程控制">流程控制</a></h3>
+<p>任何一门语言都需要基本的流程控制语句，其思想也符合人类判断问题或做事的逻辑过程。什么是流程控制呢？流程就是做一件事情的顺序。在程序设计中，流程就是要完成一个功能，而流程控制则是指如何在程序设计中控制完成某种功能的顺序。</p>
+<h6 id="条件语句"><a class="header" href="#条件语句">条件语句</a></h6>
+<p>在现实生活中，经常听人说：如果中彩票了，我就…。其实这就是程序设计中所说的条件语句。例如“如果……就……”“否则……”</p>
+<p>在Move中的if语法是：</p>
+<pre><code class="language-move">if (&lt;bool_expression&gt;) &lt;expression&gt; else &lt;expression&gt;;
+</code></pre>
+<p>if语句的几种形式：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let i = 10;
+//单行不加花括号
+if (i &gt; 5) i = i + 1;
+//多行要加花括号
+if (i &gt; 5) {
+	i = i + 1;
+};
+//if...else
+if (i &gt; 5) {
+	i = i + 1;
+} else {
+	i = i - 1;
+};
+<span class="boring">}</span></code></pre></pre>
+<p>注意: 跟大多数语言不同的是，这里最后一个表达式后加了分号代表结束。</p>
+<h4 id="循环语句"><a class="header" href="#循环语句">循环语句</a></h4>
+<ul>
+<li>
+<p>while循环：有条件的循环</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> //满足条件才会循环
+ while (i &lt; 5) {
+     i = i + 1;
+ };
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>loop循环：无条件循环</p>
+<p>无条件循环如果内部没有使用break跳出循环，会一直循环下去，也就是所谓的死循环。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这个代码与while中的示例代码作用一样
+loop {
+	if (i &gt;= 5) {
+		break;
+	};
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>continue</p>
+<p>continue代表跳过本次循环，进入下一个循环。break则是结束循环，这俩需要注意区分。</p>
+</li>
+</ul>
+<h3 id="退出语句"><a class="header" href="#退出语句">退出语句</a></h3>
+<p>如果程序满足某些条件就要停止运行，可以使用关键字abort</p>
+<p>也可以使用封装好的内建函数assert</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这两行代码是等价的
+if (i &gt; 5) abort 0;
+assert(i &lt;= 5, 0);
+<span class="boring">}</span></code></pre></pre>
+<h3 id="函数"><a class="header" href="#函数">函数</a></h3>
+<p>函数结构：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fun function_name(arg1: u64, arg2: bool): (u8, bool){
+	//函数体
+}
+<span class="boring">}</span></code></pre></pre>
+<p>函数名由小写字母和下划线组成</p>
+<h4 id="函数返回值"><a class="header" href="#函数返回值">函数返回值</a></h4>
+<p>使用return + 返回值，可以结束函数执行并返回数据，如果是最后一行返回则可以缺省return关键字。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun compare(a: u64, b: u64): u8 { 
+	if (a == b ) {
+        return 0 //中断函数执行，直接返回
+     };
+     //最后一个表达式，可以无return返回  
+     if (a &gt; b) {
+        1
+      } else {
+        2 
+      }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>值得注意的是，无论是何种返回方式，表达式最后都没有逗号</p>
+<p>Sui Move支持多个返回值，多个返回值的返回和使用，详见代码：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun call_return_nums(): u64{
+        let (a,b) = return_nums();//接收多个函数返回值，必须有括号
+        if (b) {
+            a
+        } else {
+            0    
+        }
+    }
+    public fun return_nums():(u64, bool) {//多个返回值的申明方法
+        (19, true)//返回多个函数返回值，必须有括号
+    }
+<span class="boring">}</span></code></pre></pre>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="5轻松入门sui-move-debug单元测试和命令行工具"><a class="header" href="#5轻松入门sui-move-debug单元测试和命令行工具">5.轻松入门Sui Move: Debug、单元测试和命令行工具</a></h2>
+<h3 id="单元测试"><a class="header" href="#单元测试">单元测试</a></h3>
+<p>单元测试函数是没有参数，也没有返回值，带有一个#[test]的标记的public函数。命令建议使用test_作为前缀加上被测试函数名称。单元测试函数跟被测试函数可以放置在同一个module内，也可以单独放置在跟sources文件夹同级别的tests文件夹内。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun a_greater_than_b(a: u64, b: u64): bool{ 
+    a &gt;= b
+}
+ #[test]
+ public fun test_a_greater_than_b() {
+    let a = 10;
+    let b = 12;
+    assert!(!a_greater_than_b(a, b), 0);
+ }
+<span class="boring">}</span></code></pre></pre>
+<p>assert即将被丢弃，建议使用assert!。assert!函数第一个参数是一个表达式，表达式值为false表示断言失败，单元测试报错不通过。</p>
+<p>编写好单元测试后，在项目根目录执行如下命令即可运行单元测试</p>
+<pre><code class="language-move">sui move test
+</code></pre>
+<p>单元测试报告解读：</p>
+<pre><code class="language-bash">INCLUDING DEPENDENCY Sui
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING hello_world
+Running Move unit tests
+[ PASS    ] 0x0::hello_world::test_a_greater_than_b    #通过的单元测试名
+Test result: OK. Total tests: 1; passed: 1; failed: 0  #单元测试数，通过数，失败数
+Total number of linter warnings suppressed: 1 (filtered categories: 1)
+</code></pre>
+<h3 id="debug"><a class="header" href="#debug">Debug</a></h3>
+<p>Sui Move暂时没有本地的调试器，可以使用std::debug模块来调试代码，打印变量。</p>
+<p>调用print函数打印变量值到命令行,注意print参数传递的不是变量本身，而是变量的引用。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>std::debug::print(&amp;v);
+//在命令行输出中带有[debug]标记的就是打印结果
+<span class="boring">}</span></code></pre></pre>
+<p>也调用print_stack_trace函数打印堆栈轨迹</p>
+<pre><code class="language-move">std::debug::print_stack_trace();
+</code></pre>
+<p>结合单元测试，就可以在命令行打印数据，调试代码：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun a_greater_than_b(a: u64, b: u64): bool{ 
+    std::debug::print(&amp;a);
+    std::debug::print(&amp;b);//调试打印
+    a &gt;= b
+}
+#[test]
+public fun test_a_greater_than_b() {
+    let a = 13;
+    let b = 12;
+      
+    assert!(a_greater_than_b(a, b), 0);//单元测试调用函数
+}
+<span class="boring">}</span></code></pre></pre>
+<p>现在只需运行单元测试，就可以打印信息进行调试。</p>
+<h3 id="命令行工具"><a class="header" href="#命令行工具">命令行工具</a></h3>
+<p>下面将讲解一些常用的命令：</p>
+<h4 id="sui-move命令"><a class="header" href="#sui-move命令">sui move命令</a></h4>
+<h5 id="创建一个新包"><a class="header" href="#创建一个新包">创建一个新包</a></h5>
+<pre><code class="language-bash"># 指定路劲创建新包
+sui move new &lt;package_name&gt; -p &lt;path&gt;
+#当前目录创建名为hello_world的包
+sui move new hello_world
+</code></pre>
+<h5 id="编译"><a class="header" href="#编译">编译</a></h5>
+<pre><code class="language-bash">sui move build
+#想让编译更快，可以暂时不拉取最新依赖
+sui move build --skip-fetch-latest-git-deps
+#使用Move.toml申明的dev依赖和地址
+sui move build --dev
+</code></pre>
+<h5 id="单元测试-1"><a class="header" href="#单元测试-1">单元测试</a></h5>
+<p>单元测试是先编译后运行单元测试，所以上述编译的选项也可以用在单元测试中</p>
+<pre><code class="language-bash">sui move test
+#列出所有单元测试
+sui move test -l 
+#指定运行单元测试的线程数，默认八个
+sui move test -t 10
+#使用dev模式编译并运行单元测试,--test同理
+sui move test --dev
+#在单元测试结尾生成统计信息并打印到终端
+sui move test -s
+#限制每个单元测试函数消耗的gas
+sui move test -i 1
+#收集覆盖率相关数据，以支持sui move coverage命令的使用。
+sui move test --coverage
+</code></pre>
+<p>注意：单元测试的覆盖率只有debug模式的客户端支持，想使用此功能，可以使用源码构建sui move cli</p>
+<h5 id="覆盖率统计"><a class="header" href="#覆盖率统计">覆盖率统计</a></h5>
+<p>获取覆盖率数据之前，需要使用–coverage运行单元测试</p>
+<pre><code class="language-bash">#获取覆盖率的汇总信息
+sui move coverage summary 
+#根据源代码显示有关模块的覆盖率信息
+sui move coverage source
+#根据反汇编的字节码显示有关模块的覆盖率信息
+sui move coverage bytecode
+</code></pre>
+<h4 id="sui-client命令"><a class="header" href="#sui-client命令">sui client命令</a></h4>
+<p>sui client提供与Sui网络交互的命令</p>
+<h5 id="列出可用网络环境"><a class="header" href="#列出可用网络环境">列出可用网络环境</a></h5>
+<pre><code class="language-bash">sui client envs
+</code></pre>
+<h5 id="创建新的网络环境"><a class="header" href="#创建新的网络环境">创建新的网络环境</a></h5>
+<pre><code class="language-bash">sui client new-env --alias=mainnet --rpc https://fullnode.mainnet.sui.io:443
+</code></pre>
+<h5 id="切换当前网络环境"><a class="header" href="#切换当前网络环境">切换当前网络环境</a></h5>
+<pre><code class="language-bash">sui client switch --env mainnet
+</code></pre>
+<h5 id="新建地址"><a class="header" href="#新建地址">新建地址</a></h5>
+<pre><code class="language-bash">#选择ed25519密钥对方案，生成新的密钥对和地址，并设置地址别名为test
+ sui client new-address  ed25519 test
+</code></pre>
+<h5 id="切换当前地址"><a class="header" href="#切换当前地址">切换当前地址</a></h5>
+<pre><code class="language-bash">sui client switch --address &lt;address别名&gt;
+</code></pre>
+<h5 id="获取当前活跃地址"><a class="header" href="#获取当前活跃地址">获取当前活跃地址</a></h5>
+<p>当前活跃地址可以理解为是当前用户在Sui网络的标识符</p>
+<pre><code class="language-bash">sui client active-address
+</code></pre>
+<h5 id="使用对象id获取对象信息"><a class="header" href="#使用对象id获取对象信息">使用对象ID获取对象信息</a></h5>
+<pre><code class="language-bash">sui client object &lt;object id&gt;
+#使用json格式返回对象数据
+sui client object &lt;object id&gt; --json
+</code></pre>
+<h5 id="查看当前地址拥有的所有对象"><a class="header" href="#查看当前地址拥有的所有对象">查看当前地址拥有的所有对象</a></h5>
+<pre><code class="language-bash">sui client objects
+#输出json
+sui client objects --json
+</code></pre>
+<h5 id="获取动态字段信息"><a class="header" href="#获取动态字段信息">获取动态字段信息</a></h5>
+<pre><code class="language-bash">sui client dynamic-field &lt;DYNAMIC-FIELD-ID&gt;
+</code></pre>
+<h5 id="获取余额"><a class="header" href="#获取余额">获取余额</a></h5>
+<pre><code class="language-bash">sui client balance
+sui client gas
+</code></pre>
+<h5 id="在devnet申请gas"><a class="header" href="#在devnet申请gas">在devnet申请gas</a></h5>
+<pre><code class="language-bash"># 执行前需要确认当前网络是否是devnet.执行后一分钟内就能到账
+sui client faucet --address &lt;你的地址&gt;
+</code></pre>
+<h5 id="合并gas的余额"><a class="header" href="#合并gas的余额">合并gas的余额</a></h5>
+<p>如果有多个gas对象，不想每次使用–gas选项指定，就可以合并gas对象的余额到一个gas对象中去</p>
+<pre><code class="language-bash">sui client merge-coin --primary-coin &lt;gas coin id&gt; --coin-to-merge &lt;gas coin id&gt; --gas-budget &lt;GAS_BUDGET&gt;
+</code></pre>
+<ul>
+<li>–primary-coin 余额都合并到这个gas对象中</li>
+<li>–coin-to-merge 被合并余额的gas对象</li>
+</ul>
+<h5 id="发布包之前检查字节码是否超过规定值"><a class="header" href="#发布包之前检查字节码是否超过规定值">发布包之前，检查字节码是否超过规定值</a></h5>
+<p>强烈建议在发包之前执行此操作，避免发布失败，消耗不必要的gas</p>
+<pre><code class="language-bash">sui client verify-bytecode-meter
+</code></pre>
+<h5 id="发布包"><a class="header" href="#发布包">发布包</a></h5>
+<pre><code class="language-bash">#发布当前目录的包
+sui client publish 
+#发布指定目录的包
+sui client publish  /home/root/packages/hello_world
+#发布时消耗指定的gas对象的gas
+sui client publish--gas &lt;gas coin id&gt; 0 
+</code></pre>
+<p>注意：</p>
+<ul>
+<li>
+<p>gas可以适当指定大一点，因为gas不够导致的发布失败，并不会退回gas</p>
+</li>
+<li>
+<p>gas coin id可以通过sui client gas获取</p>
+</li>
+<li>
+<p>发布之前要进行编译，所以编译的选项在这个命令也是生效的</p>
+</li>
+</ul>
+<h5 id="调用已经发布包的方法"><a class="header" href="#调用已经发布包的方法">调用已经发布包的方法</a></h5>
+<pre><code class="language-bash">#调用一个没有参数的函数
+sui client call [OPTIONS] --package &lt;package id&gt; --module &lt;module名称&gt; --function &lt;函数名&gt; --gas-budget &lt;GAS_BUDGET&gt;
+#调用带参数的函数
+sui client call [OPTIONS] --package &lt;package id&gt; --module &lt;module名称&gt; --function &lt;函数名&gt; --gas-budget &lt;GAS_BUDGET&gt;  --args &lt;参数1&gt; &lt;参数2&gt;
+#调用泛型函数,必须指定所有的类型参数否则会报错
+sui client call [OPTIONS] --package &lt;package id&gt; --module &lt;module名称&gt; --function &lt;函数名&gt; --gas-budget &lt;GAS_BUDGET&gt;  ----type-args &lt;类型参数1&gt; &lt;类型参数2&gt;
+
+</code></pre>
+<h5 id="查看交易消耗gas的详细信息"><a class="header" href="#查看交易消耗gas的详细信息">查看交易消耗gas的详细信息</a></h5>
+<pre><code class="language-bash">sui client profile-transaction --tx-digest &lt;交易的digest&gt;
+</code></pre>
+<h5 id="转移资产"><a class="header" href="#转移资产">转移资产</a></h5>
+<pre><code class="language-bash">#转移指定资产给指定地址
+sui client pay --input-coins &lt;被转移的coin id&gt; --recipients &lt;收款地址&gt;--amounts &lt;转账金额&gt;--gas-budget &lt;本次操作可消费最大gas&gt;
+#转移Sui资产给指定地址
+sui client sui-pay --input-coins &lt;被转移的coin id&gt; --recipients &lt;收款地址&gt;--amounts &lt;转账金额&gt;--gas-budget &lt;本次操作最大可消耗gas&gt;
+</code></pre>
+<h5 id="转移对象所有权"><a class="header" href="#转移对象所有权">转移对象所有权</a></h5>
+<pre><code class="language-bashsui client transfer [OPTIONS] --to &lt;TO&gt; --object-id &lt;OBJECT_ID&gt; --gas-budget &lt;GAS_BUDGET&gt;">sui client transfer --to &lt;收到对象所有权的地址&gt; --object-id &lt;对象id&gt; --gas-budget &lt;本次交易最大可消耗gas&gt;
+</code></pre>
+<h5 id="sui-console"><a class="header" href="#sui-console">sui console</a></h5>
+<p>有没有觉得sui client相关的命令每次都要输入sui client 很麻烦？可以使用sui console进入sui的命令行，省略sui client字符直接输入命令即可。比如：</p>
+<pre><code class="language-sui console">#获取gas对象余额
+gas
+#切换当前地址
+switch --address mystifying-sphene
+</code></pre>
+<h5 id="退出sui命令行模式"><a class="header" href="#退出sui命令行模式">退出sui命令行模式</a></h5>
+<pre><code class="language-bash">exit
+</code></pre>
+<h5 id="清屏"><a class="header" href="#清屏">清屏</a></h5>
+<pre><code class="language-bash">clear
+</code></pre>
+<h5 id="查看历史命令"><a class="header" href="#查看历史命令">查看历史命令</a></h5>
+<pre><code class="language-bash">history
+</code></pre>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="6轻松入门sui-move-结构体"><a class="header" href="#6轻松入门sui-move-结构体">6.轻松入门Sui Move: 结构体</a></h2>
+<p>我们前面讲解基本数据类型的时候，讲到基本数据类型只有三种：整型，布尔型和地址。细心的朋友可能会疑惑，为什么连字符串类型都没有？我想使用Move程序保存一段文本如何实现？ 这时候就要用到自定义类型，也就是结构体。</p>
+<h4 id="创建string结构体类型"><a class="header" href="#创建string结构体类型">创建String结构体类型</a></h4>
+<p>我们可以使用结构体定义一个String类型：使用基本数据类型u8组成的数组来存储字符串。那我们自己实现一个String类型? 大可不必！Sui框架已经为我们实现了String类型，源码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//struct &lt;type name&gt; &lt;has abilities&gt;
+public struct String has copy, drop, store {
+    bytes: vector&lt;u8&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p><strong>结构体名称要使用大写字母开头，首字母后可以包含大小写字母、下划线和数字（建议使用大驼峰命名法）。结构体内的字段名则由小写字母、数字和下划线组成。</strong></p>
+<p>那我们如何使用这个自定义的类型呢？</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//先引用String类型
+use std::string::String;
+//申明一个HelloWorld类型，包含String类型
+public struct HelloWorld has drop {
+    no: u64,
+    text: string::String //申明text字段类型是String类型
+}
+public fun new_hello_world():HelloWorld{
+    //实例化一个结构体
+    HelloWorld{
+        no: 1,
+        //调用string模块提供的utf8函数实例化String类型
+        text: string::utf8(b"hello world")
+    } 
+}
+<span class="boring">}</span></code></pre></pre>
+<p>上述例子中，结构体HelloWorld带有两个字段，字段no是u64类型,另一个字段text则是标准库定义的结构体。 我们可以得出一个结论：**结构体是一种自定义类型，可以包含基础数据类型和自定义类型的字段。**但是值得注意的是，<strong>结构体不能包含自身类型</strong>。比如说：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct HelloWorld has drop {
+    no: u64,
+    text: string::String,
+    hello_world: HelloWorld //包含自身类型
+}
+<span class="boring">}</span></code></pre></pre>
+<p>以上代码在编译的时候会报错：Invalid field containing ‘HelloWorld’ in struct ‘HelloWorld’.</p>
+<h4 id="访问结构体字段值"><a class="header" href="#访问结构体字段值">访问结构体字段值</a></h4>
+<h5 id="模块内访问"><a class="header" href="#模块内访问">模块内访问</a></h5>
+<p>我们使用一个单元测试用例来演示如何访问HelloWorld类型的text字段：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[test]
+public fun test_create_hello_world() {
+    let hw = create_hello_world();//先实例化一个类型
+    let text = hw.text;//使用符号.即可访问结构体内字段
+    assert!(string::utf8(b"hello world") == text, 0);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>注意：有的文档说只有基本数据类型的访问能使用.符号，本人在sui-move 1.20.0上测试发现自定义类型也能使用！也就是说不管字段是什么类型都可以使用.访问。</p>
+<p>上面的代码通过了单元测试。那我们用同样的方法访问text字段的bytes字段是不是也能通过？</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[test]
+public fun test_create_hello_world() {
+    let hw = create_hello_world();
+    let bytes = hw.text.bytes;
+    assert!(b"hello world" == bytes, 0);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>运行sui move test直接报错：Invalid access of field ‘bytes’ on ‘std::string::String’. Fields can only be accessed inside the struct’s module（<strong>只有在模块内才有访问结构体字段的权限</strong>）</p>
+<h5 id="模块外访问"><a class="header" href="#模块外访问">模块外访问</a></h5>
+<p>也就是说我们在自己编写的模块里不能直接访问标准库string模块的结构体字段值，那我们就”绕一个弯“，通过调用函数来访问其他模块的结构体字段值。</p>
+<p>比如访问String类型的bytes字段，我们可以使用string模块提供的bytes方法，这个方法是公共方法所以任何模块都有权限调用。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[test]
+public fun test_create_hello_world() {
+    let hw = create_hello_world();//实例化一个HelloWorld类型
+    let bytes = string::bytes(&amp;hw.text);//bytes函数返回的不是bytes字段而是一个指针
+    assert!(b"hello world" ==  *bytes, 0);//*号+指针表示指针指向的值，并断言值是"hello world"
+}
+<span class="boring">}</span></code></pre></pre>
+<p>同样的我们在自己模块定义结构体的时候，可以定义函数来开放结构体字段的访问。函数的名称建议直接延用字段的名称。比如：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun no(hw: &amp;HelloWorld):u64 {
+    return hw.no   
+}
+<span class="boring">}</span></code></pre></pre>
+<p>注意：实例化结构体、访问结构体字段值、修改结构体实例和销毁结构体都只能在定义这个结构体的模块内。</p>
+<h4 id="修改结构体字段值"><a class="header" href="#修改结构体字段值">修改结构体字段值</a></h4>
+<p>方法如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun changeText(hw: &amp;mut HelloWorld) {
+    hw.text = string::utf8(b"change it");
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这里值得注意的是函数参数引用结构体的方式，<strong>引用结构体分为可变引用（&amp;mut）和不可变引用(&amp;)。</strong> 因为上述代码块要修改结构体实例的值就必须使用&amp;mut。如果只是访问结构体实例则使用&amp;即可。</p>
+<p>不仅仅是函数参数可以这么引用，变量赋值也是如此：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = S {f : 10};
+let s_ref = &amp;s;//不可变引用
+let s_mutref = &amp;mut s;//可变引用，可以使用s_mutref变量修改s实例的值
+<span class="boring">}</span></code></pre></pre>
+<p>除了引用外，还可以直接使用按值传输对象也就是直接传输对象本身。按值传输对象用于销毁对象、嵌套在对象里或者移交。</p>
+<h4 id="销毁结构体实例"><a class="header" href="#销毁结构体实例">销毁结构体实例</a></h4>
+<p>如果结构体含有drop的能力，会在使用后自动销毁。但是如果结构体没有drop能力且有销毁的需求，就需要编写函数并调用函数销毁。销毁的方法如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun drop(hello_world: HelloWorld) {
+    let HelloWorld{text:_,test_vector:_} = hello_world;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>注意：</p>
+<ul>
+<li>
+<p>官方建议统一使用drop命名销毁函数。</p>
+</li>
+<li>
+<p>上述代码块是把结构体所有值都丢弃了，如果其中字段没有drop能力就不允许这么做。</p>
+</li>
+<li>
+<p>参数就不允许传递实例的地址，必须是传递实例本身。</p>
+</li>
+</ul>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="7轻松入门sui-move-对象上"><a class="header" href="#7轻松入门sui-move-对象上">7.轻松入门Sui Move: 对象（上）</a></h2>
+<p>有过后端编程经验的小伙伴会发现：无论什么语言核心其实都是对数据的增删改查，Sui Move也不例外，但是Sui Move并不会跟其他语言一样连接数据库、使用特定的数据库语言存储数据，而是使用<strong>对象作为最小的存储单元</strong>。也就是说如果你想持久化一些数据，先申明一个对象模型，使用要存储的数据实例化对象即可。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//申明对象模型
+public struct Article has key {
+    id: object::UID,
+    title: string::String,
+    content: string::String,
+    word_cnt: u64,
+}
+public fun new(title: vector&lt;u8&gt;, content: vector&lt;u8&gt;, ctx: &amp;mut tx_context::TxContext) {
+ 	let content = string::utf8(content);
+    //实例化一个对象
+    let article = Article{
+        id: object::new(ctx),
+        title: string::utf8(title),
+        content: content,
+        word_cnt: string::length(&amp;content),
+    };
+	//对象设置为共享对象，所有用户皆可访问修改
+    transfer::share_object&lt;Article&gt;(article);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在发布这段代码后，调用new方法就可以生成一个对象并返回对象的元数据，对象也保存在了链上。</p>
+<p><strong>对象模型是一种特殊的结构体</strong>，所以上一章讲到的结构体相关的用法对象也一样适用。那如何区分这是一个普通的结构体还是对象呢？<strong>对象一定具有key能力且对象的第一个字段是全局唯一ID</strong>  ，这个全局唯一id可以确定对象在链上的位置，所以也可以理解为就是对象的地址。对象的其他字段则可以是基础数据类型、对象或者非对象结构体。</p>
+<p>第一章我们也讲过，在发布代码的时候会返回一个所有者为Immutable(不可改变的)的对象,这个对象的ID就是对应的包地址。这句话隐含了一个信息，就是<strong>我们发布的包也是一个对象</strong>。这个对象永远不可改变或删除。所以发布代码的过程也可以理解为是把代码存储到区块链的过程。</p>
+<h4 id="对象的结构"><a class="header" href="#对象的结构">对象的结构</a></h4>
+<p>使用sui client object <object id>就可以看到对象的完整信息，无论是包还是结构体对象都可以执行这个命令。结果如下：</p>
+<p>结构体对象：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/object.jpg?raw=true" alt="" /></p>
+<p>包：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/package.jpg?raw=true" alt="" /></p>
+<p>我们可以把对象分为两部分：元数据和内容。</p>
+<h5 id="公共元数据"><a class="header" href="#公共元数据">公共元数据</a></h5>
+<p>以下是无论是对象模型还是包都有的公共元数据：</p>
+<ul>
+<li>32个字节的全球唯一标识符（objectId），也就是对象ID，也可以说是对象的地址。</li>
+<li>8个字节的版本号(version)，每次修改对象都会加一。</li>
+<li>32个字节的交易的摘要（prevTx），记录最后一次输出这个对象的交易。</li>
+<li>33个字节的owner字段，对象的所有者，也可以根据这个字段推测如何访问这个对象。</li>
+<li>objectType则指明对象类型，值可能是package可能是自定义的结构体类型。</li>
+<li>digest字段是这个对象元数据和内容的哈希，也就是对象的摘要。</li>
+<li>storageRebate字段表示，如果这个对象后期在链上删除，将会返还的gas值。</li>
+</ul>
+<h5 id="对象内容"><a class="header" href="#对象内容">对象内容</a></h5>
+<p>对象内容就一个content字段，它里面的dataType字段用于区分是结构体对象（moveObject）还是包(package)。content字段的其他内容则因类型的不同而各有区别了。</p>
+<h6 id="结构体对象"><a class="header" href="#结构体对象">结构体对象</a></h6>
+<ul>
+<li>type字段：表明结构体类型</li>
+<li>hasPublicTransfer字段：是否能使用publish_transfer转移所有权，上图这个对象因为是共享对象所以不能被转移所有权，值为false。</li>
+<li>fields字段就是对象的键值对，使用BCS(Binary Canonical Serialization)编码。我们可以在sui client object命令中指定–bcs选项来查看编码后的值。</li>
+</ul>
+<h6 id="包"><a class="header" href="#包">包</a></h6>
+<p>Move Packages包含包中的代码。查看上图可以发现引用包的名称已经自动变成了包的地址。</p>
+<h4 id="删除对象"><a class="header" href="#删除对象">删除对象</a></h4>
+<p>我们上面说对象就是一种特殊的结构体，按理说上一章的销毁实例应该也适用于对象吧？我们按照上一章讲解的方法定义drop函数：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun drop(a: Article) {
+    let Article{id:_,title:_,content:_,word_cnt:_}=a;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>编译的时候直接报错：id字段Cannot ignore values without the ‘drop’ ability. The value must be used。id字段的类型是sui::object::UID，这个结构体类型没有drop的能力，所以不能丢弃id字段值。好在sui::object模块提供了一个删除UID的方法，也是删除对象id的唯一方法，如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//注意：要删除对象，必须按值传入
+public fun drop(a: Article) {
+    let Article{id:id,title:_,content:_,word_cnt:_}=a;
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们发布合约后调用这个方法删除对象。在浏览器查看本次交易的费用明细可以发现：本次交易给我们返还了0.000351964 SUI！删除对象释放存储空间就会返还一部分gas，那我们在编码过程中应该积极删除无用对象，以减少gas消耗！</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/delete_object.png?raw=true" alt="" /></p>
+<h4 id="对象的分类"><a class="header" href="#对象的分类">对象的分类</a></h4>
+<p>根据对象的所有者和访问权限的不同，可以将对象分为以下几类：</p>
+<ul>
+<li>
+<p>独有对象</p>
+<p>这种对象的owner字段值是账户的地址或者是对象的ID。它只能属于某一个地址，可以切换对象的所有者。也只有所有者能访问，修改，转交它。</p>
+</li>
+<li>
+<p>共享对象</p>
+<p>这种对象的owner字段值带有Shared标记。这种对象属于所有人，对所有人开放访问，修改的权限。</p>
+</li>
+<li>
+<p>不可变对象</p>
+</li>
+</ul>
+<p>​	 这种对象的owner字段值是Immutable,一旦创建不能修改和转交，但是对所有人开放访问权限。 我们每次发布包就会返回一个不可变对象，所有人都可以访问这个包但包一经发布不可修改。</p>
+<ul>
+<li>被嵌套的对象</li>
+</ul>
+<p>​		这种对象的owner字段值是嵌套对象的地址,。它被一个对象嵌套在内，在链上不能独立存在，也无法使用对象ID直接访问。只能通过嵌套他的对象访问，修改或转移。如果转移给了一个账户地址，该账户的用户就可以通过对象ID直接访问了。</p>
+<p>本节我们只简单介绍一下每种对象的特征，下一节我们将详解讲解如何创建，访问和转交这些对象。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="8轻松入门sui-move-对象下"><a class="header" href="#8轻松入门sui-move-对象下">8.轻松入门Sui Move: 对象（下）</a></h2>
+<p>上一章我们简单概括了四种不同类型的对象，这一章将详细介绍每种对象的使用方法。期间可能会有些关于ability的内容，如果对ability不太熟悉的朋友，建议先看：9.轻松入门Sui Move: Ability</p>
+<h4 id="独有对象"><a class="header" href="#独有对象">独有对象</a></h4>
+<p><strong>独有对象属于某一个账户地址或者某个对象ID，只有该账户地址（或对象）能访问，修改，删除和转交它。</strong></p>
+<h5 id="创建方法"><a class="header" href="#创建方法">创建方法</a></h5>
+<p><strong>创建一个对象后，使用transfer或者public_transfer把所有权转交给一个账户地址（或对象ID），那么这个对象就是独有对象</strong>。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun new(ctx: &amp;mut TxContext) {
+    let person = Person {
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+    };
+    let company = Company {
+        id: object::new(ctx),
+        person: person,
+        can_be_transfered: false,
+    };
+    //company就是一个独有对象
+    transfer::transfer(company, tx_context::sender(ctx))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>那transfer和public_transfer有什么区别呢？我们来看一下实现这两个方法的源码：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun transfer&lt;T: key&gt;(obj: T, recipient: address) {
+    transfer_impl(obj, recipient)
+}
+//public_transfer要求被转交的对象具有key, store ability
+public fun public_transfer&lt;T: key + store&gt;(obj: T, recipient: address) {
+    transfer_impl(obj, recipient)
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们可以看到函数内的实现完全一样，只是不同函数对类型T的限定有区别：public_transfer方法还要求对象必须有store ability。</p>
+<p>根据这个源码，我们得出以下结论：</p>
+<ul>
+<li>无论是transfer还是pubic_transfer,都只能用于转交对象，没有key ability的非对象结构体不能使用。</li>
+<li>如果对象没有store ability 就只能使用transfer</li>
+</ul>
+<p>还有一个区别就是transfer方法只能在定义对象的模块内使用,public_transfer则模块内外均可使用。</p>
+<p>总结来说就是：<strong>transfer适用于没有store ability的对象，只能在定义它的模块内转交。 public_transfer则只能用于有store ability的对象，可以在模块内外转交</strong>。</p>
+<p><font size=4>笔者做了一个小实验，使用transfer在模块内转交有store ability的对象，会触发警告，不影响运行。但不建议这么做。</font></p>
+<h5 id="使用场景"><a class="header" href="#使用场景">使用场景</a></h5>
+<p>只要是在任何时间点都只有一个拥有者的对象，都应该使用独有对象。相比共享对象，独有对象没有数据争用的问题，将会有更快的速度，更小的成本和更高的吞吐量，所以独有对象应用尽用。</p>
+<h4 id="不可变对象"><a class="header" href="#不可变对象">不可变对象</a></h4>
+<p><strong>不可变对象不能被编辑、删除和转交。它不属于任何人，所有人都可以访问它</strong>。</p>
+<h5 id="创建方法-1"><a class="header" href="#创建方法-1">创建方法</a></h5>
+<p><strong>使用freeze_object或者public_freeze_object就可以freeze对象，把对象变成不可变对象</strong>。注意！这个过程是不可逆的。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//创建一个不可变对象
+public fun new_contract(text:String, ctx: &amp;mut TxContext) {
+    transfer::freeze_object(Contract{
+        id: object::new(ctx),
+        text: string::utf8(b"hello world"),
+    })
+}
+<span class="boring">}</span></code></pre></pre>
+<p>freeze_object和public_freeze_object的区别，跟public_transfer和transfer的区别一样，这里不再详解。</p>
+<h5 id="访问方法"><a class="header" href="#访问方法">访问方法</a></h5>
+<p>因为不可变对象不属于任何人，也不允许编辑，所以不可变对象只允许不可变引用。把对象本身作为参数或者使用可变引用都会引起报错，</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//正确
+public fun access_contract(c: &amp;Contract, _: &amp;mut TxContext)
+//报错
+public fun access_contract(c: Contract, _: &amp;mut TxContext)
+//报错
+public fun access_contract(c: &amp;mut Contract, _: &amp;mut TxContext)
+<span class="boring">}</span></code></pre></pre>
+<h5 id="使用场景-1"><a class="header" href="#使用场景-1">使用场景</a></h5>
+<p>只要对象有不可改变，不能转移，不能删除的特性都应该使用不可变对象。不仅是因为它的特性，而且它也没有数据争用问题具有较高性能。一个典型的不可变对象就是我们发布的包。</p>
+<h4 id="共享对象"><a class="header" href="#共享对象">共享对象</a></h4>
+<p><strong>共享对象是使用share_object或者public_share_object函数的对象，它属于所有人，所有人都可以访问、修改、删除和转交它</strong>。这里值得注意的是，所有人都可以访问共享对象不代表模块内外都能直接访问对象内字段，模块外对共享对象字段的访问也只能通过调用定义对象的模块提供的函数实现。所有人都可以转交共享对象也不意味着模块外一定能转交共享对象，模块外要能转交共享对象，要求对象有store abiity 并且使用public_share_object方法。</p>
+<p>share_object和public_share_object的区别请看transfer和public_transfer</p>
+<h5 id="创建方法-2"><a class="header" href="#创建方法-2">创建方法</a></h5>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun new_platform(ctx: &amp;mut TxContext): Admin {
+    let platform = RentalPlatform {
+        id: object::new(ctx),
+        deposit_pool: table::new&lt;ID, u64&gt;(ctx),
+        balance: balance::zero&lt;SUI&gt;(),
+        notices: table::new&lt;ID, RentalNotice&gt;(ctx),
+        owner: tx_context::sender(ctx),
+    };
+
+    transfer::share_object(platform);
+}
+<span class="boring">}</span></code></pre></pre>
+<h5 id="访问方法-1"><a class="header" href="#访问方法-1">访问方法</a></h5>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这三种都可以
+public fun access_platform(c: &amp;Contract, _: &amp;mut TxContext)
+public fun access_platform(c: Contract, _: &amp;mut TxContext)
+public fun access_platform(c: &amp;mut Contract, _: &amp;mut TxContext)
+<span class="boring">}</span></code></pre></pre>
+<h5 id="使用场景-2"><a class="header" href="#使用场景-2">使用场景</a></h5>
+<p>只有必要的时候才使用共享对象，因为所有人都能编辑，转交，删除可能会存在数据争用问题，为了解决数据争用会耗费更多时间和资源。</p>
+<h4 id="被嵌套的对象"><a class="header" href="#被嵌套的对象">被嵌套的对象</a></h4>
+<p>**被嵌套的对象被一个对象嵌套在内，成为外层对象的一部分，在链上不能独立存在，也无法使用对象ID直接访问。只能通过嵌套他的对象访问，修改或转移。**如果它又被转交给了一个账户地址，这个对象就转变成了独有对象，该账户的用户就可以通过对象ID直接访问了。</p>
+<p>嵌套对象的Owner是外层对象ID，那是不是Owner是对象ID的都是嵌套对象呢？？？别忘了独有对象的owner也可能是对象ID，这里需要注意区分。</p>
+<p>注意，非对象结构体也能被嵌套，嵌套时也要求结构体有store ability.但是本文讨论的是对象，非对象结构体暂不详谈。</p>
+<p>嵌套的方式有三种，分别是直接嵌套，通过Option嵌套和通过vector嵌套。我们接下来依次探究每种嵌套方式。</p>
+<h5 id="直接嵌套"><a class="header" href="#直接嵌套">直接嵌套</a></h5>
+<h6 id="创建方式"><a class="header" href="#创建方式">创建方式</a></h6>
+<p><strong>直接把一个对象作为另外一个对象的字段，这种方式就是直接嵌套。</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Company  has key,store {
+    id: UID,     
+    //嵌套Person对象
+    person: Person,
+    can_be_transfered: bool,
+}
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>注意，不能循环嵌套，也就是说A嵌套B,B不能嵌套A。</p>
+<h6 id="访问方式"><a class="header" href="#访问方式">访问方式</a></h6>
+<p>被直接嵌套的对象，不能使用对象ID访问(sui client object命令也不行)，也不能在任何函数调用中将其作为参数，唯一的访问方式就是通过访问外层对象。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_person(company: &amp;Company,_: &amp;mut TxContext) {
+    //使用.一层一层访问
+    let _ = company.person.name;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套"><a class="header" href="#解除嵌套">解除嵌套</a></h6>
+<p>被嵌套的对象，可以取出转交给账户地址，转变成一个独有对象。这个过程称之为解除嵌套。方法如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//这里的company对象必须按值传递才能获取到person的对象
+public entry fun transfer_person(company: Company, ctx: &amp;mut TxContext) {
+    let Company{
+        id:id,
+        person:person,
+        can_be_transfered:can_be_transfered,
+    } = company;
+    let _ = can_be_transfered;
+    //需要使用person对象值来转交
+    transfer::public_transfer(person, tx_context::sender(ctx));
+    //必须删除外层对象
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>本段代码执行完，输出的Transaction Effects 模块，会有一个 Unwrapped Objects，展示的就是解开嵌套的对象。如下：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/unwrap_object.png?raw=true" alt="" /></p>
+<h6 id="应用场景"><a class="header" href="#应用场景">应用场景</a></h6>
+<p>被嵌套的对象无法直接访问只有通过调用模块内特定的函数才能访问，在这个函数内我们可以设置访问的条件，以实现对对象的访问限制。</p>
+<p>被直接嵌套的对象在解除嵌套的时候，必须删除外层对象；并且实例化外层对象的时候也必须同时实例化被嵌套的对象。直接嵌套适用于外层对象必须有嵌套对象的场景。比如公司必须有员工，没员工就会倒闭。</p>
+<p>那有没有一种更灵活的方式，外层对象可能嵌套对象，可能没有嵌套对象，可以动态嵌套；解除嵌套也无需删除外层对象？通过Option嵌套就能轻松实现。</p>
+<h5 id="通过option嵌套"><a class="header" href="#通过option嵌套">通过Option嵌套</a></h5>
+<p>Option是标准库实现的一个结构体，含有copy,drop和store ability，内部包含一个可指定类型的数组字段。源码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//在使用Option类型的时候，需要使用&lt;&gt;指定类型。这是泛型相关知识后续将会讲到
+struct Option&lt;Element&gt; has copy, drop, store {
+    vec: vector&lt;Element&gt;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>那如何使用Option来嵌套对象呢？我们通过一个人和笔记本的例子说明：</p>
+<h6 id="创建方式-1"><a class="header" href="#创建方式-1">创建方式</a></h6>
+<p>有的人拥有笔记本，有的人则没有。所以我们可以声明一个Person对象，通过Option嵌套Notebook对象。我们先实例化一个没有笔记本的Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    notebook: Option&lt;Notebook&gt;,
+}
+//被嵌套的对象必须要有store ability
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public fun new(ctx: &amp;mut TxContext) {
+    transfer::transfer(Person{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+        //可以实例化一个没有Notebook对象的Peroson对象
+        notebook: option::none&lt;Notebook&gt;(),
+        }, tx_context::sender(ctx));
+}
+
+<span class="boring">}</span></code></pre></pre>
+<p>后面这位名为hanmeimei的人购买了一个笔记本，我们使用option::fill方法将Notebook对象嵌入Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//嵌套Notebook对象
+public fun fill_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    //在将Notebook嵌入Person之前，确定Person没有嵌套Notebook。否则会报错
+    assert!(option::is_none(&amp;person.notebook), EOptionNotEmpty);
+
+    let notebook = Notebook {
+        id: object::new(ctx),
+        brand: string::utf8(b"HUAWEI"),
+        model: string::utf8(b"v10"),
+    };
+    //嵌套Notebook
+    option::fill&lt;Notebook&gt;(&amp;mut person.notebook, notebook);    
+}		
+<span class="boring">}</span></code></pre></pre>
+<h6 id="访问方式-1"><a class="header" href="#访问方式-1">访问方式</a></h6>
+<p>访问被Option嵌套的对象也只能通过外层对象访问，可以使用option::borrow方法不可变引用notebook对象，也可以使用option::borrow_mut方法可变引用notebook对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_notebook(person: &amp;Person, _: &amp;mut TxContext) {
+    let notebook_ref = option::borrow&lt;Notebook&gt;(&amp;person.notebook);
+    _ = notebook_ref.brand;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套-1"><a class="header" href="#解除嵌套-1">解除嵌套</a></h6>
+<p>如果要转卖笔记本，则使用option::extract取出，并转交给其他人。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//解除嵌套
+public entry fun unwrap_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    //确认有嵌套，否则会报错
+    assert!(option::is_some(&amp;person.notebook), EOptionEmpty);
+    //解除嵌套并转交给当前用户
+    let notebook = option::extract&lt;Notebook&gt;(&amp;mut person.notebook);
+    transfer::public_transfer(notebook, someone);
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="应用场景-1"><a class="header" href="#应用场景-1">应用场景</a></h6>
+<p>虽然Option类型的唯一字段是数组类型，但是Option&lt;element&gt;只能最多只能包含一个对象。所以Option适合可能有一个嵌套或者没有嵌套对象的场景。那如果我想嵌套多个同类型对象怎么办？我们可以使用vector嵌套对象。</p>
+<h5 id="通过vector嵌套"><a class="header" href="#通过vector嵌套">通过vector嵌套</a></h5>
+<p>很多人可能没有笔记本，开发人员则可能有一个或者多个笔记本，我们使用vector来创建Person对象：</p>
+<h6 id="创建方式-2"><a class="header" href="#创建方式-2">创建方式</a></h6>
+<p>我们可以声明一个Person对象,notebooks字段申明为Notebook类型的数组。并实例化一个没有笔记本的Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    notebooks: vector&lt;Notebook&gt;,
+}
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public fun new(ctx: &amp;mut TxContext) {
+    transfer::transfer(Person{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+        notebooks: vector::empty&lt;Notebook&gt;(),
+        }, tx_context::sender(ctx));
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="访问方式-2"><a class="header" href="#访问方式-2">访问方式</a></h6>
+<p>跟option类型类似，可以使用borrow方法不可变引用。不过因为是数组，在访问的时候需要指定索引，确实访问多个笔记本中的哪一个。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_notebook(person: &amp;Person, index: u64, _: &amp;mut TxContext) {
+    //也可以使用vector::borrow_mut方法可变引用
+    let notebook_ref = vector::borrow&lt;Notebook&gt;(&amp;person.notebooks, index);
+    _ = notebook_ref.brand;
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="解除嵌套-2"><a class="header" href="#解除嵌套-2">解除嵌套</a></h6>
+<p>使用vector::remove方法解除嵌套</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//解除嵌套
+public entry fun unwrap_notebook(person: &amp;mut Person, notebook: &amp;Notebook, ctx: &amp;mut TxContext) {
+    //确认有嵌套，否则会报错
+    let (contains,index) = vector::index_of&lt;Notebook&gt;(&amp;person.notebooks, notebook);
+    assert!(contains, EEmpty);
+    //解除嵌套并转交给当前用户
+    let notebook = vector::remove&lt;Notebook&gt;(&amp;mut person.notebooks, index);
+    transfer::public_transfer(notebook, tx_context::sender(ctx));
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="应用场景-2"><a class="header" href="#应用场景-2">应用场景</a></h6>
+<p>vector方法的嵌套，适用于外层对象有零个或者多个同类型嵌套对象的场景。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="9轻松入门sui-move-ability"><a class="header" href="#9轻松入门sui-move-ability">9.轻松入门Sui Move: Ability</a></h2>
+<p>在前面几章我们一直在说对象的ability，那什么是ability呢？ ability直译过来就是数据类型的能力。</p>
+<p>Ability有四种，分别是key,store,copy,drop。基础数据类型和内建的数据类型的ability是默认的，不可修改的。他们默认有copy,drop,store这三种能力。结构体默认没有任何能力，但是我们可以自行设置结构体的能力。下面我主要讲解每种能力的含义和如何设置结构体的能力。</p>
+<p>无论哪种ability，都是使用has关键字申明，具体如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//多个ability使用逗号隔开
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="key-ability"><a class="header" href="#key-ability">Key Ability</a></h4>
+<p>有些资料说拥有key ability代表能在全局存储中作为key使用，这个并不适用于Sui Move。关于key ability的作用官网如下描述：</p>
+<blockquote>
+<p>On Sui, the <code>key</code> ability indicates that a struct is an object type and comes with an additional requirement that the first field of the struct has signature <code>id: UID</code>, to contain the object’s unique address on-chain.</p>
+</blockquote>
+<p>翻译过来：**如果一个类型，带有key ability就代表他是一个对象，并且要求这个结构体的第一个字段必须是id:UID。**这个id字段包含了这个对象在区块链上的地址。</p>
+<p>如果我们定义了一个结构体有key ability，但是没有id字段或者id字段没在第一位置，编译都会报错：有key ability第一字段就必须是类型为UID的id。如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> public struct Test3 has key {
+     name: String     
+}
+<span class="boring">}</span></code></pre></pre>
+<pre><code class="language-bash">public struct Test3 has key {
+--- The 'key' ability is used to declare objects in Sui
+name: String     
+^^^^ Invalid object 'Test3'. Structs with the 'key' ability must have 'id: sui::object::UID' as their first field
+</code></pre>
+<p>所以<strong>key ability就是用来标识结构体是否是对象的</strong>。</p>
+<h4 id="store-ability"><a class="header" href="#store-ability">Store Ability</a></h4>
+<p>key是对象必有的能力，而store则是对象可选的能力。<strong>有以下两种情况需要指定对象的store abiity:</strong></p>
+<ul>
+<li><strong>1.当一个对象需要在定义他的模块之外被转交</strong></li>
+<li><strong>2.当 一个结构体需要被嵌套的时候</strong></li>
+</ul>
+<p>如果你想限定某一个独有对象只能在定义它的模块内transfer,就无需予对象store ability。比如以下代码中的company对象，如果在定义他的模块外调用transfer方法，或者在命令行使用sui client transfer都会报错。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//没有store ability
+public struct Company  has key {
+    id: UID,     
+    person: Person,
+    can_be_transfered: bool,
+}
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>如果你想限定某个对象只有满足特定条件的时候才能转交，就可以自定义transfer方法，并且限定只能在模块内transfer，这样。实现如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const ECanNotTransfer = 1;
+//对象company没有store ability,只允许在定义对象的模块内transfer
+public struct Company  has key {
+    id: UID,     
+    person: Person,
+    can_be_transfered: bool,
+}
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+//自定义transfer方法
+public fun transfer_company(company: Company, someone: address) {
+    //只有can_be_transfered字段为true才可以transfer，否则退出程序
+    assert!(company.can_be_tra	nsfered, ECanNotTransfer);
+    transfer::transfer(company, someone);
+} 
+<span class="boring">}</span></code></pre></pre>
+<p>如果是非对象结构体，想在对象中作为一个字段存储，也必须要有store能力。</p>
+<h4 id="copy"><a class="header" href="#copy">Copy</a></h4>
+<p>与key ability相反，copy ability不能用于对象。copy ability 就是<strong>用于标记这个结构体是否可以被复制</strong>。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Company  has key {
+    id: UID,     
+    person: Person,
+    can_be_transfered: bool,
+}
+public struct Person has key,store {
+    id:UID,
+    name: String,
+}
+public entry fun new(ctx: &amp;mut TxContext) {
+    let person = Person {
+        id: object::new(ctx),
+        name: string::utf8(b"hanmeimei"),
+    };
+    let company = Company {
+        id: object::new(ctx),
+        person: person,
+        can_be_transfered: false,
+    };
+    //使用关键词copy复制company对象
+    let _company2 = copy company;
+    transfer::transfer(company, tx_context::sender(ctx));
+    transfer::transfer(_company2, tx_context::sender(ctx))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>编译报错：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/copy.png?raw=true" alt="" /></p>
+<p>那我们是不是加上copy ability就可以顺利通过编译呢？？？我们加上之后继续编译，报错如下：</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/coyp2.png?raw=true" alt="" /></p>
+<p><strong>如果要对一个结构体加上copy ability,那么这个结构体内所有字段都需要拥有该ability</strong>然而对象Company的id字段不具有copy ability，而这个id字段是每个对象都有的字段，所以可以得出结论：<strong>copy ability不能用于对象，只能用于非对象结构体</strong>。</p>
+<p>值得注意的是在对结构体设置copy 、store 和drop能力的时候，都需要先确保结构体内所有字段包含这些能力。</p>
+<h4 id="drop"><a class="header" href="#drop">Drop</a></h4>
+<p>跟copy同理，drop ability也只能用于非对象结构体。drop表明<strong>这个结构体是否能在作用域结束的时候自动删除</strong>。如果不能自动删除则需要手动调用删除逻辑。删除结构体的方法详见：6.轻松入门Sui Move: 结构体</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="10轻松入门sui-move-动态字段"><a class="header" href="#10轻松入门sui-move-动态字段">10.轻松入门Sui Move: 动态字段</a></h2>
+<p>在第八章我们讲被嵌套的对象的时候，举了一个例子：人(Person对象)可能拥有0个或者多个笔记本电脑，但在实际生活中，我们不仅仅可以拥有笔记本电脑，我们还可以拥有平板电脑、手机、台式机、游戏机等电子设备。那Person对象的定义将会变成如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    //拥有的笔记本
+    notebooks: vector&lt;Notebook&gt;,
+    //拥有的手机
+    mobile_phones: vector&lt;MobilePhone&gt;,
+    //拥有的游戏机
+    game_consoles: vector&lt;GameConsole&gt;,
+    //拥有的平板电脑
+    ipads: vector&lt;Ipad&gt;,
+}
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+}
+public struct MobilePhone has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    number: u64,
+}
+public struct GameConsole has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    games: vector&lt;u8&gt;,
+}
+public struct Ipad has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    size: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Person对象嵌套了一堆对象，但事实上有的老年人没有任何电子设备，那这个实例化这个老人的Person对象就得带着四个空的对象数组，不仅没有任何意义还会消耗GAS。再者如果每出现一个新型电子设备，就得给Person对象增加一个字段，不仅麻烦，后面Person对象的定义会变得又臭又长，难以维护。如果达到嵌套对象数量的上限，甚至会影响业务实现。</p>
+<p>有没有一种方法，可以让对象只嵌套需要的对象，不限名称不限类型，还可以动态的嵌套，动态解除嵌套对象？</p>
+<p>这时候就要用到动态字段了。</p>
+<p>现在Person对象的类型定义就可以去掉所有电子设备相关的字段：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>定义Notebook，MobilePhone等电子设备对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//注意：Notebook作为动态字段的值，必须具有store ability
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    weight: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>person对象购入一台笔记本电脑，只需调用add方法，给Person对象增加一个动态字段：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun add_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let notebook = Notebook{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        weight: 12,
+    };
+    //给Person对象增加一个动态字段
+    ofield::add&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name(), notebook);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>get_notebook_name()方法是用于获取String类型的动态字段名，而字段值是新实例化的Notebook对象。</p>
+<p>add方法可以将不同类型的电子设备对象都加入到Person对象的动态字段中，而无需修改Person的类型定义。</p>
+<p>如果要转卖笔记本电脑，就使用remove方法从Person对象中删除：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun remove_notebook(person: &amp;mut Person, buyer: address, _:&amp;mut TxContext) {
+    //如果动态字段中不存在，就停止运行
+    assert!(ofield::exists_&lt;String&gt;(&amp;person.id, get_notebook_name()), ENotExsitsInOfiled);
+	//remove方法从动态字段中删除
+    let notebook:Notebook = ofield::remove&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name());
+	//转交给买家
+    transfer::public_transfer(notebook, buyer);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们使用add和remove就可以灵活的给Person对象增加/删除字段，是不是特别简单。</p>
+<p>但是，动态字段有两种，一种是dynamic_object_field，另一种则是dynamic_field。他们之间有什么区别呢，各自使用场景是什么？我们一起看看源码中add方法的定义：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//dynamic_object_field模块
+public fun add&lt;Name: copy + drop + store, Value: key + store&gt;(
+    object: &amp;mut UID,
+    name: Name,
+    value: Value,
+) 
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//dynamic_field模块
+public fun add&lt;Name: copy + drop + store, Value: store&gt;(
+    object: &amp;mut UID,
+    name: Name,
+    value: Value,
+) 
+<span class="boring">}</span></code></pre></pre>
+<p>两个模块对动态字段的字段名有相同的要求：必须是带有copy,drop,store 能力的数据类型。那就包括所有的基础类型和带有这三个能力的非对象结构体。在第9章中阐述了为什么对象不能有copy和drop能力，不懂的小伙伴可以翻阅一下这里不再赘述。</p>
+<p>add函数的区别主要在于字段值。dynamic_object_field模块要求字段值必须是带有store能力的对象，而dynamic_field模块的字段值可以是带有store能力的任何数据类型。</p>
+<p>所以如果字段值是非对象类型，就只能使用dynamic_field模块，但是如果值是对象，如何选择使用哪种动态字段呢？</p>
+<p>假设现在Person对象有两个动态字段，一个值是笔记本另一个则是手机。分别使用两种动态字段添加到Person对象中。笔记本的代码已经在上面代码块add_notebook定义，就不再重复。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct MobilePhone has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    number: u64,
+}
+public entry fun add_mobilephone(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let mp = MobilePhone{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        number: 13512354569,
+    };
+    //使用dynamic_filed模块的add方法
+    field::add&lt;String, MobilePhone&gt;(&amp;mut person.id, get_mobilephone_name(), mp);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>发布合约，再分别调用add_mobilephone方法和add_notebook方法，这两个方法都会创建一个归属于Person对象的Field对象，</p>
+<p>这个Field对象是用于保存动态字段键值对的对象，它在源码中的定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Field&lt;Name: copy + drop + store, Value: store&gt; has key {
+    /// Determined by the hash of the object ID, the field name value and it's type,
+    /// i.e. hash(parent.id || name || Name)
+    id: UID,
+    /// 键
+    name: Name,
+    /// 值
+    value: Value,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>调用add方法新创建的两个Filed对象类型分别是：Field&lt;String, MobilePhone&gt;和Filed&lt;dynamic_object_field::Wrapper&lt;0x1::string::String&gt;, object::ID&gt;。</p>
+<p>这两个Filed对象的name字段类型不同，是为了让dynamic_object_field和dynamic_filed添加的动态字段的字段名区分开，避免产生键冲突。</p>
+<p>使用dynamic_filed::add方法生成的Field对象，通过value字段直接嵌套了MobilePhone对象，那这个MobilePhone对象就只能通过Field对象进行访问，修改，删除和转移了。执行sui client object 命令也会报错不存在这个对象。</p>
+<p>与此不同的是，dynamic_object_field:add对象生成的Field对象值是Notebook对象的ID，并没有嵌套Notebook对象，那就意味着外界依然可以访问Notebook对象。</p>
+<p>所以对象选择哪种方式添加进动态字段，取决于被添加的对象是否需要被外界访问。</p>
+<p>动态字段模块还为我们提供了borrow和borrow_mut方法来不可变引用和可变引用；exists_方法判断是否存在动态字段。</p>
+<p>虽然是为Person对象添加的动态字段，但是删除Person对象并不会默认删除对象的动态字段！所以删除对象的方法里，应该先删除动态字段，再删除对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun delete_person(mut person: Person, _: &amp;mut TxContext) {
+    assert!(ofield::exists_&lt;String&gt;(&amp;person.id, get_notebook_name()), ENotExsitsInOfiled);
+    assert!(field::exists_&lt;String&gt;(&amp;person.id, get_mobilephone_name()), ENotExsitsInOfiled);
+	//删除notebook动态字段
+    let Notebook{id: notebook_id, brand:_, model:_,weight:_} = ofield::remove&lt;String, Notebook&gt;(&amp;mut person.id, get_notebook_name());
+    object::delete(notebook_id);
+	//删除mobilephone动态字段
+    let MobilePhone{id: mobilephone_id, brand:_, model:_,number:_} = field::remove&lt;String, MobilePhone&gt;(&amp;mut person.id, get_notebook_name());
+    object::delete(mobilephone_id);
+	//删除person对象
+    let Person{id:id, name: _} = person;
+    object::delete(id);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="11轻松入门sui-move-bag和table"><a class="header" href="#11轻松入门sui-move-bag和table">11.轻松入门Sui Move: Bag和Table</a></h2>
+<p>上一章我们讲到使用动态字段可以给Person对象动态添加电子设备的例子，因为无法直接获取Person对象的动态字段个数，在删除Person对象之前，具体应该删除多少个动态字段也是不确定的，所以其实特别容易漏删，造成资源浪费。</p>
+<p>Sui框架基于dynamic_field实现Bag和Table对象，解决了这个问题。Bag是一个异构的映射集合，也就是说值是键值对形式，而且每对键值对的类型可以不同。Table也是一个映射集合，但是所有键值对的类型必须一致。这一点从名字也有体现，包（bag）里可以塞任何东西，表格（Table）则只能按条目填写。</p>
+<p>基于dynamic_object_field则实现了ObjectBag和ObjectTable。他们与Bag、Table的区别跟dynamic_field和dynamic_object_field的区别一样，这里不再赘述。本章我们以Bag和Table为例，讲解如何使用“升级版”动态字段。</p>
+<p>我们先看Bag和Table的定义：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Bag has key, store {
+    /// the ID of this bag
+    id: UID,
+    /// the number of key-value pairs in the bag
+    size: u64,
+}
+public struct Table&lt;phantom K: copy + drop + store, phantom V: store&gt; has key, store {
+    /// the ID of this table
+    id: UID,
+    /// the number of key-value pairs in the table
+    size: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Bag和Table对象只有两个字段，其中size字段用于记录键值对的个数。</p>
+<p>有的朋友可能会疑惑，这两个对象不都是映射集合嘛，怎么没有保存键值对的字段？别忘了我们讲到这俩对象是通过dynamic_field实现的。他们的add方法实现如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun add&lt;K: copy + drop + store, V: store&gt;(bag: &amp;mut Bag, k: K, v: V) {
+    field::add(&amp;mut bag.id, k, v);
+    bag.size = bag.size + 1;
+}
+
+public fun add&lt;K: copy + drop + store, V: store&gt;(table: &amp;mut Table&lt;K, V&gt;, k: K, v: V) {
+    field::add(&amp;mut table.id, k, v);
+    table.size = table.size + 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>往Bag对象中添加键值对，本质就是往Bag对象添加动态字段，键作为动态字段的名称，值作为动态字段的值。我们上一节讲到每次调用dynamic_filed::add方法，都会创建一个Field对象，现在这个Field对象跟Bag对象关联，所以调用dynamic_filed::add的时候，传入的是bag的id，并且Bag对象对动态字段的数量进行了管理，每次新增+1，每次删除动态字段减一。Table对象也是如此，不再赘述。</p>
+<p>所以官网说，Bag和Table不像传统的映射集合在其中保存键值对，它们的键值对作为对象保存在Sui的对象系统中，而Bag和Table只提供处理键值对的方法。那提供了哪些方法呢？</p>
+<p>我们还是延用上一章的例子讲解Bag用法，人（Person）可以拥有多个不同种类的电子设备，比如笔记本、手机等。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//人对象定义
+public struct Person has key {
+    id: UID,
+    name: String,
+    electronic_devices: Bag,
+}
+//笔记本对象定义
+public struct Notebook has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    weight: u64,
+}
+//手机对象定义
+public struct MobilePhone has key,store {
+    id: UID,
+    brand: String,
+    model: String,
+    number: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Person对象新增一个名为电子设备的字段，字段类型是Bag对象。我们来实例化一个Person对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun new(ctx: &amp;mut TxContext) {
+    transfer::transfer(
+        Person{
+            id: object::new(ctx),
+            name: string::utf8(b"hanmeimei"),
+            electronic_devices: bag::new(ctx),
+        }, tx_context::sender(ctx)
+    );
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这里调用了bag::new方法，实例化了一个没有任何内容的电子设备。</p>
+<h6 id="添加键值对"><a class="header" href="#添加键值对">添加键值对</a></h6>
+<p>假如现在购买了一个笔记本和一个手机，我们使用如下方法，给electronic_devices字段添加键值对：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//添加一个笔记本
+public entry fun add_notebook(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let notebook = Notebook{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        weight: 12,
+    };
+    //键是vector&lt;u8&gt;类型，值是Notebook对象
+    bag::add&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;mut person.electronic_devices, b"notebook_1", notebook);
+}
+public entry fun add_mobilephone(person: &amp;mut Person, ctx: &amp;mut TxContext) {
+    let mp = MobilePhone{
+        id: object::new(ctx),
+        brand: string::utf8(b"brand"),
+        model: string::utf8(b"model"),
+        number: 13512354569,
+    };
+    //u8类型，值是MobilePhone对象
+    bag::add&lt;u8, MobilePhone&gt;(&amp;mut person.electronic_devices, 1, mp);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>两个方法都调用bag::add方法，往electronic_devices字段添加了不同类型的键值对。添加完两个电子设备，我们可以直接通查看Person对象，就可以获取这个对象拥有的电子设备数量:</p>
+<p><img src="bag.png" alt="" /></p>
+<h6 id="访问键值对"><a class="header" href="#访问键值对">访问键值对</a></h6>
+<p>跟其他类型一样，访问分为不可变访问和可变访问，使用哪个取决于是否需要改变键值对的值（注意这里只能改变值，不能改变键）。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun access_notebook(person: &amp;Person, _: &amp;mut TxContext) {
+        assert!(bag::contains&lt;vector&lt;u8&gt;&gt;(&amp;person.electronic_devices, b"notebook_1"), 1);
+    	//不可变访问
+        let notebook_ref = bag::borrow&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;person.electronic_devices, b"notebook_1");
+        let _ = notebook_ref.brand;
+    }
+    public entry fun modify_notebook(person: &amp;mut Person, _: &amp;mut TxContext) {
+        assert!(bag::contains&lt;vector&lt;u8&gt;&gt;(&amp;person.electronic_devices, b"notebook_1"), 1);
+        //可变访问
+        let notebook_ref = bag::borrow_mut&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;mut person.electronic_devices, b"notebook_1");
+        notebook_ref.brand = string::utf8(b"pingguo");
+    }
+<span class="boring">}</span></code></pre></pre>
+<p>在访问之前必须使用bag::contains判断是否存在该键值，否则会报错。使用bag::borrow方法会返回对Notebook对象的不可变引用，而bag::borrow_mut方法则是可变引用。</p>
+<h6 id="删除键值对"><a class="header" href="#删除键值对">删除键值对</a></h6>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun remove_notebook(person: &amp;mut Person, _: &amp;mut TxContext) {
+    assert!(bag::contains&lt;vector&lt;u8&gt;&gt;(&amp;person.electronic_devices, b"notebook_1"), 1);
+    let Notebook{id:id,brand:_,model:_,weight:_} = bag::remove&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;mut person.electronic_devices, b"notebook_1");
+    id.delete();
+}
+<span class="boring">}</span></code></pre></pre>
+<p>为避免报错，删除之前也需要使用bag::contains确定是否包含该键。调用bag::remove方法会返回Notebook对象本身，我们可以选择删除这个对象或者转交。</p>
+<p>注意，这里我使用的是id.delete()来删除对象这是Move 2024新增用法，是不是比原来的object::delete(id)顺眼？</p>
+<h6 id="删除person对象"><a class="header" href="#删除person对象">删除Person对象</a></h6>
+<p>因为Bag是基于dynamic_field实现的，所以删除Person对象，也不会自动删除Bag内的键值对。所以删除Person对象之前也需要先删除键值对：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun delete_person(person: Person, _: &amp;mut TxContext) {
+    let Person{id:id, name: _, electronic_devices: mut electronic_devices} = person;
+
+    assert!(bag::contains&lt;vector&lt;u8&gt;&gt;(&amp;electronic_devices,  b"notebook_1"), 1);
+    let Notebook{id:notebook_id,brand:_,model:_,weight:_} = bag::remove&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;mut electronic_devices, b"notebook_1");
+    notebook_id.delete();
+
+    assert!(bag::is_empty(&amp;electronic_devices), 1);
+    bag::destroy_empty(electronic_devices);
+    id.delete();       
+}
+<span class="boring">}</span></code></pre></pre>
+<p>与上一章的删除Person对象不同，这里可以使用Bag提供的bag::is_empty方法判断是否已经删除所有的键值对，以此避免漏删。从这个角度来说我们应该尽量使用Bag而不是dynamic_field。</p>
+<p>Table、ObjectTable、ObjectBag的用法都跟Bag一样，这里就不再赘述。总结来说Bag和Table其实只是一种在dynamic_field的基础上又封装了一层带有数量管理功能的对象。本文不仅仅介绍Bag和Table的用法，更是希望给读者展示Move如何通过装饰器模式扩展功能，希望读者能举一反三，开发出高效优美的Move代码。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="12轻松入门sui-move-父子对象"><a class="header" href="#12轻松入门sui-move-父子对象">12.轻松入门Sui Move: 父子对象</a></h2>
+<p>我们在第八章讲对象的类别的时候，讲到独有对象，它只属于一个账户或者对象，只有这个账户或者对象可以对其进行访问、删除、修改和转交。这是因为Move并没有区分转交的目标是一个账户的地址还是一个对象ID。当一个对象被转交给另一个对象的时候，这两个对象就形成了父子关系，为了方便下面我统一将被转交的对象称之为子对象，作为owner的另一个对象称之为父对象。</p>
+<p>如何创建父子对象，这个我们在上一章就讲过，只需要transfer给一个对象即可：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Parent has key {
+    id:UID,
+    name: String,
+}
+public struct Child has key {
+    id:UID,
+    description: String,
+} 
+public entry fun new_parent(ctx: &amp;mut TxContext) {
+    transfer::transfer(Parent{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmi"),
+        }, tx_context::sender(ctx));
+}
+public entry fun new_child(parent_id: address, ctx: &amp;mut TxContext) {
+    transfer::transfer(Child{
+        id: object::new(ctx),
+        description: string::utf8(b"this is a description"),
+        }, parent_id);
+} 
+<span class="boring">}</span></code></pre></pre>
+<p>但是要成功创建父子对象需要保证父对象的ID存在并且这个父对象不是不可变对象。因为后续需要对父对象进行可变引用，而不可变对象不允许这么做。</p>
+<p>当对象属于一个账户地址的时候，只要使用对应账户的上下文就可以访问这个对象。但是如果对象属于另外一个对象，就只能通过这个对象访问了，如何通过这个对象访问呢？前面我们讲嵌套对象的时候讲到过如何通过一个对象访问另一个对象，是否可以沿用这个方法呢？</p>
+<p>独有对象跟嵌套对象虽然都是一个对象属于另一个对象，但大相径庭，首先被嵌套的对象必须有store ability，而独有对象不用；其次被嵌套的对象是直接或者间接作为外层对象的一个字段，所以访问被嵌套对象只需要像访问外层对象的一个字段就可以实现被嵌套对象的访问。</p>
+<p>但独有对象的值并不保存在对象中，自然无法像嵌套对象那样访问。Move提供了receive和public_receive方法。下面这个例子展示了如何接收子对象并修改它：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun modify_child(parent: &amp;mut Parent, to_receive: Receiving&lt;Child&gt;, _: &amp;mut TxContext) {
+    let mut child = transfer::receive&lt;Child&gt;(&amp;mut parent.id, to_receive);
+    child.description = string::utf8(b"have changed");
+    transfer::transfer(child, object::uid_to_address(&amp;parent.id));
+}
+<span class="boring">}</span></code></pre></pre>
+<p>访问子对象的方法，必须对父对象使用可变引用，并且使用Receive结构体作为另一个参数。然后调用transfer::receive方法来返回子对象本身。修改完子对象后再次转交到父对象，就完成了子对象的修改。</p>
+<p>那如何将Receive结构体值作为参数调用modify_child方法？我们直接使用子对象的ID作为参数传入即可，如下：</p>
+<pre><code class="language-bash">sui client call --package $PACKAGE --module $MODULE --function modify_child --args $PARENT_ID $CHILD_ID
+</code></pre>
+<p>上面的例子Parent、Child对象和所有方法都在同一个模块中，并且Child只有key ability没有store ability，所以我们使用receive方法。如果Child对象有store ability我们也可以在定义Child模块之外使用public_receive方法。现在我们尝试在定义子对象的模块外接收它，父子对象分别在不同模块定义：</p>
+<p>父对象模块：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Parent has key {
+    id:UID,
+    name: String,
+}
+public entry fun new_parent(ctx: &amp;mut TxContext) {
+    transfer::transfer(Parent{
+        id: object::new(ctx),
+        name: string::utf8(b"hanmi"),
+        }, tx_context::sender(ctx));
+}
+public entry fun new_child(parent_id: address, ctx: &amp;mut TxContext) {
+    //创建父子对象关系，因为是在父对象模块，只能使用public_transfer
+    transfer::public_transfer(child::new(ctx), parent_id);
+}
+public entry fun motify_child(parent: &amp;mut Parent, to_receive: Receiving&lt;Child&gt;, _: &amp;mut TxContext) {
+    //接收子对象，因为是在父对象模块只能使用public_receive
+    let mut child = transfer::public_receive&lt;Child&gt;(&amp;mut parent.id, to_receive);
+    //只能调用子对象的方法修改，不能在定义对象的模块外修改
+    child::modify(&amp;mut child);
+    transfer::public_transfer(child, object::uid_to_address(&amp;parent.id));
+}
+<span class="boring">}</span></code></pre></pre>
+<p>子对象模块：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//包含store ability才能在模块外转发，接收对象
+public struct Child has key,store{
+    id:UID,
+    description: String,
+}
+//只能在定义对象的模块内，创建、修改对象。
+public fun new(ctx: &amp;mut TxContext):Child {
+    Child{
+        id: object::new(ctx),
+        description: string::utf8(b"this is a description"),
+    }
+}
+public fun modify(child: &amp;mut Child) {
+    child.description = string::utf8(b"have changed");
+}
+<span class="boring">}</span></code></pre></pre>
+<p>因为要在模块外接收它，子对象就必须有store ability。我们在前面章节讲过，对象的创建和修改，也都只能在定义它的模块中实现，所以在父对象模块中使用public_receive接收并修改子对象就只能调用子对象修改字段的方法，而不是直接修改。</p>
+<p>如果我们想自定义接收规则，可以不给子对象store ability，在子对象模块内实现自定义接收方法，在方法内使用receive接收子对象。其他模块想接收子对象就只能调用这个接收方法以此保证遵循自定义接收规则。跟自定义transfer规则的机制相同，这里不再赘述。</p>
+<p>我们前面说，父对象不能是不可变对象，那父对象可能是一个独有对象、共享对象或者被嵌套对象。因为子对象需要根据父对象先接收后访问，所以父对象的访问控制也会影响子对象的访问控制：</p>
+<ul>
+<li>如果父对象是一个独有对象，那就只有在owner账户上下文中，可以通过对父对象可变引用来访问子对象</li>
+<li>如果父对象是一个共享对象，那所有用户都可以访问子对象</li>
+<li>如果父对象是一个被嵌套的对象，那就取决于外层对象的访问控制。</li>
+</ul>
+<p>接下来我想介绍一种特殊的父子对象–灵魂绑定：可以从父对象中取出子对象访问，但是在这之后必须将子对象返还给父对象。代码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Child has key {
+    id: UID,
+}
+//归还子对象的清单,没有drop能力，不允许自动析构
+struct ReturnReceipt { 
+    object_id: ID, 
+    return_to: address,
+}
+public fun get_object(parent: &amp;mut UID, soul_bound_ticket: Receiving&lt;Child&gt;): (Child, ReturnReceipt) {
+    let soul_bound = transfer::receive(parent, soul_bound_ticket);
+    let return_receipt = ReturnReceipt { 
+        return_to: object::uid_to_address(parent),
+        object_id: object::id(&amp;soul_bound),
+    };
+    (soul_bound, return_receipt)
+}
+public fun return_object(soul_bound: Child, receipt: ReturnReceipt) {
+    let ReturnReceipt { return_to, object_id }  = receipt;
+    assert!(object::id(&amp;soul_bound) == object_id, EWrongObject);
+    sui::transfer::transfer(soul_bound, return_to);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>ReturnReceipt结构体是一个hot potato结构体,主要保存父子对象映射。get_object方法就是通过对父对象的可变引用获取子对象的方法。return_object方法则将取出的子对象又归还给父对象并销毁归还清单。</p>
+<p>调用get_object方法不仅会返回子对象，还会返回一个归还子对象的清单。这个清单是ReturnReceipt结构体的实例，没有drop能力，不会自动析构，要想保证交易的成功，就必须再调用return_object去删除ReturnReceipt实例，以此保证在取出Child对象之后一定会返还，父子对象再次绑定，这就像绑定灵魂契约一次绑定永不改变！</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="13轻松入门sui-move--事件和泛型"><a class="header" href="#13轻松入门sui-move--事件和泛型">13.轻松入门Sui Move:  事件和泛型</a></h2>
+<h3 id="事件"><a class="header" href="#事件">事件</a></h3>
+<p>学过设计模式的朋友们，应该都知道观察者模式，又叫做发布订阅模式（publish/subscribe）模式。</p>
+<p>观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象在状态发生变化时，会通知所有观察者对象，使它们能够自动更新自己。</p>
+<p>使用Event模块将数据发送到链外就实现了观察者模式，今天我们要讲的就是如何使用Event发送主题来追踪链上活动。</p>
+<p>Event模块源码非常简单，只包含一个方法：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module sui::event {
+    /// Emit a custom Move event, sending the data offchain.
+    ///
+    /// Used for creating custom indexes and tracking onchain
+    /// activity in a way that suits a specific application the most.
+    ///
+    /// The type `T` is the main way to index the event, and can contain
+    /// phantom parameters, eg `emit(MyEvent&lt;phantom T&gt;)`.
+    public native fun emit&lt;T: copy + drop&gt;(event: T);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>从源码可以看到，发送的事件是包含copy和drop能力的任何类型。我们使用这个方法，就可以将数据发送到链外:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct ObjectCreated has copy, drop {
+   //...一些属性
+}
+event::emit(ObjectCreated {
+    //一些属性赋值
+});
+<span class="boring">}</span></code></pre></pre>
+<p>我们自定义了一个包含copy和drop的结构体，在实例化这个结构体之后，通过emit方法将其发送到链外。</p>
+<h3 id="泛型"><a class="header" href="#泛型">泛型</a></h3>
+<p>我们在前面章节，举了一个例子，一个人（Person对象）拥有多个电子设备，比如手机，笔记本等。我们可以使用Bag来保存人的电子设备。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Person has key {
+    id: UID,
+    name: String,
+    electronic_devices: Bag,
+}
+public entry fun add_notebook(person: &amp;mut Person, notebook: Notebook, _: &amp;mut TxContext) {
+    bag::add&lt;vector&lt;u8&gt;, Notebook&gt;(&amp;mut person.electronic_devices, b"notebook_1", notebook);
+}
+public entry fun add_mobilephone(person: &amp;mut Person, mp: MobilePhone, _: &amp;mut TxContext) {
+    bag::add&lt;u8, MobilePhone&gt;(&amp;mut person.electronic_devices, 1, mp);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>add_notebook和add_mobilephone分别用于增加Person对象的笔记本和手机。除了笔记本和手机外还有Iwatch、Ipad、PC电脑等等电子设备，我们每增加一个电子设备的类型，都要增加一个add_方法来给Person对象新增电子设备。但实际上这两个方法除了参数类型不一样，实现都是无差别的。有没有一种方法可以使一个传入参数代表多种类型，从而让这个函数可以处理不同类型的传参？这就是我们今天要讲的泛型。泛型就是在函数或者结构体上新增一种特殊的参数——类型参数。在使用函数或者结构体的时候通过传入类型参数指定参数类型。</p>
+<p>在函数中定义泛型的方法如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public entry fun add_electronic_device&lt;T: store&gt;(person: &amp;mut Person, device: T, _: &amp;mut TxContext) {
+    bag::add&lt;vector&lt;u8&gt;, T&gt;(&amp;mut person.electronic_devices, b"notebook_1", device);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在函数名称后&lt;&gt;内申明这个函数的参数device的类型，T只是一个占位符，可以是X也可以是Y,但是更多时候使用T代表一个类型参数。可以申明一个类型参数也可以申明多个类型参数，多个之间使用逗号隔开。也可以指定这个类型参数必须具有的能力，多个能力使用+号连接。</p>
+<p>比如bag模块的add函数有K,V两个类型参数，并分别有不同能力限定：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun add&lt;K: copy + drop + store, V: store&gt;(bag: &amp;mut Bag, k: K, v: V) {
+    field::add(&amp;mut bag.id, k, v);
+    bag.size = bag.size + 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>我们在调用这个函数需要使用尖括号指定参数device的类型，如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>add_electronic_device&lt;Notebook&gt;(person, nt, ctx);
+<span class="boring">}</span></code></pre></pre>
+<p>如果是使用命令行调用这个方法，则需要用到–type-args</p>
+<pre><code class="language-bash">sui client call --package $PACKAGE --module $MODULE --function add_electronic_device --args $PERSON $DEVICE --type-args "0xed4593bd4d24170af4eb6a52a13ca551d567297af55e003c52615cb467f41c74::person::Notebook" --gas-budget 10000000
+</code></pre>
+<p>–type-args选项后需要列举出这个函数的所有泛型，缺一个都会报错。值是由package_id::module::struct的结构组成。</p>
+<p>除了在函数中使用泛型，结构体中也可以使用。比如我们前面讲到的动态字段中保存键值对的Field对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/// Internal object used for storing the field and value
+public struct Field&lt;Name: copy + drop + store, Value: store&gt; has key {
+    /// Determined by the hash of the object ID, the field name value and it's type,
+    /// i.e. hash(parent.id || name || Name)
+    id: UID,
+    /// The value for the name of this field
+    name: Name,
+    /// The value bound to this field
+    value: Value,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>方法跟函数中使用泛型类似，这里不再赘述。</p>
+<p>泛型还有一种比较特殊的用法，申明一个类型参数但并不使用它，只是用于区分或者约束。但是如果申明了一个类型参数不使用，编译肯定会报错，如下：</p>
+<pre><code class="language-bash">warning[W09006]: unused struct type parameter
+   ┌─ sources/test5.move:12:22
+   │
+12 │     public struct Yy&lt;T&gt; has copy, drop {
+   │                      ^ Unused type parameter 'T'. Consider declaring it as phantom
+   │
+   = This warning can be suppressed with '#[allow(unused_type_parameter)]' applied to the 'module' or module member ('const', 'fun', or 'struct')
+</code></pre>
+<p>报错：存在一个未使用的类型参数T，考虑将其申明为phantom。像这种申明类型参数但不使用它的情况，应该将类型参数申明为“幻影”类型参数。</p>
+<p>比如Sui Framework里的Coin对象，申明如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/// A coin of type `T` worth `value`. Transferable and storable
+public struct Coin&lt;phantom T&gt; has key, store {
+    id: UID,
+    balance: Balance&lt;T&gt;
+}
+/// Storable balance - an inner struct of a Coin type.
+/// Can be used to store coins which don't need the key ability.
+public struct Balance&lt;phantom T&gt; has store {
+    value: u64
+}
+<span class="boring">}</span></code></pre></pre>
+<p>使用zero方法实例化一个Coin对象的时候也要指定幻影类型参数以表明Coin的货币类型：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//创建一个SUI币的Coin
+let coin = coin::zero&lt;SUI&gt;();
+<span class="boring">}</span></code></pre></pre>
+<p>coin对象包含Balance类型的字段，而Balance包含phantom类型参数，我们可以看到Balance结构体的定义中并没有使用类型T，这种时候就必须使用幻影类型参数了，这个幻影类型参数仅仅用于表明余额的货币类型。 Coin使用了Balance,那也必须申明幻影类型参数，否则会导致一个报错。</p>
+<p>注意：使用幻影类型参数定义结构体或者函数，就不能再结构体或函数中使用它了。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="番外篇我在dacade赚了100sui"><a class="header" href="#番外篇我在dacade赚了100sui">番外篇：我在dacade赚了100SUI</a></h2>
+<p>事先说明，本篇文章不是广告，只是讲述我如何在Dacade的挑战中赢得了100SUI的经历。如果大家有疑问可以自己去dacade官网查看，仔细辨别：https://dacade.org/communities/sui/challenges/19885730-fb83-477a-b95b-4ab265b61438</p>
+<p>这是我在dacede中提现100SUI的截图:</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/dacade.jpg?raw=true" alt="" /></p>
+<p>这个挑战的要求是</p>
+<ul>
+<li>
+<p>在DEFI领域创建创新项目，例如用于交易所，贷款平台或产量耕作应用程序的原型。</p>
+</li>
+<li>
+<p>确保项目的高质量代码：结构良好，高效，最佳实践，详细的代码注释并没有错误。</p>
+</li>
+</ul>
+<p>按照上述要求编写，70分以上就能获得100SUI。他们的评分分为两个部分，一个是原创分满分60，另外一个部分则是代码质量分满分40分。原创是非常重要的分数，建议大家在写之前看看历次已经得分的提交，如果有人写过的功能最好就不要写了，原创分低的话很难超过70。高质量代码他们也给出了范例，可以拉优秀的代码下来研究一下再写</p>
+<p><img src="https://github.com/Crazyjs123/crazyjs123.github.io/blob/main/pic/best_submit.jpg?raw=true" alt="" />代码提写完代码提交到代码仓库，并在dacade中提交你的代码仓库地址，接下来只需要等待审核就可以啦。根据我的观察审核周期是在一周到一个月不等，只要审核通过就会收到邮件。</p>
+<p>下面我介绍一下我在dacade审核通过的代码，希望能给大家一起启发：</p>
+<p>我编写的是一个公平公开的租房平台，可以防止提灯定损。在这平台中有三个角色：平台管理员，房东，房客。房东发布租房信息，房客租房时需要缴纳房租和押金，房租将会打款给房东，而押金则交由平台托管。等房租到期房东验房并管理员审核之后才能扣除押金，房客退房时退还剩余押金。</p>
+<p>租房平台对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct RentalPlatform has key {
+    // uid of the RentalPlatform object
+    id: UID,
+    // deposit stored on the rental platform, key is house object id,value is the amount of deposit
+    deposit_pool: Table&lt;ID, u64&gt;,
+    balance: Balance&lt;SUI&gt;,
+    // rental notices on the platform, key is house object id
+    notices: Table&lt;ID, RentalNotice&gt;,
+    //owner of platform
+    owner: address,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这是一个共享对象，不仅保存了房东发布的租房信息（notices）,还保存了租房押金，balance就是所有租房押金的总和，deposit_pool保存了每个房屋的押金明细。</p>
+<p>还有一个平台管理员的对象，是一个独有对象，创建它主要是为了权限管理，只有拥有这个对象的上下文才能请求比如审核验房报告的接口。这个对象是在创建租房平台的接口中创建并转交给请求者的。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//presents Rental platform administrator
+struct Admin has key, store {
+	// uid of admin object
+	id: UID,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>租房信息由房东发布，包含租金押金等信息：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//If the landlord wants to rent out a house, they first need to issue a rental notice
+struct RentalNotice has key,store  {
+    // uid of the RentalNotice object
+    id: UID,
+    // the amount of gas to be paid per month
+    monthly_rent: u64,
+    // the amount of gas to be deposited 
+    deposit: u64,
+    // the id of the house object
+    house_id: ID,
+    // account address of landlord
+    landlord: address,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>房屋对象则是房屋的虚拟化，租房前房东拥有它，租房后租客拥有它：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// present a house object
+struct House has key {
+    // uid of the house object
+    id: UID,
+    // The square of the house area
+    area: u64,
+    // The owner of the house
+    owner: address,
+    // A set of house photo links
+    photo: String,
+    // The landlord's description of the house
+    description: String
+}
+<span class="boring">}</span></code></pre></pre>
+<p>租客想租房，就需要签订租房合同，租房合同一旦创建不可改变，不可销毁，所以这里的租房合同是一个不可变对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// present a house rentle contract object
+struct Lease has key,store {
+    // uid of the Lease object
+    id: UID,
+    //uid of house object
+    house_id: ID,
+    // Tenant's account address
+    tenant: address,
+    // Landlord's account address
+    landlord: address,
+    // The month plan to rent
+    tenancy: u32,
+    // The mount of gas already paid
+    paid_rent: u64,
+    // The mount of gas already paid for deposit
+    paid_deposit: u64,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在租约到期之后，房东需要出具验房报告并提交给管理员审核，以获取房屋损坏的赔偿。验房报告包含房屋损伤相关的证明</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//presents inspection report object.The landlord submits the inspection report, and the administrator reviews the inspection report
+struct Inspection has key,store {
+    // uid of the Inspection object
+    id: UID,
+    //id of the house object
+    house_id: ID,
+    //id of the lease object
+    lease_id: ID,
+    //Damage level, from 0 to 3, evaluated by the landlord
+    damage: u8,
+    //Description of damage details submitted by the landlord
+    damage_description: String,
+    //Photos of the damaged area submitted by the landlord
+    damage_photo: String,
+    //Damage level evaluated by administrator
+    damage_assessment_ret: u8,
+    //Deducting the deposit based on the damage to the house
+    deduct_deposit: u64,
+    //Used to mark whether the administrator reviews or not
+    review_status: u8,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>最后我再挑选几个主要的接口讲解一下。分别是房东发布租房信息、租客交钱签订租房合同、房东交房给租客、房东验房并提交报告、平台管理员审核验房报告并给与房东补偿，租客退房并领取剩余押金。</p>
+<ul>
+<li>
+<p>房东发布租房信息</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//The landlord releases a rental message, creates a rentalnotice object and create a  house object
+public fun post_rental_notice(platform: &amp;mut RentalPlatform, monthly_rent: u64, housing_area: u64, description: vector&lt;u8&gt;, photo: vector&lt;u8&gt;, ctx: &amp;mut TxContext): House {
+    //caculate deposit by monthly_rent
+    let deposit = (monthly_rent * DEPOSIT_PERCENT) / 100;
+
+    let house = House {
+        id: object::new(ctx),
+        area: housing_area,
+        owner: tx_context::sender(ctx),
+        photo: string::utf8(photo),
+        description:string::utf8(description),
+    };
+    let rentalnotice = RentalNotice{
+        id: object::new(ctx),
+        deposit: deposit,
+        monthly_rent: monthly_rent,
+        house_id: object::uid_to_inner(&amp;house.id),
+        landlord: tx_context::sender(ctx),
+    };
+
+    table::add&lt;ID, RentalNotice&gt;(&amp;mut platform.notices, object::uid_to_inner(&amp;house.id), rentalnotice);
+
+    house
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>租客交钱签订租房合同</p>
+<p>这个接口暂时只接收SUI币的coin,如果缴纳的金额不正确将会报错。在这个事务中，一旦租房成功，租房合约签订完毕，租房信息将会被删除。押金归入到了平台的balance字段，租金打入了房东账户。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//call pay_rent function,transfer rent coin object  to landlord, deposit will be managed by platform.
+public entry fun pay_rent_and_transfer(platform: &amp;mut RentalPlatform, house_address: address, tenancy: u32,  paid: Coin&lt;SUI&gt;, ctx: &amp;mut TxContext) {
+    let house_id: ID = object::id_from_address(house_address);
+    let (rent_coin, deposit_coin, landlord) = pay_rent(platform, house_id, tenancy, paid, ctx);
+    transfer::public_transfer(rent_coin, landlord);
+    balance::join(&amp;mut platform.balance, coin::into_balance(deposit_coin));
+}
+//Tenants pay rent and sign rental contracts
+public fun pay_rent(platform: &amp;mut RentalPlatform, house_id: ID, tenancy: u32,  paid: Coin&lt;SUI&gt;, ctx: &amp;mut TxContext): (Coin&lt;SUI&gt;, Coin&lt;SUI&gt;, address) {
+    assert!(tenancy &gt; 0, ETenancyIncorrect);
+    assert!(table::contains&lt;ID, RentalNotice&gt;(&amp;platform.notices, house_id), EInvalidNotice);
+
+    let notice = table::borrow&lt;ID, RentalNotice&gt;(&amp;platform.notices, house_id);
+    assert!(!table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, notice.house_id), EInvalidHouse);
+
+
+    let rent = notice.monthly_rent * (tenancy as u64);
+    let total_fee = rent + notice.deposit;
+    assert!(total_fee == coin::value(&amp;paid), EInvalidSuiAmount);
+
+    //the deposit is stored by rental platform
+    let deposit_coin = coin::split&lt;SUI&gt;(&amp;mut paid, notice.deposit, ctx);
+    table::add&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, notice.house_id, notice.deposit);
+
+    //lease is a Immutable object
+    let lease = Lease {
+        id: object::new(ctx),
+        tenant: tx_context::sender(ctx),
+        landlord: notice.landlord,
+        tenancy: tenancy,
+        paid_rent: rent,
+        paid_deposit: notice.deposit,
+        house_id: notice.house_id,
+    };
+    transfer::public_freeze_object(lease);
+
+    //remove notice from platform
+    let RentalNotice{id: notice_id, monthly_rent: _, deposit: _, house_id: _, landlord: landlord } = table::remove&lt;ID, RentalNotice&gt;(&amp;mut platform.notices, house_id);
+    object::delete(notice_id);
+
+
+    (paid, deposit_coin, landlord)
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>房东交房给租客</p>
+<p>这个接口非常简单，就是转移house的所有权给租客</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//After the tenant pays the rent, the landlord transfers the house to the tenant
+public entry fun transfer_house_to_tenant(lease: &amp;Lease, house: House) {
+    transfer::transfer(house, lease.tenant)
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>房东验房并提交报告</p>
+<p>房东需要对房屋损伤评级，1-4级分别赔偿押金的0%,10%,50%,100%。具体赔付结果需要管理员定级。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//Rent expires, landlord inspects and submits inspection report
+public entry fun landlord_inspect(lease: &amp;Lease, damage: u8, damage_description: vector&lt;u8&gt;, damage_photo: vector&lt;u8&gt;, ctx: &amp;mut TxContext) {
+    assert!(lease.landlord == tx_context::sender(ctx), ENoPermission);
+    assert!(damage &gt;= DAMAGE_LEVEL_0 &amp;&amp; damage &lt;= DAMAGE_LEVEL_3, EDamageIncorrect);
+    let inspection = Inspection{
+        id: object::new(ctx),
+        house_id: lease.house_id,
+        lease_id: object::uid_to_inner(&amp;lease.id),
+        damage: damage,
+        damage_description: string::utf8(damage_description),
+        damage_photo: string::utf8(damage_photo),
+        damage_assessment_ret: DAMAGE_LEVEL_UNKNOWN,
+        deduct_deposit: 0,
+        review_status: WAITING_FOR_REVIEW
+    };
+
+    transfer::public_share_object(inspection);
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>平台管理员审核验房报告并给与房东补偿</p>
+<p>这个接口只有管理员可以请求，在这个事务里将审核验房报告，并对房屋评级、取出这个房屋的押金，根据评级结果赔偿一部分给房东、deposit_pool也要同步减去已经取走的押金。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    //The platform administrator reviews the inspection report and deducts the deposit as compensation for the landlord
+public entry fun review_inspection_report(platform: &amp;mut RentalPlatform, lease: &amp;Lease, inspection: &amp;mut Inspection, _: &amp;Admin, damage: u8, ctx: &amp;mut TxContext)  {
+    assert!(lease.house_id == inspection.house_id, EWrongParams);
+    assert!(inspection.review_status == WAITING_FOR_REVIEW, EInspectionReviewed);
+    assert!(table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, lease.house_id), EInvalidDeposit);
+
+    let deduct_deposit:u64 = calculate_deduct_deposit(lease.paid_deposit, damage);
+    let deposit_amount = table::borrow_mut&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, lease.house_id);
+
+    assert!(deduct_deposit &lt;= balance::value&lt;SUI&gt;(&amp;platform.balance), EInsufficientBalance);
+
+    inspection.damage_assessment_ret = damage;
+    inspection.review_status = REVIEWED;
+    inspection.deduct_deposit = deduct_deposit;
+
+    if (deduct_deposit &gt; 0) {
+        *deposit_amount = *deposit_amount - deduct_deposit; 
+
+        let deduct_coin = coin::take&lt;SUI&gt;(&amp;mut platform.balance, deduct_deposit, ctx);
+        transfer_deposit(deduct_coin, lease.landlord)
+    };
+}
+
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>租客退房并领取剩余押金</p>
+<p>租客将房屋退还给房东，领取部分押金。清除租房平台押金和押金明细。</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//The tenant returns the room to the landlord,collects deposit 
+public entry fun tenant_return_house_and_transfer(platform: &amp;mut RentalPlatform, lease: &amp;Lease, house: House, ctx: &amp;mut TxContext) {
+    let house = tenant_return_house(platform, lease, house, ctx);
+
+    transfer::transfer(house, lease.landlord)
+}
+//The tenant returns the room to the landlord and receives the deposit
+public fun tenant_return_house(platform: &amp;mut RentalPlatform, lease: &amp;Lease, house: House, ctx: &amp;mut TxContext): House {
+    assert!(lease.house_id == object::uid_to_inner(&amp;house.id), EWrongParams);
+    assert!(lease.tenant == tx_context::sender(ctx), ENoPermission);
+    assert!(table::contains&lt;ID, u64&gt;(&amp;platform.deposit_pool, lease.house_id), EInvalidDeposit);
+
+    let deposit = table::borrow(&amp;platform.deposit_pool, lease.house_id);
+    assert!(*deposit &lt;= balance::value&lt;SUI&gt;(&amp;platform.balance), EInsufficientBalance);
+
+    //If there is still any remaining deposit, refund it to the tenant
+    if (*deposit &gt; 0) {
+        let deposit_coin = coin::take&lt;SUI&gt;(&amp;mut platform.balance, *deposit, ctx);
+        transfer_deposit(deposit_coin, tx_context::sender(ctx));
+    };
+
+    let _ = table::remove&lt;ID, u64&gt;(&amp;mut platform.deposit_pool, lease.house_id);
+
+    house
+}
+<span class="boring">}</span></code></pre></pre>
+<p>其实这种赢奖励的机会并不少，大家在学习Web3的过程中应该积极参与这些活动，用金钱激励自己才能学的更快更深刻。</p>
+<p>了解更多活动：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="14轻松入门sui-move--集合上"><a class="header" href="#14轻松入门sui-move--集合上">14.轻松入门Sui Move:  集合（上）</a></h2>
+<p>这一章我们将讲解如何保存数据的集合。说到数据的集合首先想到的肯定是数组，Move标准库给我们提供了vector模块以支持数组类型。</p>
+<h3 id="数组"><a class="header" href="#数组">数组</a></h3>
+<p>vector是一个可变长度的，任意类型的容器。跟其他语言的数组一样，使用索引访问，索引从0开始。</p>
+<p>如何使用数组，在结构体章节讲解String类型讲过：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//struct &lt;type name&gt; &lt;has abilities&gt;
+struct String has copy, drop, store {
+    bytes: vector&lt;u8&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>String类型本质就是一个字节数组。vector使用了泛型来支持任何类型，所以在使用它的时候需要指定类型参数。</p>
+<h6 id="创建数组"><a class="header" href="#创建数组">创建数组</a></h6>
+<p>我们可以使用empty方法，创建一个空数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let arr = vector::empty&lt;u64&gt;();
+<span class="boring">}</span></code></pre></pre>
+<p>或者创建一个长度为1的数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let arr = vector::singleton&lt;u64&gt;(12);
+<span class="boring">}</span></code></pre></pre>
+<p>也可以使用[]创建数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let arr = vector&lt;u64&gt;[1,2,3,4];
+<span class="boring">}</span></code></pre></pre>
+<h6 id="添加元素"><a class="header" href="#添加元素">添加元素</a></h6>
+<ul>
+<li>
+<p>在数组尾部插入一个元素</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>vector::push_back&lt;u64&gt;(&amp;mut arr, 67);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>在数组指定位置插入一个元素</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//在数组arr的第三个元素位置插入100
+vector::insert&lt;u64&gt;(&amp;mut arr, 100, 2);
+<span class="boring">}</span></code></pre></pre>
+<p>insert函数第三个参数，用于指定插入位置。如果插入位置已经超过数组长度将会报错；等于数组长度则在数组末尾插入元素；小于数组长度该位置的元素及后续元素均往后移一位。注意这里不是替换原位置元素，而是插入。</p>
+</li>
+<li>
+<p>合并两个数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun append&lt;Element&gt;(lhs: &amp;mut vector&lt;Element&gt;, mut other: vector&lt;Element&gt;) 
+<span class="boring">}</span></code></pre></pre>
+<p>将other数组合并到lhs数组。被合并数组必须传值，合并数组则传可变引用。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+
+let mut arr2 = vector::singleton&lt;u64&gt;(3);
+vector::push_back(&amp;mut arr2, 4);
+
+vector::append(&amp;mut arr2, arr1);
+print(&amp;arr2);
+//打印结果：[ 3, 4, 1, 2, 3 ]
+<span class="boring">}</span></code></pre></pre>
+<p>合并完的数据，顺序是：lhs数组、other数组。如果有重复的值也会保留。</p>
+</li>
+</ul>
+<h6 id="获取元素"><a class="header" href="#获取元素">获取元素</a></h6>
+<ul>
+<li>
+<p>弹出数组尾部元素</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>assert!(!vector::is_empty&lt;u64&gt;(&amp;arr), 1);
+let item = vector::pop_back&lt;u64&gt;(&amp;mut arr);
+<span class="boring">}</span></code></pre></pre>
+<p>注意，弹出后返回的是元素值，数组中不再包含该值，长度-1。在调用pop_back之前请确保数组不为空否则将会报错。</p>
+</li>
+<li>
+<p>获取指定位置元素</p>
+<p>与弹出不同，borrow和borrow_mut只是获取元素引用，并没有从数组中取出元素。</p>
+<p>borrow是不可变引用，只用于读；如果要修改元素则使用borrow_mut</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+//可变引用第一个元素
+let item = vector::borrow_mut(&amp;mut arr1, 0);
+*item = 2;
+
+print(&amp;arr1);
+//输出结果：[ 2, 2, 3 ]
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<h6 id="交换位置"><a class="header" href="#交换位置">交换位置</a></h6>
+<ul>
+<li>
+<p>反转数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+
+vector::reverse(&amp;mut arr1);
+
+print(&amp;arr1);
+//输出结果：[ 3, 2, 1 ]
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>两个位置互换</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+//位置2和3交换值
+vector::swap(&amp;mut arr1, 1, 2);
+
+print(&amp;arr1);
+//输入结果：[1, 3, 2]
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<h6 id="删除元素"><a class="header" href="#删除元素">删除元素</a></h6>
+<ul>
+<li>
+<p>弹出末尾元素</p>
+<ul>
+<li>这个在上面已经讲过，不再赘述</li>
+</ul>
+</li>
+<li>
+<p>删除指定位置元素</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+
+vector::remove(&amp;mut arr1, 1);
+
+print(&amp;arr1);
+//输出结果：[1,3]
+<span class="boring">}</span></code></pre></pre>
+<p>注意：在删除指定位置的元素后，后续元素会自动前移一位。</p>
+</li>
+<li>
+<p>删除并使用末尾元素填充</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut arr1 = vector::singleton&lt;u64&gt;(1);
+vector::push_back(&amp;mut arr1, 2);
+vector::push_back(&amp;mut arr1, 3);
+
+vector::swap_remove(&amp;mut arr1, 0);
+
+print(&amp;arr1);
+//输出结果：[3, 2]
+<span class="boring">}</span></code></pre></pre>
+<p>被删除的位置使用末尾元素填充，省去了前移元素的时间，如果元素顺序不重要，优选此方法。</p>
+</li>
+<li>
+<p>删除空数组</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>assert!(is_empty(&amp;arr1), 1);
+vector::destroy_empty(arr1);
+<span class="boring">}</span></code></pre></pre>
+<p>注意，请在调用destroy_empty之前确保数组是空的，否则会导致报错</p>
+</li>
+</ul>
+<h6 id="其他"><a class="header" href="#其他">其他</a></h6>
+<ul>
+<li>
+<p>获取数组长度</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let len = vector::length(&amp;arr1);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>判断数组是否为空</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>assert!(vector::is_empty(&amp;arr1), 1);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p>根据值获取元素位置</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun index_of&lt;Element&gt;(v: &amp;vector&lt;Element&gt;, e: &amp;Element): (bool, u64) 
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let (exsits, index) = vector::index_of&lt;u64&gt;(&amp;arr1, &amp;item);
+<span class="boring">}</span></code></pre></pre>
+<p>注意第二个参数是传入元素的引用不是本身.返回两个字段,第一个代表是否存在,第二个代表元素位置.</p>
+</li>
+<li>
+<p>是否包含某元素</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let item: u64 = 2;
+let exists = vector::contains&lt;u64&gt;(&amp;arr1, &amp;item);
+<span class="boring">}</span></code></pre></pre>
+<p>vector模块具有丰富的函数,利用pop_back和push_back可以轻松实现栈, 利用insert和remove也能轻松实现队列.</p>
+<h3 id="优先级队列"><a class="header" href="#优先级队列">优先级队列</a></h3>
+<p>优先级队列使用最大堆排序方法来对优先级进行排序.优先级高的先出列.如果我们需要有序的数据集合,就可以使用优先级队列.</p>
+<p>最大堆是二叉树并且每个节点的值都大于或等于其子节点.也就是说根节点就是堆中最大值.最大堆排序的平均时间复杂度是O(nlogn)是一种比较优秀的排序方法.</p>
+<p>我们以学生成绩排名为例来介绍优先级队列的功能,创建一个学生结构体和一个学校期末报告结构体.期末报告结构体负责保存学生信息和成绩,并按照成绩从高到低输入分数和学生的信息.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct Student has drop,store {
+    name: String,
+    score: u64,
+}
+public struct SchoolReport has drop{
+    report: PriorityQueue&lt;Student&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>期末报告report字段,类型就是优先级队列.这里需要注意的是,Student结构体作为优先级队列中实体的值,必须要有drop和store能力.</p>
+<p>期末出成绩后,往优先级队列中塞入成绩</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun new(): SchoolReport{
+    let student1 = Student{
+        name: string::utf8(b"hanmeimei"),
+        score: 89,
+    }; 
+    let student2 = Student{
+        name: string::utf8(b"lilei"),
+        score: 97,
+    }; 
+    let p = vector&lt;u64&gt;[89,97]; 
+    let students = vector&lt;Student&gt;[student1, student2]; 
+
+    SchoolReport{
+        report: priority_queue::new&lt;Student&gt;(priority_queue::create_entries&lt;Student&gt;(p, students)),
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在创建优先级队列之前,我们需要调用create_entries方法创建实体数组.</p>
+<p>塞入一个成绩为70分的学生:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun add_student(sr: &amp;mut SchoolReport) {
+    let student1 = Student{
+        name: string::utf8(b"libai"),
+        score: 70,
+    }; 
+    priority_queue::insert&lt;Student&gt;(&amp;mut sr.report, 70, student1);       
+}
+<span class="boring">}</span></code></pre></pre>
+<p>按照成绩从高到低排序并输出</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun rank(sr: &amp;mut SchoolReport) {
+    while(true) {
+        let (p, student) = priority_queue::pop_max&lt;Student&gt;(&amp;mut sr.report);
+
+        print(&amp;p);
+        print(&amp;student.name);
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>pop_max每次一定会输出堆内最大值,多次调用直到堆内无数据,即可实现对分数的排序.</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="15轻松入门sui-move--集合下"><a class="header" href="#15轻松入门sui-move--集合下">15.轻松入门Sui Move:  集合（下）</a></h2>
+<p>除了上一章提到的vector和PriorityQueue类型是集合外，还有我们讲动态字段的时候讲到的bag(object_bag)、table(object_table)、dynamic_filed(dynamic_object_field)等，这些已经讲过我们不再赘述。这一章我们将探究Move给我们提供了哪些额外实用的集合结构体。</p>
+<h3 id="linkedtable"><a class="header" href="#linkedtable">LinkedTable</a></h3>
+<p>Table用于保存同类型的数据，并且它动态字段的基础上增加了动态字段数量的管理，以此保证动态字段的删除不会遗漏。但是要访问或者删除动态字段也只能按照动态字段名逐个操作无法使用迭代。linked_table则完善了这个缺点。它不仅管理动态字段的数量，还把每个动态字段封装成Node结构体然后像链表一样把它们“串”起来。从表头或者表尾开始访问就能访问到所有的动态字段。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct LinkedTable&lt;K: copy + drop + store, phantom V: store&gt; has key, store {
+    /// the ID of this table
+    id: UID,
+    /// the number of key-value pairs in the table
+    size: u64,
+    /// the front of the table, i.e. the key of the first entry
+    head: Option&lt;K&gt;,
+    /// the back of the table, i.e. the key of the last entry
+    tail: Option&lt;K&gt;,
+}
+public struct Node&lt;K: copy + drop + store, V: store&gt; has store {
+    /// the previous key
+    prev: Option&lt;K&gt;,
+    /// the next key
+    next: Option&lt;K&gt;,
+    /// the value being stored
+    value: V
+}
+<span class="boring">}</span></code></pre></pre>
+<p>每个节点不仅保存了值还保存了访问前后节点所需的键名。值得注意的是这时候就不是V作为动态字段的值了，而是Node类型作为值，K作为键名添加到linked_table中。而linked_table包含head字段和tail字段用于指示链表头和链表尾，让我们可选择从head开始使用next指针逐个正序访问，也可以使用tail开始使用prev指针逐个倒序访问。</p>
+<p>Move给我们提供了一系列的方法来操作这个链表,包括表头插入、表尾插入、表头弹出、表尾弹出、获取前后节点K值等。就不再一一讲解，我们用下面这个例子来演示如何对其进行迭代访问和迭代删除：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use sui::linked_table::{Self, LinkedTable};
+//创建一个linked_table
+public entry fun new(ctx: &amp;mut TxContext) {
+    transfer::public_transfer(linked_table::new&lt;u8, u8&gt;(ctx), tx_context::sender(ctx));
+}
+//添加字段
+public entry fun add(table: &amp;mut LinkedTable&lt;u8, u8&gt;, k:u8, v:u8, _: &amp;mut TxContext) {
+    linked_table::push_front&lt;u8, u8&gt;(table, k, v);
+}
+//迭代删除所有节点并删除linked_table
+public entry fun remove_all(mut table: LinkedTable&lt;u8, u8&gt;, _: &amp;mut TxContext) {
+    let lt = &amp;mut table;
+    while (!lt.is_empty&lt;u8, u8&gt;()) {
+        let (_,_) = lt.pop_front&lt;u8, u8&gt;();
+    };
+    linked_table::destroy_empty&lt;u8, u8&gt;(table);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>如上例所示，删除动态字段值不需要根据键名删除，可以迭代删除全部字段，无任何遗漏。访问和修改也都可以从链表头（或者尾）迭代访问而无需使用键名。</p>
+<p>值得注意的是同样的数据量下使用table存储会比使用linked_table存储更节省gas,所以建议大家只有在需要linked_table的链表功能的时候才使用，其他时间尽量使用table。</p>
+<h3 id="tablevec"><a class="header" href="#tablevec">TableVec</a></h3>
+<p>在Table基础上实现了vector的功能。我们可以像使用vector一样使用它，就连提供的方法都差不多。源码：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct TableVec&lt;phantom Element: store&gt; has store {
+    /// The contents of the table vector.
+    contents: Table&lt;u64, Element&gt;,
+}
+/// Add element `e` to the end of the TableVec `t`.
+public fun push_back&lt;Element: store&gt;(t: &amp;mut TableVec&lt;Element&gt;, e: Element) {
+    let key = t.length();
+    t.contents.add(key, e);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>将Table的键名类型设置为u64，每次添加元素都将键名加一，以此将Table包装成vector。除此之外还提供了跟vector一样的borrow_mut、borrow、pop_back、length等。但是没有index_of、contains、insert等方法。</p>
+<p>值得注意的是经过实验证明，同样的数据用TableVec将会耗费更多gas。可是为什么要创建一个跟vector差不多功能，还更耗费gas的类型呢？这是因为数据量非常大的时候vector可能会有达到上限的情况，在这时候就可以使用TableVec来保存数据。</p>
+<h3 id="vecmap"><a class="header" href="#vecmap">VecMap</a></h3>
+<p>这是一个基于vector实现的映射表。这个映射表保证不会有重复的键名，我们可以根据键名查询，删除，修改值。但是根据键名访问值并不像真正的映射表那样 时间复杂度为O(1)。VecMap根据键名访问值的时间复杂度是O(n)!</p>
+<p>究其原因，其实是它底层实现并不是真的映射表。实现如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct VecMap&lt;K: copy, V&gt; has copy, drop, store {
+    contents: vector&lt;Entry&lt;K, V&gt;&gt;,
+}
+/// An entry in the map
+public struct Entry&lt;K: copy, V&gt; has copy, drop, store {
+    key: K,
+    value: V,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这是一个Entry类型组成的数组，每次根据键名取值，实际上是在遍历这个数组：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>///根据键名查找在数组内的位置
+public fun get_idx_opt&lt;K: copy, V&gt;(self: &amp;VecMap&lt;K,V&gt;, key: &amp;K): Option&lt;u64&gt; {
+    let mut i = 0;
+    let n = size(self);
+    while (i &lt; n) {
+        if (&amp;self.contents[i].key == key) {
+            return option::some(i)
+        };
+        i = i + 1;
+    };
+    option::none()
+}
+<span class="boring">}</span></code></pre></pre>
+<p>在调用insert去添加键值对的时候，实际上是在调用vector::push_back。也就是说，VecMap并不按照键值排序，而是按照添加顺序存储的。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>///添加键值对
+public fun insert&lt;K: copy, V&gt;(self: &amp;mut VecMap&lt;K,V&gt;, key: K, value: V) {
+    assert!(!self.contains(&amp;key), EKeyAlreadyExists);
+    //调用vector的push_back
+    self.contents.push_back(Entry { key, value })
+}
+<span class="boring">}</span></code></pre></pre>
+<p>由于根据键名访问值时间复杂度是O(n),所以在数据量比较大的时候不建议使用VecMap, 应该使用父子关系实现。</p>
+<h3 id="vecset"><a class="header" href="#vecset">VecSet</a></h3>
+<p>VecSet是基于vector实现的，是一个保证没有重复的数据集合。它是按照插入顺序保存的，跟VecMap一样，它访问每个元素的时间复杂度都是O(n)。只适用于数据量比较少的情况。</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>cQQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="16轻松入门sui-move--升级上"><a class="header" href="#16轻松入门sui-move--升级上">16.轻松入门Sui Move:  升级（上）</a></h2>
+<p>在编写合约部署上链后，如果发现有Bug怎么办？在web2中我们可以修改代码，重新部署即可。但是在Move中包是一个不可变对象，也就是说一旦发布就无法修改和删除，以此保证不会因为修改线上包对使用者造成不可预见的问题。不过虽然无法修改链上合约，但Move提供了一个升级包的方法来重新生成一个包。下面我先演示一下升级的方法。</p>
+<h4 id="升级的方法"><a class="header" href="#升级的方法">升级的方法</a></h4>
+<h6 id="1发布包"><a class="header" href="#1发布包">1.发布包</a></h6>
+<p>在我们写好合约之后，在项目根目录执行发布包的命令：</p>
+<pre><code class="language-bash">sui client publish
+</code></pre>
+<p>注意：在Sui v1.24.1版本之后，–gas-budget选项不再是必填项。</p>
+<p>包发布成功后，我们查看本次交易的对象变更：</p>
+<pre><code class="language-bash">╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Object Changes                                                                                   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Created Objects:                                                                                 │
+│  ┌──                                                                                             │
+│  │ ObjectID: 0xba952a24d7855908cf825f789e8318219c410068aab1448b349edc0ad97019df                  │
+│  │ Sender: 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb                    │
+│  │ Owner: Account Address ( 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb ) │
+│  │ ObjectType: 0x2::package::UpgradeCap                                                          │
+│  │ Version: 6                                                                                    │
+│  │ Digest: 4mHhhDaL4sfSN6QQ86FhxbZhNUPtR6vaSoNJeQFVbSYo                                          │
+│  └──                                                                                             │
+│ Mutated Objects:                                                                                 │
+│  ┌──                                                                                             │
+│  │ ObjectID: 0x28cdaee082d3a58b5b0f31dd396655920f0f7c2109f46a61c8eb79d7c46ce5dd                  │
+│  │ Sender: 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb                    │
+│  │ Owner: Account Address ( 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb ) │
+│  │ ObjectType: 0x2::coin::Coin&lt;0x2::sui::SUI&gt;                                                    │
+│  │ Version: 6                                                                                    │
+│  │ Digest: B3xgxJ9YStCzkqW2wyXNYeSBu2sjyMaHZa8sH743MzqB                                          │
+│  └──                                                                                             │
+│ Published Objects:                                                                               │
+│  ┌──                                                                                             │
+│  │ PackageID: 0x272713c478b3f04670f65056b36f03c0602925227e743344e80bd161e037da69                 │
+│  │ Version: 1                                                                                    │
+│  │ Digest: E63ByxG6cj8BQ8DRUgkfJuXWWs1c7wtBD6hWsP74BLZ8                                          │
+│  │ Modules: test6                                                                                │
+│  └──                                                                                             │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre>
+<p>可以看到创建了一个UpgradeCap对象，这个对象的ID需要保存好，在升级的时候需要使用它生成升级需要的“票”。这个对象也保存了一些基本信息,在源代码中的定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>///可用于控制是否可以升级
+public struct UpgradeCap has key, store {
+    id: UID,
+    /// 可以升级的包ID,值是最新版本的包ID
+    package: ID,
+   	///成功升级的次数，原始值是0
+    version: u64,
+    ///使用的升级的策略，有哪些可选策略将在下一章节详解
+    policy: u8,
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="2编辑movetoml"><a class="header" href="#2编辑movetoml">2.编辑Move.toml</a></h6>
+<p>在发布之后我们需要编辑Move.toml以保证其他包能正确的引用这个包。这里只展示片段：</p>
+<pre><code class="language-toml">[package]
+name = "test6"
+version = "0.0.0"
+edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
+published-at = "0x272713c478b3f04670f65056b36f03c0602925227e743344e80bd161e037da69"
+[addresses]
+test6 = "0x272713c478b3f04670f65056b36f03c0602925227e743344e80bd161e037da69"
+</code></pre>
+<p>设置published-at和test6包的地址为发布后包的地址。</p>
+<h6 id="3升级操作"><a class="header" href="#3升级操作">3.升级操作</a></h6>
+<p>在升级之前，需要再次修改Move.toml,将包的地址设置为0x0,以便验证器给升级后的包分配一个新的包地址。也不要忘记修改version字段:</p>
+<pre><code class="language-toml">[package]
+name = "test6"
+version = "0.0.1"
+edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
+published-at = "0x272713c478b3f04670f65056b36f03c0602925227e743344e80bd161e037da69"
+[addresses]
+test6 = "0x0"
+</code></pre>
+<p>现在我们来执行升级的命令</p>
+<pre><code class="language-bash">sui client upgrade --upgrade-capability &lt;UPGRADE-CAP-ID&gt;
+</code></pre>
+<p>这个命令会生成升级的摘要，使用UpgradeCap授权升级以获取UpgradeTicket，生成新的包，并在升级成功后使用UpgradeReceipt确保成功升级后会更新UpgradeCap。</p>
+<p>命令执行完后，返回如下：</p>
+<pre><code class="language-bash">╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Object Changes                                                                                   │
+├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Mutated Objects:                                                                                 │
+│  ┌──                                                                                             │
+│  │ ObjectID: 0x28cdaee082d3a58b5b0f31dd396655920f0f7c2109f46a61c8eb79d7c46ce5dd                  │
+│  │ Sender: 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb                    │
+│  │ Owner: Account Address ( 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb ) │
+│  │ ObjectType: 0x2::coin::Coin&lt;0x2::sui::SUI&gt;                                                    │
+│  │ Version: 7                                                                                    │
+│  │ Digest: A7cV91fjF4MLEYLXwbmQnfrza5WbmxKh5B2rVFvUpGh3                                          │
+│  └──                                                                                             │
+│  ┌──                                                                                             │
+│  │ ObjectID: 0xba952a24d7855908cf825f789e8318219c410068aab1448b349edc0ad97019df                  │
+│  │ Sender: 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb                    │
+│  │ Owner: Account Address ( 0xc571b07c805118eb0177af2e4e69913af6e9de1bf3fb3fc4df52a8b9d31343cb ) │
+│  │ ObjectType: 0x2::package::UpgradeCap                                                          │
+│  │ Version: 7                                                                                    │
+│  │ Digest: 8eKeChSfT5nv1SLfiE893c83fU1H5C2L4J3wYXSUTaVD                                          │
+│  └──                                                                                             │
+│ Published Objects:                                                                               │
+│  ┌──                                                                                             │
+│  │ PackageID: 0x68f4a731627e2fb1b212e685ce041e8d2cb834d3d4429c7a74eeb622e3aa9536                 │
+│  │ Version: 2                                                                                    │
+│  │ Digest: 9utSnMUMTHdDd4aCeKKpmv7Go4TRgynTtEngUqhvfUfG                                          │
+│  │ Modules: test6                                                                                │
+│  └──                                                                                             │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre>
+<p>我们可以看到，除了创建了新的包对象以外，UpgradeCap对象也被修改了，version字段加一，package变为了最新发布的包地址。</p>
+<h6 id="4设置movetoml"><a class="header" href="#4设置movetoml">4.设置Move.toml</a></h6>
+<p>注意：每次升级完，都要把published-at设置为最新版本包地址。而包的地址则一直是原始地址。</p>
+<pre><code class="language-toml">[package]
+name = "test6"
+version = "0.0.1"
+edition = "2024.beta" # edition = "legacy" to use legacy (pre-2024) Move
+#设置为最新版本包的地址
+published-at = "0x68f4a731627e2fb1b212e685ce041e8d2cb834d3d4429c7a74eeb622e3aa9536"
+[addresses]
+#设置为最初版本包的地址
+test6 = "0x272713c478b3f04670f65056b36f03c0602925227e743344e80bd161e037da69"
+</code></pre>
+<h4 id="升级可能会不成功"><a class="header" href="#升级可能会不成功">升级可能会不成功！</a></h4>
+<p>要想顺利的升级包，默认情况下必须要满足以下要求：</p>
+<ul>
+<li>
+<p>必须要有发布包需要的票，也就是前面提到的UpgradeTicket。在升级的示例中我们使用的是UpgradeCap来自动生成的UpgradeTicket</p>
+</li>
+<li>
+<p>public函数的签名，必须与上个版本保持一致</p>
+<ul>
+<li>
+<p>非public函数，包括friend和entry函数的签名可以在升级中修改</p>
+</li>
+<li>
+<p>不可以改public函数签名，但是可以修改public函数（及其他函数）的实现</p>
+</li>
+<li>
+<p>可以删除函数中泛型的约束</p>
+</li>
+<li>
+<p>可以添加新的函数</p>
+</li>
+</ul>
+</li>
+<li>
+<p>结构体的定义，包括ability都必须与上个版本保持一致</p>
+<ul>
+<li>不可以在结构体中新增字段</li>
+<li>可以添加新的结构体</li>
+</ul>
+</li>
+</ul>
+<p>那在满足以上条件之后，是不是就可以保证升级后没有兼容性问题了呢？然而事情并没有那么简单。</p>
+<p>public函数允许修改代码的实现，那我在一个public函数中新增一个事件的发布。可以顺利升级。升级后前一个版本的包和当前版本的包都在链上且都可以调用。如果调用方依然调用旧版本，监听事件的程序就会错过这个事件，导致程序运行不正确。那这种情况怎么处理呢？我们可以使用一些方法强制调用方调用最新版本的包。</p>
+<h4 id="强制调用方使用最新版本的包"><a class="header" href="#强制调用方使用最新版本的包">强制调用方使用最新版本的包</a></h4>
+<h6 id="方法一在新包中使用新类型"><a class="header" href="#方法一在新包中使用新类型">方法一：在新包中使用新类型</a></h6>
+<p>在新包中定义新的类型，并新增一个方法用于将旧类型的数据转换为新类型。新包只支持新类型的访问，而旧类型数据已经被转换，以此强制接入方使用最新版本的包。</p>
+<p>值得注意的是，数据迁移的方法需要做好权限管理，确保是包的拥有者才能调用此方法。可以通过在init的时候生成一个AdminCap对象，并在迁移数据的方法中使用这个对象验证实现。</p>
+<h6 id="方法二使用版本标记共享对象"><a class="header" href="#方法二使用版本标记共享对象">方法二：使用版本标记共享对象</a></h6>
+<p>在共享对象中记录包的最新版本，并在访问中验证版本，如果不是最新版本的包访问共享对象就直接报错。</p>
+<p>参考资料：</p>
+<p>https://docs.sui.io/concepts/sui-move-concepts/packages/upgrade</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>cQQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="17轻松入门sui-move--升级下"><a class="header" href="#17轻松入门sui-move--升级下">17.轻松入门Sui Move:  升级（下）</a></h2>
+<p>上一章我们讲到UpgradeCap的定义，讲到它有一个policy字段表示这个包使用的升级策略。那Move内置的升级策略有哪些呢？</p>
+<h4 id="内置的升级策略"><a class="header" href="#内置的升级策略">内置的升级策略</a></h4>
+<p>Move内置了几种升级策略供我们选择，下面我们分别介绍各种策略以及设置方法。不过在这之前，设置升级策略的规则需要了解：</p>
+<ul>
+<li>默认的升级策略是最宽松的策略</li>
+<li>如果想设置升级策略只能设置比当前策略更严苛的策略，设置更宽松的策略将会导致报错。</li>
+</ul>
+<h5 id="升级策略"><a class="header" href="#升级策略">升级策略</a></h5>
+<p>我们从严苛到宽松列举内置的升级策略：</p>
+<ul>
+<li>
+<p>不可升级</p>
+<p>这是最严格的升级策略，发布之后不允许任何升级。可以通过调用sui::package::make_immutable方法设置:</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function make_immutable --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>只允许修改依赖项</p>
+<p>只能修改包的依赖项，其他一律不允修改</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function only_dep_upgrades --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>只允许添加</p>
+<p>只能在包内添加新的函数和结构体，不允许修改原来的代码（即便是私有函数的内部实现也不行）</p>
+<pre><code class="language-bash">sui client call --package 0x2 --module package --function only_additive_upgrades --args &lt;UpgradeCap ID&gt;
+</code></pre>
+</li>
+<li>
+<p>兼容</p>
+</li>
+</ul>
+<p>​	最宽松的升级策略，也是默认的升级策略。允许修改函数的实现代码，但是不允许修改public函数签名（非public函数的签名允许修改）；允许祛除函数的泛型约束（只允许放松约束); 只允许新增结构体不允许修改。</p>
+<p>​	兼容策略是默认的升级策略，并且不允许从更严苛的策略设置为此策略，所以兼容策略没有设置方法。</p>
+<h4 id="自定义升级策略"><a class="header" href="#自定义升级策略">自定义升级策略</a></h4>
+<p>除了内置的升级策略外，我们也可以自定义升级策略，但是自定义之前我们需要了解包的升级过程，才能理解如何编写策略。</p>
+<h5 id="升级包的流程"><a class="header" href="#升级包的流程">升级包的流程</a></h5>
+<p>我们上一章讲解包升级方法，了解到包的升级是在一个事务中完成的。不过在这个事务中，实际上是分别调用了三个命令，下面我们通过介绍这三个命令来了解升级的底层原理。</p>
+<h6 id="授权authorize_upgrade"><a class="header" href="#授权authorize_upgrade">授权（authorize_upgrade）</a></h6>
+<p>这个命令的作用是使用UpgradeCap验证权限、验证通过则返回UpgradeTicket。这个命令在sui包package模块中的签名是：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun authorize_upgrade(
+        cap: &amp;mut UpgradeCap,
+        policy: u8,
+        digest: vector&lt;u8&gt;
+): UpgradeTicket 
+<span class="boring">}</span></code></pre></pre>
+<p>第一个传参是UpgradeCap对象，在发布包的时候返回它的ID, 包的发布者即是它的拥有者。它的拥有者可以使用它升级包或者修改升级策略。它的定义再上一章已经讲过，这章不再赘述。</p>
+<p>第二个参数是正在使用的升级策略</p>
+<p>第三个参数则是摘要，摘要如何计算的可以参考</p>
+<p>我们可以通过在build包的时候通过–dump-bytecode-as-base64选项来指示程序打印base64编码的字节码，在打印的内容中可以获取digest值</p>
+<pre><code class="language-bash">sui move build --dump-bytecode-as-base64
+</code></pre>
+<p>打印内容：</p>
+<pre><code class="language-json">{"modules":["oRzrCwYAAAALAQAKAgoUAx4pBEcEBUslB3CKAQj6AWAG2gIkCv4CEgyQA1AN4AMCAA8BDQILAhACEQAACAAAAQgAAQIHAAIEBAAEAwIAAAoAAQAACQABAAAFAgEAAA4CAQABEgQFAAIIAAMAAxAJAQEIBAwGBwAGCAYKAQcIBAACBwgABwgEAQgDAQoCAQgCAQYIBAEFAQgBAgkABQEIAAZQZXJzb24FUGhvbmUGU3RyaW5nCVR4Q29udGV4dANVSUQNY2hhbmdlX3BlcnNvbgJpZARuYW1lA25ldwpuZXdfcGVyc29uCW5ld19waG9uZQZvYmplY3QGc2VuZGVyBnN0cmluZwR0ZXN0BXRlc3Q2CHRyYW5zZmVyCnR4X2NvbnRleHQEdXRmOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgoCBwYxMjM0NTYKAgkIdmVyc2lvbjEKAgsKdmVyc2lvbjE5MAACAgYIAwcIAgECAgYIAwcIAgABBAABCgoAEQUHABEEEgELAC4RBzgAAgEBBAABCgoAEQUHABEEEgALAC4RBzgBAgIBBAABBgcBEQQLAA8AFQIDAAAAAQYHAhEECwAPABUCAAEA"],"dependencies":["0x0000000000000000000000000000000000000000000000000000000000000001","0x0000000000000000000000000000000000000000000000000000000000000002"],"digest":[79,58,190,101,62,35,128,195,167,4,23,212,223,242,100,90,123,173,107,231,106,142,168,236,51,207,220,158,121,59,154,142]}
+</code></pre>
+<p>其中digest字段就是第三个参数的值。</p>
+<p>这个函数的返回是UpgradeTicket，旨在作为授权成功的凭证。它的定义为：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeTicket {
+    /// 生成ticket的UpgradeCap对象ID
+    cap: ID,
+    /// 可以升级的包的ID，一定是最新版本包的ID,以此保证只有最新包能升级
+    package: ID,
+    /// 在本次升级中使用的升级策略
+    policy: u8,
+    /// 在本次升级中使用的摘要,用于标识升级后的包的内容
+    digest: vector&lt;u8&gt;,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>每个UpgradeCap一次只能生成一个UpgradeTicket，以此保证不会并发升级或者修改升级策略等操作。</p>
+<p>UpgradeTicket是一个“烫手山芋”，所以在拿到这个UpgradeTicket之后，必须要调用后续的升级命令来将UpgradeTicket传递出去，否则事务将失败。</p>
+<h6 id="执行升级"><a class="header" href="#执行升级">执行升级</a></h6>
+<p>执行升级这一步是使用的内建命令，作用是消费UpgradeTicket、验证包的更新是否符合升级策略、生成升级包的对象并返回一个代表升级成功的UpgradeReceipt对象。</p>
+<p>在这个命令中，拿到UpgradeTicket后验证器便会使用这个类型的所有字段值来验证，只要有一个不符合要求都会升级失败。比如，要升级的包的字节码必须要跟digest字段匹配，policy字段至少要跟UpgradeCap的升级策略一样严格等。</p>
+<p>值得注意的是，UpgradeTicket是一次性“票据”，会在这一步被析构，不能将其保存多次使用。</p>
+<p>这一步骤返回的UpgradeReceipt是升级成功的证明，它也是一个“烫手山芋”用来保证一定会调用提交升级的方法。它的定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeReceipt {
+    ///UpgraceCap的ID
+    cap: ID,
+    ///升级后的包的ID
+    package: ID,
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="提交升级commit_upgrade"><a class="header" href="#提交升级commit_upgrade">提交升级(commit_upgrade)</a></h6>
+<p>这个命令的作用是消费UpgradeReceipt，并更新UpgradeCap的version字段和package字段。它的定义：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun commit_upgrade(
+    cap: &amp;mut UpgradeCap,
+    receipt: UpgradeReceipt,
+) {
+    //析构UpgradeReceipt
+    let UpgradeReceipt { cap: cap_id, package } = receipt;
+
+    assert!(object::id(cap) == cap_id, EWrongUpgradeCap);
+    assert!(cap.package.to_address() == @0x0, ENotAuthorized);
+	//修改UpgradeCap对象的值
+    cap.package = package;
+    cap.version = cap.version + 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<h5 id="自定义升级策略-1"><a class="header" href="#自定义升级策略-1">自定义升级策略</a></h5>
+<p>我们可以通过重写授权和提交升级这两个命令来自定义升级策略。但是要自定义升级策略之前我们最好先了解官方建议的最佳实践：</p>
+<h6 id="最佳实践"><a class="header" href="#最佳实践">最佳实践</a></h6>
+<ul>
+<li>自定义升级策略单独一个包，不要与使用这个策略的代码放同一个包</li>
+<li>自定义的升级策略的包升级策略设置为不可升级</li>
+<li>锁定UpgradeCap的policy字段，不允许违反只能收紧升级策略的原则。</li>
+</ul>
+<h6 id="自定义升级策略-2"><a class="header" href="#自定义升级策略-2">自定义升级策略</a></h6>
+<p>下面我们使用官网的例子来演示如何升级。我们自定义一个升级策略：在兼容的升级策略基础上，只允许在一周内的指定一天进行升级操作。</p>
+<p>我们新创建一个包，自定义一个UpgradeCap对象，在这个对象中保存验证规则所需字段:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public struct UpgradeCap has key, store {
+    id: UID,
+    //包含package的UpgradeCap对象，用于调用基础的授权和提交升级等函数
+    cap: package::UpgradeCap,
+    //指定可发布的时间，值在1-7
+    day: u8,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>定义新建升级策略的方法,这个方法返回UpgraceCap对象：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun new_policy(
+    cap: package::UpgradeCap,
+    day: u8,
+    ctx: &amp;mut TxContext,
+): UpgradeCap {
+    assert!(day &lt; 7, ENotWeekDay);
+    UpgradeCap { id: object::new(ctx), cap, day }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>重写授权函数,在这个函数中验证是否满足升级策略：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun authorize_upgrade(
+    cap: &amp;mut UpgradeCap,
+    policy: u8,
+    digest: vector&lt;u8&gt;,
+    ctx: &amp;TxContext,
+): package::UpgradeTicket {
+    //如果不是可升级的日期，就报错
+    assert!(week_day(ctx) == cap.day, ENotAllowedDay);
+    //调用基础的授权方法，也就是说在遵循自定义升级策略的基础上还要遵循内建的升级策略！
+    package::authorize_upgrade(&amp;mut cap.cap, policy, digest)
+}
+<span class="boring">}</span></code></pre></pre>
+<p>重写提交升级函数：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>public fun commit_upgrade(
+    cap: &amp;mut UpgradeCap,
+    receipt: package::UpgradeReceipt,
+) {
+    package::commit_upgrade(&amp;mut cap.cap, receipt)
+}
+<span class="boring">}</span></code></pre></pre>
+<h6 id="发布升级策略"><a class="header" href="#发布升级策略">发布升级策略</a></h6>
+<p>编写完成后，将包发布到链上</p>
+<pre><code class="language-bash">sui client publish
+</code></pre>
+<p>遵循最佳实践，将这个包设置为不可升级</p>
+<pre><code class="language-bash">sui client call --gas-budget 10000000 \
+    --package 0x2 \
+    --module 'package' \
+    --function 'make_immutable' \
+    --args '&lt;POLICY-UPGRADE-CAP&gt;'
+</code></pre>
+<h6 id="使用升级策略"><a class="header" href="#使用升级策略">使用升级策略</a></h6>
+<p>我们在发布完一个包之后，拿着这个发布包返回的UpgradeCap对象的ID,调用new_policy函数，并保存返回的自定义UpgradeCap对象的ID。</p>
+<p>在后续的升级中，按照上面讲得升级的流程，依次调用自定义的authorize_upgrade函数、内置的升级函数和commit_upgrade函数即可。</p>
+<p>参考资料：</p>
+<p>https://docs.sui.io/concepts/sui-move-concepts/packages/custom-policies</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="18轻松入门sui-move--设计模式"><a class="header" href="#18轻松入门sui-move--设计模式">18.轻松入门Sui Move:  设计模式</a></h2>
+<p>今天要介绍两个比较常见的设计模式烫手山芋和一次性见证者，烫手山芋可以保证函数调用完必须调用某类函数，而一次性见证者则可以保证函数只会执行一次。</p>
+<h4 id="烫手山芋hot-phtato"><a class="header" href="#烫手山芋hot-phtato">烫手山芋（hot phtato）</a></h4>
+<p>烫手山芋是指那些没人任何能力的结构体。没有key能力不是对象，就无法转移给账户地址或者另一个对象；没有store能力就无法保存在对象中；没有copy能力就不能复制；没有drop能力就无法自动析构。拿到“烫手山芋”的方法如果不在定义“烫手山芋”的模块内就没有权限手动析构它，那就只有调用有能力处理“烫手山芋”的方法。也就是说“烫手山芋”可以作为一定会调用某类方法的一个保证。</p>
+<p>烫手山芋的应用非常广泛，常见的例子就是闪电贷，闪电贷需要在同一个事务中借款和还款。为了保证借款后一定会还款，贷款方法会返回借款和一个“烫手山芋”，在同一个事务中必须调用还款的方法来将“烫手山芋”销毁掉，否则会导致也无法成功借款。</p>
+<p>还有一个例子就是上一章我们讲解包的升级流程的时候，包的升级流程分为三步：授权、升级、提交升级，这三步缺一不可且必须在同一个事务中完成。为了保证流程的完整性，授权这一步会返回UpgradeTicket这个“烫手山芋”，来保证同一个事务中一定会调用升级命令，在升级完又会返回UpgradeReciept（也是“烫手山芋”）用来保证同一个事务会调用提交升级。</p>
+<p>下面我们通过一个示例来演示如何实现“烫手山芋”的设计模式。我们需要实现购买手机的功能，分为两个步骤：支付和取手机。为了保证支付成功后一定会在同一个事务调用取手机的方法，会在支付方法返回一个支付凭证（也就是“烫手山芋”），只有取手机的方法实现了消费支付凭证的逻辑，所以必须调用支付之后必须调用取手机的方法。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module test6::test6 {
+    use sui::coin::Coin;
+    use test6::store;
+    use std::string::String;
+    use sui::sui::SUI;
+
+    public entry fun buy_phone(model: String, coin: Coin&lt;SUI&gt;, ctx: &amp;mut TxContext) {
+        //支付成功拿到票据，必须取货，否则事务失败
+        let br =  store::pay(model, coin);
+        //取货
+        transfer::public_transfer(store::pick_up_phone(br, ctx), tx_context::sender(ctx));
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>值得注意的是，只有在定义支付凭证的模块外调用支付方法，才能让“烫手山芋”的模式生效，否则在定义支付凭证的模块内程序可以手动析构支付凭证，以此绕开“烫手山芋”模式。</p>
+<p>在另一个模块，定义支付凭证、实现支付方法和取手机方法</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module test6::store {
+    use sui::coin::Coin;
+    use std::string::String;
+    use sui::sui::SUI;
+
+    public struct Phone has key,store{
+        id: UID,
+        model: String
+    }
+    //支付凭证
+    public struct BoughtReciept {
+        model: String,
+    }
+    //支付
+    public fun pay(model: String, coin: Coin&lt;SUI&gt;): BoughtReciept {
+        /*处理支付相关逻辑
+            ...
+            
+        支付成功
+        */
+        //返回支付凭证
+        BoughtReciept{
+            model: model,
+        }
+    }
+    //取手机
+    public fun pick_up_phone(bought_reciept: BoughtReciept, ctx: &amp;mut TxContext): Phone {
+  		//消费支付凭证
+        let BoughtReciept{model:model} = bought_reciept;
+        Phone{
+            id: object::new(ctx),
+            model: model,
+        }
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="一次性见证者one-time-witness"><a class="header" href="#一次性见证者one-time-witness">一次性见证者（One-Time Witness）</a></h4>
+<p>一次性见证者是一种特殊的类型，可以保证在包的整个生命周期中最多有一个实例。它的主要作用是用于保证函数只会执行一次。</p>
+<p>如果这个结构体跟模块名称一样且全部大写，有且仅有一个drop能力，没有字段或者只有一个bool类型字段那么这个结构体就是一次性见证者。可以通过sui::types::is_one_time_witness函数来判断是否是一次性见证者。</p>
+<p>这个结构体不允许手动实例化这个结构体，只会在发布包的时候自动调用init函数的过程中生成实例，并作为参数传递给init函数。那什么是init函数呢？</p>
+<h6 id="init函数"><a class="header" href="#init函数">init函数</a></h6>
+<p>init函数是模块的初始化函数，一个模块只允许有一个init函数。仅在包发布的时候自动执行一次，后续不再执行即便升级包也不再执行，也不能手动调用它。</p>
+<p>init函数必须满足以下特征：</p>
+<ul>
+<li>函数名为init</li>
+<li>参数列表的最后一个参数一定是TxContent的可变引用或者不可变引用</li>
+<li>参数列表的第一个参数，可能是一次性见证者</li>
+<li>没有任何返回</li>
+</ul>
+<h6 id="为什么需要一次性见证者"><a class="header" href="#为什么需要一次性见证者">为什么需要一次性见证者?</a></h6>
+<p>刚接触一次性见证者的朋友们可能会觉得疑惑，init函数已经保证只会在发布的时候执行一次了，为什么还需要一次性见证者？</p>
+<p>以coin模块的create_currency为例，这个函数用于创建一个货币类型，并返回新货币类型的发币权限和元数据对象。源代码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module sui::coin {    
+	public fun create_currency&lt;T: drop&gt;(
+        witness: T,
+        decimals: u8,
+        symbol: vector&lt;u8&gt;,
+        name: vector&lt;u8&gt;,
+        description: vector&lt;u8&gt;,
+        icon_url: Option&lt;Url&gt;,
+        ctx: &amp;mut TxContext
+    ): (TreasuryCap&lt;T&gt;, CoinMetadata&lt;T&gt;) {
+        // 保证类型T一定是一个一次性见证者
+        assert!(sui::types::is_one_time_witness(&amp;witness), EBadWitness);
+
+        (
+            TreasuryCap {
+                id: object::new(ctx),
+                total_supply: balance::create_supply(witness)
+            },
+            CoinMetadata {
+                id: object::new(ctx),
+                decimals,
+                name: string::utf8(name),
+                symbol: ascii::string(symbol),
+                description: string::utf8(description),
+                icon_url
+            }
+        )
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>这个函数的第一个参数就是一次性见证者类型，需要witness是因为调用balance::create_supply(witness)函数需要，那我们再看balance::create_supply函数为什么需要一次性见证者。</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module sui::balance {
+    public fun create_supply&lt;T: drop&gt;(_: T): Supply&lt;T&gt; {
+        Supply { value: 0 }
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>事实是它的实现根本不依赖这个一次性见证者，甚至在参数栏就把它丢弃了！</p>
+<p>换个角度，如果我们需要调用create_currency方法就必须传入witness实例，前面讲到witness的实例只会在init函数中出现，那就意味着create_currency方法只能在init函数中调用，也就保证了同一个模块这个方法只会调用一次！定义方法的时候只需要要求传入witness就能控制方法的调用次数和调用时机，这个设计模式可以说十分精妙！</p>
+<p>我们以eth模块为例来介绍一次性见证者的使用方法：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module bridged_eth::eth {
+    use std::option;
+
+    use sui::coin;
+    use sui::transfer;
+    use sui::tx_context;
+    use sui::tx_context::TxContext;
+	//定义一次性见证者
+    struct ETH has drop {}
+
+    const DECIMAL: u8 = 8;
+	//一次性见证者一定是init函数的第一个参数
+    fun init(otw: ETH, ctx: &amp;mut TxContext) {
+        //保证coin::create_currency函数只会在这个模块调用一次
+        let (treasury_cap, metadata) = coin::create_currency(
+            otw,
+            DECIMAL,
+            b"ETH",
+            b"Ethereum",
+            b"Bridged Ethereum token",
+            option::none(),
+            ctx
+        );
+        transfer::public_freeze_object(metadata);
+        transfer::public_transfer(treasury_cap, tx_context::sender(ctx))
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>参考资料：</p>
+<p>https://docs.sui.io/concepts/sui-move-concepts/init</p>
+<p>https://docs.sui.io/concepts/sui-move-concepts/one-time-witness</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="19轻松入门sui-move--获取时间"><a class="header" href="#19轻松入门sui-move--获取时间">19.轻松入门Sui Move:  获取时间</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="20轻松入门sui-move-对象的展示"><a class="header" href="#20轻松入门sui-move-对象的展示">20.轻松入门Sui Move: 对象的展示</a></h1>
+<p>SUI提供了一个模板引擎，可以使用它将对象的数据转换为模板对象定义的键值对，来实现对链上对象的链下展示管理。</p>
+<p>下面我们通过一个例子来展示如何使用模板引擎，在这个例子中我们试图创建一个Phone对象的模板对象。</p>
+<h4 id="生成publisher"><a class="header" href="#生成publisher">生成Publisher</a></h4>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module test6::test6 {
+     use std::string::{Self, String};
+    use sui::package::{Self, Publisher};
+    use sui::display;
+    //需要展示的对象
+    public struct Phone has key{
+        id: UID,
+        model: String,
+        image_url: String,
+        create_time: u64
+    }
+    //一次性见证者
+    public struct TEST6 has drop {}
+    fun init(otw: TEST6, ctx: &amp;mut TxContext) {
+        //生成Publisher对象
+        let publisher = package::claim(otw, ctx);
+        transfer::public_transfer(publisher, tx_context::sender(ctx));
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>因为Display对象的创建需要Publisher权限,所以要先创建一个Publisher对象。创建Publisher的函数在源代码中定义如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module sui::package {
+    public fun claim&lt;OTW: drop&gt;(otw: OTW, ctx: &amp;mut TxContext): Publisher {
+        assert!(types::is_one_time_witness(&amp;otw), ENotOneTimeWitness);
+
+        let tyname = type_name::get_with_original_ids&lt;OTW&gt;();
+
+        Publisher {
+            id: object::new(ctx),
+            package: tyname.get_address(),
+            module_name: tyname.get_module(),
+        }
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>claim函数主要作用是消费一次性见证者、生成Pulisher对象并返回。它的参数中包含一次性见证者，那就意味着这个函数只能在init函数中调用。init函数仅在包发布的执行一次，所以可以保证一个模块只会有一个Publisher对象，但是一个包可能包含多个Publisher对象。</p>
+<p>除了claim函数外，还可以使用claim_and_keep函数创建并转交Publisher对象给当前上下文环境的账户(即包的拥有者)。</p>
+<h4 id="创建display对象"><a class="header" href="#创建display对象">创建Display对象</a></h4>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> 	//创建模板
+    public entry fun new_display(p: &amp;Publisher, ctx: &amp;mut TxContext) {
+        	//定义模板的字段名
+            let keys = vector[
+            string::utf8(b"name"),
+            string::utf8(b"link"),
+            string::utf8(b"image_url"),
+            string::utf8(b"model"),
+            string::utf8(b"crete_time"),
+            string::utf8(b"creator"),
+        ];
+		//定义模板的字段值
+        let values = vector[
+            string::utf8(b"{name}"),
+            string::utf8(b"https://www.phone.com/phone/{id}"),
+            string::utf8(b"ipfs://{image_url}"),
+            string::utf8(b"{model}"),
+            string::utf8(b"{create_time}"),
+            string::utf8(b"some studio")
+        ];
+        //创建模板对象
+        let mut display = display::new_with_fields&lt;Phone&gt;(
+            p, keys, values, ctx
+        );
+
+        transfer::public_transfer(display, tx_context::sender(ctx));
+    }
+<span class="boring">}</span></code></pre></pre>
+<p>在生成Display对象之前，我们要定义展示的字段名和字段值。字段名数组和字段值数组都是字符串数组，两个数组个数必须一致否则会导致报错。字段值与其他模板语言类似，可以通过大括号“{}”来嵌入对象的字段值。我们使用display::new_with_fields函数来创建Display对象并指定它的键值对。也可以使用display::new函数创建空的Display对象。或者使用display::create_and_keep来创建Display空对象并将其转交给调用这个函数的账户。</p>
+<p>一个包可能有多个Publisher, 其他模块的Publisher肯定没有权限创建Phone对象的模板对象,所以在创建Display对象的时候还需要验证创建Publisher的模块是否是Phone对象的模块，源码如下：</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>module sui::display { 
+    //判断传入的Publisher对象是否有权限创建类型T的Display对象
+    public fun is_authorized&lt;T: key&gt;(pub: &amp;Publisher): bool {
+        pub.from_package&lt;T&gt;()
+    }
+}
+module sui::package {
+	/// 判断泛型所属的包，是否与Publisher对象的package字段吻合
+    public fun from_package&lt;T&gt;(self: &amp;Publisher): bool {
+        type_name::get_with_original_ids&lt;T&gt;().get_address() == self.package
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="修改和删除模板内容"><a class="header" href="#修改和删除模板内容">修改和删除模板内容</a></h4>
+<p>display模块还提供了新增键/值对，修改键/值对和删除键/值对的方法，需要注意的是，修改和删除键值对之前要确保键值对已经存在于Display对象中，否则会产生报错。</p>
+<p>在必要时候可以调用display::update_version升级Display的版本，并且它会发布一个版本升级的事件，监听这个事件的代码可以接到通知做相应处理。</p>
+<h4 id="使用display对象展示phone对象"><a class="header" href="#使用display对象展示phone对象">使用Display对象展示Phone对象</a></h4>
+<p>只需要在查询Phone对象的时候，使用 <code>{ showDisplay: true }</code> 选项就可以返回模板变量定义的内容:</p>
+<pre><code class="language-typescript">const rpcObject = await toolbox.client.getObject({
+    id,
+    options: {
+        showBcs: true,
+        showContent: true,
+        showDisplay: true,//指定返回模板对象定义的内容
+        showOwner: true,
+        showPreviousTransaction: true,
+        showStorageRebate: true,
+        showType: true,
+    },
+});
+</code></pre>
+<p>参考资料：</p>
+<p>https://docs.sui.io/standards/display</p>
+<p>了解更多Sui Move内容：</p>
+<ul>
+<li>telegram: t.me/move_cn</li>
+<li>QQ群: 79489587</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
