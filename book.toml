@@ -4,3 +4,19 @@ language = "en"
 multilingual = false
 src = "src"
 title = "easy move"
+
+
+[output.html]
+default-theme = "light"
+smart-punctuation = true
+mathjax-support = false
+copy-fonts = true
+no-section-label = false
+git-repository-url = "https://github.com/move-cn/EasyMove"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/move-cn/EasyMove/edit/main/{path}"
+input-404 = "not-found.md"
+
+[output.html.fold]
+enable = true
+level = 2
