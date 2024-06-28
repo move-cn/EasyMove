@@ -62,7 +62,7 @@ module hello_world::hello_world {
     use sui::transfer;
     use sui::tx_context::{Self, TxContext};
 
-    struct HelloWorldObject has key, store {
+    public struct HelloWorldObject has key, store {
         id: UID,
         text: std::string::String 
     }
@@ -109,7 +109,7 @@ module <包的地址>::<模块名称> {
 
   ```rust
   use sui::object::UID //申明引用UID结构体（或函数）
-  struct HelloWorldObject has key, store {
+  public struct HelloWorldObject has key, store {
   	id: UID, //直接使用结构体名（或函数）
       text: std::string::String 
   }
@@ -184,13 +184,12 @@ sender(ctx)//直接调用函数
 
 - 部分模块可以调用
 
-  使用关键词public(friend)申明函数，那就只有在模块内申明了是“朋友”的模块才可以调用。如下：
+  使用关键词public(package)申明函数，那就只有在模块内申明了是“朋友”的模块才可以调用。如下：
 
   ```rust
   //申明朋友模块
-  friend hello_world::test;
   //只有朋友模块才可以引用的函数
-  public(friend) fun getName(obj: &Game) :std::string::String {
+  public(package) fun getName(obj: &Game) :std::string::String {
       obj.name
   }
   ```

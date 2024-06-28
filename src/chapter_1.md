@@ -29,7 +29,7 @@ module test::test {
     use sui::transfer;
     use std::string;
 	//定义一个博客结构体
-    struct Blog has key{
+    public struct Blog has key{
         id: UID,
         content: string::String,
         like_cnt: u64,
@@ -54,13 +54,13 @@ module test::test {
 我们如何将这段代码发布到Sui区块链网络上呢？只需要使用Sui Move命令行工具的publish命令即可。需要注意的是，这个操作会消耗gas(gas这里暂不多做介绍，我们简单理解为付费的一种形式)
 
 ```bash
-sui client publish --gas-budget 100000000
+sui client publish 
 ```
 
 执行完这个命令后，会返回一个所有者为Immutable(不可改变的)的对象，这个对象的ID就是这个代码在区块链的地址。拿着这个地址，指定模块名和函数名，就可以在区块链上调用publish_blog函数：
 
 ```bash
-sui client call --package <合约地址> --module <合约模块名> --function publish_blog --args "this is a blog" --gas-budget 100000000
+sui client call --package <合约地址> --module <合约模块名> --function publish_blog --args "this is a blog" 
 ```
 
 建好的对象会保存在区块链中，并返回一个对象ID。我们使用对象ID就可以查询到刚新建的Blog对象
@@ -74,7 +74,7 @@ Web2.0的开发者可能对此感到惊奇，数据存储的过程没有连接�
 接下来我们继续调用like_blog函数
 
 ```bash
-sui client call --package <合约地址> --module <合约模块名> --function publish_blog --args <Blog对象ID> --gas-budget 100000000
+sui client call --package <合约地址> --module <合约模块名> --function publish_blog --args <Blog对象ID> 
 ```
 
 通过sui client object 命令查看对象可以发现：虽然我们没有显式的对存储做任何操作，但是Blog对象的like_cnt属性值已经加1。

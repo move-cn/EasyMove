@@ -4,7 +4,7 @@
 
 ```rust
 //申明对象模型
-struct Article has key {
+public struct Article has key {
     id: object::UID,
     title: string::String,
     content: string::String,

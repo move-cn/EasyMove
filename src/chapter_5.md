@@ -234,11 +234,11 @@ sui client verify-bytecode-meter
 
 ```bash
 #发布当前目录的包
-sui client publish --gas-budget 100000000
+sui client publish 
 #发布指定目录的包
-sui client publish --gas-budget 100000000 /home/root/packages/hello_world
+sui client publish  /home/root/packages/hello_world
 #发布时消耗指定的gas对象的gas
-sui client publish--gas <gas coin id> --gas-budget 1000000000 
+sui client publish--gas <gas coin id> 0 
 ```
 
 注意：

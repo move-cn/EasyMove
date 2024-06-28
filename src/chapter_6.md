@@ -8,7 +8,7 @@
 
 ```rust
 //struct <type name> <has abilities>
-struct String has copy, drop, store {
+public struct String has copy, drop, store {
     bytes: vector<u8>,
 }
 ```
@@ -21,7 +21,7 @@ struct String has copy, drop, store {
 //先引用String类型
 use std::string::String;
 //申明一个HelloWorld类型，包含String类型
-struct HelloWorld has drop {
+public struct HelloWorld has drop {
     no: u64,
     text: string::String //申明text字段类型是String类型
 }
@@ -38,7 +38,7 @@ public fun new_hello_world():HelloWorld{
 上述例子中，结构体HelloWorld带有两个字段，字段no是u64类型,另一个字段text则是标准库定义的结构体。 我们可以得出一个结论：**结构体是一种自定义类型，可以包含基础数据类型和自定义类型的字段。**但是值得注意的是，**结构体不能包含自身类型**。比如说：
 
 ```rust
-struct HelloWorld has drop {
+public struct HelloWorld has drop {
     no: u64,
     text: string::String,
     hello_world: HelloWorld //包含自身类型
