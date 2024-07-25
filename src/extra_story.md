@@ -23,7 +23,7 @@
 租房平台对象：
 
 ```rust
-struct RentalPlatform has key {
+public struct RentalPlatform has key {
     // uid of the RentalPlatform object
     id: UID,
     // deposit stored on the rental platform, key is house object id,value is the amount of deposit
@@ -42,7 +42,7 @@ struct RentalPlatform has key {
 
 ```rust
 //presents Rental platform administrator
-struct Admin has key, store {
+public struct Admin has key, store {
 	// uid of admin object
 	id: UID,
 }
@@ -52,7 +52,7 @@ struct Admin has key, store {
 
 ```rust
 //If the landlord wants to rent out a house, they first need to issue a rental notice
-struct RentalNotice has key,store  {
+public struct RentalNotice has key,store  {
     // uid of the RentalNotice object
     id: UID,
     // the amount of gas to be paid per month
@@ -70,7 +70,7 @@ struct RentalNotice has key,store  {
 
 ```rust
 // present a house object
-struct House has key {
+public struct House has key {
     // uid of the house object
     id: UID,
     // The square of the house area
@@ -88,7 +88,7 @@ struct House has key {
 
 ```rust
 // present a house rentle contract object
-struct Lease has key,store {
+public struct Lease has key,store {
     // uid of the Lease object
     id: UID,
     //uid of house object
@@ -110,7 +110,7 @@ struct Lease has key,store {
 
 ```rust
 //presents inspection report object.The landlord submits the inspection report, and the administrator reviews the inspection report
-struct Inspection has key,store {
+public struct Inspection has key,store {
     // uid of the Inspection object
     id: UID,
     //id of the house object

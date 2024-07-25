@@ -1,4 +1,4 @@
-## 15.轻松入门Sui Move:  集合（下）
+## 15.轻松入门Move:  集合（下）
 
 除了上一章提到的vector和PriorityQueue类型是集合外，还有我们讲动态字段的时候讲到的bag(object_bag)、table(object_table)、dynamic_filed(dynamic_object_field)等，这些已经讲过我们不再赘述。这一章我们将探究Move给我们提供了哪些额外实用的集合结构体。
 
@@ -128,7 +128,7 @@ VecSet是基于vector实现的，是一个保证没有重复的数据集合。�
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - cQQ群: 79489587

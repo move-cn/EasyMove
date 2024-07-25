@@ -1,4 +1,4 @@
-## 11.轻松入门Sui Move: Bag和Table
+## 11.轻松入门Move: Bag和Table
 
 上一章我们讲到使用动态字段可以给Person对象动态添加电子设备的例子，因为无法直接获取Person对象的动态字段个数，在删除Person对象之前，具体应该删除多少个动态字段也是不确定的，所以其实特别容易漏删，造成资源浪费。
 
@@ -177,7 +177,7 @@ Table、ObjectTable、ObjectBag的用法都跟Bag一样，这里就不再赘述�
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

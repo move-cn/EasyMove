@@ -1,4 +1,4 @@
-## 10.轻松入门Sui Move: 动态字段
+## 10.轻松入门Move: 动态字段
 
 在第八章我们讲被嵌套的对象的时候，举了一个例子：人(Person对象)可能拥有0个或者多个笔记本电脑，但在实际生活中，我们不仅仅可以拥有笔记本电脑，我们还可以拥有平板电脑、手机、台式机、游戏机等电子设备。那Person对象的定义将会变成如下：
 
@@ -200,7 +200,7 @@ public entry fun delete_person(mut person: Person, _: &mut TxContext) {
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

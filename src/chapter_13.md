@@ -1,4 +1,4 @@
-## 13.轻松入门Sui Move:  事件和泛型
+## 13.轻松入门Move:  事件和泛型
 
 ### 事件
 
@@ -148,7 +148,7 @@ coin对象包含Balance类型的字段，而Balance包含phantom类型参数，�
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

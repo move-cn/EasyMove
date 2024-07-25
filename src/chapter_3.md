@@ -1,6 +1,6 @@
-## 3.轻松入门Sui Move: 清单文件和模块
+## 3.轻松入门Move: 清单文件和模块
 
-按照国际惯例，学习一门语言,编写的第一个程序一定是输出一个Hello World。今天我们也来一起写一个Hello World并以此引出一些Sui Move项目结构，并作详细介绍
+按照国际惯例，学习一门语言,编写的第一个程序一定是输出一个Hello World。今天我们也来一起写一个Hello World并以此引出一些Move项目结构，并作详细介绍
 
 首先我们新建一个名为hello_world的项目，使用命令：
 
@@ -99,7 +99,7 @@ module <包的地址>::<模块名称> {
 - 直接引用:
 
   ```rust
-  struct HelloWorldObject has key, store {
+  public struct HelloWorldObject has key, store {
   	id: UID,
       text: std::string::String //直接引用std::string模块的utf8方法
   }
@@ -200,7 +200,7 @@ sender(ctx)//直接调用函数
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

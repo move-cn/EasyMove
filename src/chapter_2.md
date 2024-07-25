@@ -1,5 +1,5 @@
-# 2.轻松入门Sui Move: 搭建开发环境
-在编写Sui Move程序之前，需要先安装开发环境，所以本章将介绍如何安装开发环境。
+# 2.轻松入门Move: 搭建开发环境
+在编写Move程序之前，需要先安装开发环境，所以本章将介绍如何安装开发环境。
 
 安装开发环境有三种方式：
 
@@ -71,11 +71,11 @@ rustup是一个管理工具链，用于管理不同平台下的 Rust 构建版�
 
 vscode编辑器的安装教程，网上已经有很多，这里不再赘述。[详见](https://blog.csdn.net/msdcp/article/details/127033151)
 
-这里要着重讲的是安装Sui Move Analyzer
+这里要着重讲的是安装Move Analyzer
 
-Sui Move Analyzer是由MoveBit开发的适用于sui-move语言的Visual Studio代码插件，它有许多有用的功能，如高亮显示、自动完成、转到定义/引用等。
+Move Analyzer是由MoveBit开发的适用于sui-move语言的Visual Studio代码插件，它有许多有用的功能，如高亮显示、自动完成、转到定义/引用等。
 
-vscode安装好后，点击侧边栏EXTENSIONS,在搜索栏搜索Sui Move Analyzer选中后，不要直接点击安装，先查看安装说明，这里有几点需要注意：
+vscode安装好后，点击侧边栏EXTENSIONS,在搜索栏搜索Move Analyzer选中后，不要直接点击安装，先查看安装说明，这里有几点需要注意：
 
 1.如果已经安装move-analyzer 或者 aptos-move-analyzer的需要先disable掉，避免产生冲突
 
@@ -97,11 +97,11 @@ vscode安装好后，点击侧边栏EXTENSIONS,在搜索栏搜索Sui Move Analyz
 
 
 
-现在既有编辑器、gas、运行环境都准备好了，那我们可以开始我们的Sui Move之旅啦。
+现在既有编辑器、gas、运行环境都准备好了，那我们可以开始我们的Move之旅啦。
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

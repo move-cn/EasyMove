@@ -1,4 +1,4 @@
-## 9.轻松入门Sui Move: Ability
+## 9.轻松入门Move: Ability
 
 在前面几章我们一直在说对象的ability，那什么是ability呢？ ability直译过来就是数据类型的能力。
 
@@ -16,7 +16,7 @@ public struct Person has key,store {
 
 #### Key Ability
 
-有些资料说拥有key ability代表能在全局存储中作为key使用，这个并不适用于Sui Move。关于key ability的作用官网如下描述：
+有些资料说拥有key ability代表能在全局存储中作为key使用，这个并不适用于Move。关于key ability的作用官网如下描述：
 
 >On Sui, the `key` ability indicates that a struct is an object type and comes with an additional requirement that the first field of the struct has signature `id: UID`, to contain the object's unique address on-chain. 
 
@@ -130,11 +130,11 @@ public entry fun new(ctx: &mut TxContext) {
 
 #### Drop
 
-跟copy同理，drop ability也只能用于非对象结构体。drop表明**这个结构体是否能在作用域结束的时候自动删除**。如果不能自动删除则需要手动调用删除逻辑。删除结构体的方法详见：6.轻松入门Sui Move: 结构体
+跟copy同理，drop ability也只能用于非对象结构体。drop表明**这个结构体是否能在作用域结束的时候自动删除**。如果不能自动删除则需要手动调用删除逻辑。删除结构体的方法详见：6.轻松入门Move: 结构体
 
 
 
- 了解更多Sui Move内容：
+ 了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

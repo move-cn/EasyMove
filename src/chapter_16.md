@@ -1,4 +1,4 @@
-## 16.轻松入门Sui Move:  升级（上）
+## 16.轻松入门Move:  升级（上）
 
 在编写合约部署上链后，如果发现有Bug怎么办？在web2中我们可以修改代码，重新部署即可。但是在Move中包是一个不可变对象，也就是说一旦发布就无法修改和删除，以此保证不会因为修改线上包对使用者造成不可预见的问题。不过虽然无法修改链上合约，但Move提供了一个升级包的方法来重新生成一个包。下面我先演示一下升级的方法。
 
@@ -197,7 +197,7 @@ https://docs.sui.io/concepts/sui-move-concepts/packages/upgrade
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - cQQ群: 79489587

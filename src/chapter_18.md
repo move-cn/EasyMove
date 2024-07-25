@@ -1,4 +1,4 @@
-## 18.轻松入门Sui Move:  设计模式
+## 18.轻松入门Move:  设计模式
 
 今天要介绍两个比较常见的设计模式烫手山芋和一次性见证者，烫手山芋可以保证函数调用完必须调用某类函数，而一次性见证者则可以保证函数只会执行一次。
 
@@ -183,7 +183,7 @@ https://docs.sui.io/concepts/sui-move-concepts/one-time-witness
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

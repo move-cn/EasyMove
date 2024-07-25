@@ -1,4 +1,4 @@
-## 17.轻松入门Sui Move:  升级（下）
+## 17.轻松入门Move:  升级（下）
 
 上一章我们讲到UpgradeCap的定义，讲到它有一个policy字段表示这个包使用的升级策略。那Move内置的升级策略有哪些呢？
 
@@ -239,7 +239,7 @@ sui client call --gas-budget 10000000 \
 
 https://docs.sui.io/concepts/sui-move-concepts/packages/custom-policies
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

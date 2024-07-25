@@ -1,4 +1,4 @@
-## 5.轻松入门Sui Move: Debug、单元测试和命令行工具
+## 5.轻松入门Move: Debug、单元测试和命令行工具
 
 ### 单元测试
 
@@ -38,7 +38,7 @@ Total number of linter warnings suppressed: 1 (filtered categories: 1)
 
 ### Debug
 
-Sui Move暂时没有本地的调试器，可以使用std::debug模块来调试代码，打印变量。
+Move暂时没有本地的调试器，可以使用std::debug模块来调试代码，打印变量。
 
 调用print函数打印变量值到命令行,注意print参数传递的不是变量本身，而是变量的引用。
 
@@ -312,7 +312,7 @@ history
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

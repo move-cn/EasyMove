@@ -1,4 +1,4 @@
-# 20.轻松入门Sui Move: 对象的展示
+# 20.轻松入门Move: 对象的展示
 
 SUI提供了一个模板引擎，可以使用它将对象的数据转换为模板对象定义的键值对，来实现对链上对象的链下展示管理。
 
@@ -132,7 +132,7 @@ const rpcObject = await toolbox.client.getObject({
 
 https://docs.sui.io/standards/display
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587

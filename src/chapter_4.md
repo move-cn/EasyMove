@@ -1,6 +1,6 @@
-## 4.轻松入门Sui Move: 基础语法
+## 4.轻松入门Move: 基础语法
 
-本章将介绍Sui Move的基础语法。
+本章将介绍Move的基础语法。
 
 ### 基本类型
 
@@ -236,7 +236,7 @@ public fun compare(a: u64, b: u64): u8 {
 
 
 
-Sui Move支持多个返回值，多个返回值的返回和使用，详见代码：
+Move支持多个返回值，多个返回值的返回和使用，详见代码：
 
 ```rust
 public fun call_return_nums(): u64{
@@ -254,7 +254,7 @@ public fun call_return_nums(): u64{
 
 
 
-了解更多Sui Move内容：
+了解更多Move内容：
 
 - telegram: t.me/move_cn
 - QQ群: 79489587
