@@ -1,8 +1,8 @@
-## 15.轻松入门Move:  集合（下）
+# 15.轻松入门Move:  集合（下）
 
 除了上一章提到的vector和PriorityQueue类型是集合外，还有我们讲动态字段的时候讲到的bag(object_bag)、table(object_table)、dynamic_filed(dynamic_object_field)等，这些已经讲过我们不再赘述。这一章我们将探究Move给我们提供了哪些额外实用的集合结构体。
 
-### LinkedTable
+## LinkedTable
 
 Table用于保存同类型的数据，并且它动态字段的基础上增加了动态字段数量的管理，以此保证动态字段的删除不会遗漏。但是要访问或者删除动态字段也只能按照动态字段名逐个操作无法使用迭代。linked_table则完善了这个缺点。它不仅管理动态字段的数量，还把每个动态字段封装成Node结构体然后像链表一样把它们“串”起来。从表头或者表尾开始访问就能访问到所有的动态字段。
 
@@ -55,7 +55,7 @@ public entry fun remove_all(mut table: LinkedTable<u8, u8>, _: &mut TxContext) {
 
 值得注意的是同样的数据量下使用table存储会比使用linked_table存储更节省gas,所以建议大家只有在需要linked_table的链表功能的时候才使用，其他时间尽量使用table。
 
-### TableVec
+## TableVec
 
 在Table基础上实现了vector的功能。我们可以像使用vector一样使用它，就连提供的方法都差不多。源码：
 
@@ -75,7 +75,7 @@ public fun push_back<Element: store>(t: &mut TableVec<Element>, e: Element) {
 
 值得注意的是经过实验证明，同样的数据用TableVec将会耗费更多gas。可是为什么要创建一个跟vector差不多功能，还更耗费gas的类型呢？这是因为数据量非常大的时候vector可能会有达到上限的情况，在这时候就可以使用TableVec来保存数据。
 
-### VecMap
+## VecMap
 
 这是一个基于vector实现的映射表。这个映射表保证不会有重复的键名，我们可以根据键名查询，删除，修改值。但是根据键名访问值并不像真正的映射表那样 时间复杂度为O(1)。VecMap根据键名访问值的时间复杂度是O(n)!
 
@@ -122,7 +122,7 @@ public fun insert<K: copy, V>(self: &mut VecMap<K,V>, key: K, value: V) {
 
 由于根据键名访问值时间复杂度是O(n),所以在数据量比较大的时候不建议使用VecMap, 应该使用父子关系实现。
 
-### VecSet
+## VecSet
 
 VecSet是基于vector实现的，是一个保证没有重复的数据集合。它是按照插入顺序保存的，跟VecMap一样，它访问每个元素的时间复杂度都是O(n)。只适用于数据量比较少的情况。
 

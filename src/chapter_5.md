@@ -1,6 +1,6 @@
-## 5.轻松入门Move: Debug、单元测试和命令行工具
+# 5.轻松入门Move: Debug、单元测试和命令行工具
 
-### 单元测试
+## 单元测试
 
 单元测试函数是没有参数，也没有返回值，带有一个#[test]的标记的public函数。命令建议使用test_作为前缀加上被测试函数名称。单元测试函数跟被测试函数可以放置在同一个module内，也可以单独放置在跟sources文件夹同级别的tests文件夹内。
 
@@ -36,7 +36,7 @@ Test result: OK. Total tests: 1; passed: 1; failed: 0  #单元测试数，通过
 Total number of linter warnings suppressed: 1 (filtered categories: 1)
 ```
 
-### Debug
+## Debug
 
 Move暂时没有本地的调试器，可以使用std::debug模块来调试代码，打印变量。
 
@@ -72,13 +72,13 @@ public fun test_a_greater_than_b() {
 
 现在只需运行单元测试，就可以打印信息进行调试。
 
-### 命令行工具
+## 命令行工具
 
 下面将讲解一些常用的命令：
 
-#### sui move命令
+### sui move命令
 
-##### 创建一个新包
+#### 创建一个新包
 
 ```bash
 # 指定路劲创建新包
@@ -87,7 +87,7 @@ sui move new <package_name> -p <path>
 sui move new hello_world
 ```
 
-##### 编译
+#### 编译
 
 ```bash
 sui move build
@@ -97,7 +97,7 @@ sui move build --skip-fetch-latest-git-deps
 sui move build --dev
 ```
 
-##### 单元测试
+#### 单元测试
 
 单元测试是先编译后运行单元测试，所以上述编译的选项也可以用在单元测试中
 
@@ -119,7 +119,7 @@ sui move test --coverage
 
 注意：单元测试的覆盖率只有debug模式的客户端支持，想使用此功能，可以使用源码构建sui move cli
 
-##### 覆盖率统计
+#### 覆盖率统计
 
 获取覆盖率数据之前，需要使用--coverage运行单元测试
 
@@ -132,42 +132,42 @@ sui move coverage source
 sui move coverage bytecode
 ```
 
-#### sui client命令
+### sui client命令
 
 sui client提供与Sui网络交互的命令
 
-##### 列出可用网络环境
+#### 列出可用网络环境
 
 ```bash
 sui client envs
 ```
 
-##### 创建新的网络环境
+#### 创建新的网络环境
 
 ```bash
 sui client new-env --alias=mainnet --rpc https://fullnode.mainnet.sui.io:443
 ```
 
-##### 切换当前网络环境
+#### 切换当前网络环境
 
 ```bash
 sui client switch --env mainnet
 ```
 
-##### 新建地址
+#### 新建地址
 
 ```bash
 #选择ed25519密钥对方案，生成新的密钥对和地址，并设置地址别名为test
  sui client new-address  ed25519 test
 ```
 
-##### 切换当前地址
+#### 切换当前地址
 
 ```bash
 sui client switch --address <address别名>
 ```
 
-##### 获取当前活跃地址
+#### 获取当前活跃地址
 
 当前活跃地址可以理解为是当前用户在Sui网络的标识符
 
@@ -175,7 +175,7 @@ sui client switch --address <address别名>
 sui client active-address
 ```
 
-##### 使用对象ID获取对象信息
+#### 使用对象ID获取对象信息
 
 ```bash
 sui client object <object id>
@@ -183,7 +183,7 @@ sui client object <object id>
 sui client object <object id> --json
 ```
 
-##### 查看当前地址拥有的所有对象
+#### 查看当前地址拥有的所有对象
 
 ```bash
 sui client objects
@@ -191,27 +191,27 @@ sui client objects
 sui client objects --json
 ```
 
-##### 获取动态字段信息
+#### 获取动态字段信息
 
 ```bash
 sui client dynamic-field <DYNAMIC-FIELD-ID>
 ```
 
-##### 获取余额
+#### 获取余额
 
 ```bash
 sui client balance
 sui client gas
 ```
 
-##### 在devnet申请gas
+#### 在devnet申请gas
 
 ```bash
 # 执行前需要确认当前网络是否是devnet.执行后一分钟内就能到账
 sui client faucet --address <你的地址>
 ```
 
-##### 合并gas的余额
+#### 合并gas的余额
 
 如果有多个gas对象，不想每次使用--gas选项指定，就可以合并gas对象的余额到一个gas对象中去
 
@@ -222,7 +222,7 @@ sui client merge-coin --primary-coin <gas coin id> --coin-to-merge <gas coin id>
 -  --primary-coin 余额都合并到这个gas对象中
 - --coin-to-merge 被合并余额的gas对象
 
-##### 发布包之前，检查字节码是否超过规定值
+#### 发布包之前，检查字节码是否超过规定值
 
 强烈建议在发包之前执行此操作，避免发布失败，消耗不必要的gas
 
@@ -230,7 +230,7 @@ sui client merge-coin --primary-coin <gas coin id> --coin-to-merge <gas coin id>
 sui client verify-bytecode-meter
 ```
 
-##### 发布包
+#### 发布包
 
 ```bash
 #发布当前目录的包
@@ -248,7 +248,7 @@ sui client publish--gas <gas coin id> 0
 
 - 发布之前要进行编译，所以编译的选项在这个命令也是生效的
 
-##### 调用已经发布包的方法
+#### 调用已经发布包的方法
 
 ```bash
 #调用一个没有参数的函数
@@ -260,13 +260,13 @@ sui client call [OPTIONS] --package <package id> --module <module名称> --funct
 
 ```
 
-##### 查看交易消耗gas的详细信息
+#### 查看交易消耗gas的详细信息
 
 ```bash
 sui client profile-transaction --tx-digest <交易的digest>
 ```
 
-##### 转移资产
+#### 转移资产
 
 ```bash
 #转移指定资产给指定地址
@@ -275,13 +275,13 @@ sui client pay --input-coins <被转移的coin id> --recipients <收款地址>--
 sui client sui-pay --input-coins <被转移的coin id> --recipients <收款地址>--amounts <转账金额>--gas-budget <本次操作最大可消耗gas>
 ```
 
-##### 转移对象所有权
+#### 转移对象所有权
 
 ```bashsui client transfer [OPTIONS] --to <TO> --object-id <OBJECT_ID> --gas-budget <GAS_BUDGET>
 sui client transfer --to <收到对象所有权的地址> --object-id <对象id> --gas-budget <本次交易最大可消耗gas>
 ```
 
-##### sui console
+#### sui console
 
 有没有觉得sui client相关的命令每次都要输入sui client 很麻烦？可以使用sui console进入sui的命令行，省略sui client字符直接输入命令即可。比如：
 
@@ -292,19 +292,19 @@ gas
 switch --address mystifying-sphene
 ```
 
-##### 退出sui命令行模式
+#### 退出sui命令行模式
 
 ```bash
 exit
 ```
 
-##### 清屏
+#### 清屏
 
 ```bash
 clear
 ```
 
-##### 查看历史命令
+#### 查看历史命令
 
 ```bash
 history

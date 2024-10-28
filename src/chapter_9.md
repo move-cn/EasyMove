@@ -1,4 +1,4 @@
-## 9.轻松入门Move: Ability
+# 9.轻松入门Move: Ability
 
 在前面几章我们一直在说对象的ability，那什么是ability呢？ ability直译过来就是数据类型的能力。
 
@@ -14,7 +14,7 @@ public struct Person has key,store {
 }
 ```
 
-#### Key Ability
+### Key Ability
 
 有些资料说拥有key ability代表能在全局存储中作为key使用，这个并不适用于Move。关于key ability的作用官网如下描述：
 
@@ -39,7 +39,7 @@ name: String
 
 所以**key ability就是用来标识结构体是否是对象的**。
 
-#### Store Ability
+### Store Ability
 
 key是对象必有的能力，而store则是对象可选的能力。**有以下两种情况需要指定对象的store abiity:**
 
@@ -85,7 +85,7 @@ public fun transfer_company(company: Company, someone: address) {
 
 如果是非对象结构体，想在对象中作为一个字段存储，也必须要有store能力。
 
-#### Copy
+### Copy
 
 与key ability相反，copy ability不能用于对象。copy ability 就是**用于标记这个结构体是否可以被复制**。
 
@@ -128,7 +128,7 @@ public entry fun new(ctx: &mut TxContext) {
 
 值得注意的是在对结构体设置copy 、store 和drop能力的时候，都需要先确保结构体内所有字段包含这些能力。
 
-#### Drop
+### Drop
 
 跟copy同理，drop ability也只能用于非对象结构体。drop表明**这个结构体是否能在作用域结束的时候自动删除**。如果不能自动删除则需要手动调用删除逻辑。删除结构体的方法详见：6.轻松入门Move: 结构体
 
