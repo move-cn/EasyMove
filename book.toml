@@ -3,7 +3,7 @@ authors = ["wsc"]
 language = "en"
 multilingual = false
 src = "src"
-title = "easy move"
+title = "轻松入门 Move"
 
 
 [output.html]

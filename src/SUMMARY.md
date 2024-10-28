@@ -11,7 +11,7 @@
 - [10.轻松入门Move: 动态字段](./chapter_10.md)
 - [11.轻松入门Move: Bag和Table](./chapter_11.md)
 - [12.轻松入门Move: 父子对象](./chapter_12.md)
-- [13.轻松入门Move: 时间和泛型](./chapter_13.md)
+- [13.轻松入门Move: 事件和泛型](./chapter_13.md)
 - [番外篇：我在dacade赚了100SUI](./extra_story.md)
 - [14.轻松入门Move:  集合（上）](./chapter_14.md)
 - [15.轻松入门Move:  集合（下）](./chapter_15.md)
