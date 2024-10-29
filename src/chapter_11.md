@@ -1,4 +1,4 @@
-## 11.轻松入门Move: Bag和Table
+# 11.轻松入门Move: Bag和Table
 
 上一章我们讲到使用动态字段可以给Person对象动态添加电子设备的例子，因为无法直接获取Person对象的动态字段个数，在删除Person对象之前，具体应该删除多少个动态字段也是不确定的，所以其实特别容易漏删，造成资源浪费。
 
@@ -84,7 +84,7 @@ public entry fun new(ctx: &mut TxContext) {
 
 这里调用了bag::new方法，实例化了一个没有任何内容的电子设备。
 
-###### 添加键值对
+##### 添加键值对
 
 假如现在购买了一个笔记本和一个手机，我们使用如下方法，给electronic_devices字段添加键值对：
 
@@ -116,7 +116,7 @@ public entry fun add_mobilephone(person: &mut Person, ctx: &mut TxContext) {
 
 ![](bag.png)
 
-###### 访问键值对
+##### 访问键值对
 
 跟其他类型一样，访问分为不可变访问和可变访问，使用哪个取决于是否需要改变键值对的值（注意这里只能改变值，不能改变键）。
 
@@ -137,7 +137,7 @@ public entry fun access_notebook(person: &Person, _: &mut TxContext) {
 
 在访问之前必须使用bag::contains判断是否存在该键值，否则会报错。使用bag::borrow方法会返回对Notebook对象的不可变引用，而bag::borrow_mut方法则是可变引用。
 
-###### 删除键值对
+##### 删除键值对
 
 ```rust
 public entry fun remove_notebook(person: &mut Person, _: &mut TxContext) {
@@ -151,7 +151,7 @@ public entry fun remove_notebook(person: &mut Person, _: &mut TxContext) {
 
 注意，这里我使用的是id.delete()来删除对象这是Move 2024新增用法，是不是比原来的object::delete(id)顺眼？
 
-###### 删除Person对象
+##### 删除Person对象
 
 因为Bag是基于dynamic_field实现的，所以删除Person对象，也不会自动删除Bag内的键值对。所以删除Person对象之前也需要先删除键值对：
 

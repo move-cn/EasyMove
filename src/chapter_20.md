@@ -4,7 +4,7 @@ SUI提供了一个模板引擎，可以使用它将对象的数据转换为模�
 
 下面我们通过一个例子来展示如何使用模板引擎，在这个例子中我们试图创建一个Phone对象的模板对象。
 
-#### 生成Publisher
+## 生成Publisher
 
 ```rust
 module test6::test6 {
@@ -50,7 +50,7 @@ claim函数主要作用是消费一次性见证者、生成Pulisher对象并返�
 
 除了claim函数外，还可以使用claim_and_keep函数创建并转交Publisher对象给当前上下文环境的账户(即包的拥有者)。
 
-#### 创建Display对象
+## 创建Display对象
 
 ```rust
  	//创建模板
@@ -101,13 +101,13 @@ module sui::package {
 }
 ```
 
-#### 修改和删除模板内容
+## 修改和删除模板内容
 
 display模块还提供了新增键/值对，修改键/值对和删除键/值对的方法，需要注意的是，修改和删除键值对之前要确保键值对已经存在于Display对象中，否则会产生报错。
 
 在必要时候可以调用display::update_version升级Display的版本，并且它会发布一个版本升级的事件，监听这个事件的代码可以接到通知做相应处理。
 
-#### 使用Display对象展示Phone对象
+## 使用Display对象展示Phone对象
 
 只需要在查询Phone对象的时候，使用 `{ showDisplay: true }` 选项就可以返回模板变量定义的内容:
 
